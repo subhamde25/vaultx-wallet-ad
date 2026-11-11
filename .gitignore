@@ -1,0 +1,16 @@
+# The client's brand kit: logo files, script and voiceover (see README, Rights)
+brandkit/
+
+# Built audio, review stills, Console scratch scripts and test comps
+# (tools/ recreates all of it; only the nine scene comps and the five UI screen comps are kept)
+build/*
+!build/comps/
+build/comps/*
+!build/comps/C0*.comp
+!build/comps/UI_*.comp
+
+# Tool state and caches
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db
