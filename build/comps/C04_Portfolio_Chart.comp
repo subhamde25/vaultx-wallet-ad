@@ -1,0 +1,2928 @@
+Composition {
+	CurrentTime = 0,
+	RenderRange = { 0, 125 },
+	GlobalRange = { 0, 125 },
+	CurrentID = 235,
+	HiQ = true,
+	PlaybackUpdateMode = 0,
+	Version = "DaVinci Resolve Fusion 21.2",
+	SavedOutputs = 0,
+	HeldTools = 0,
+	DisabledTools = 0,
+	LockedTools = 0,
+	AudioOffset = 0,
+	AutoRenderRange = true,
+	Resumable = true,
+	OutputClips = {
+	},
+	Tools = ordered() {
+		BG_Base = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.043137, },
+				TopLeftGreen = Input { Value = 0.054902, },
+				TopLeftBlue = Input { Value = 0.043137, },
+				TopLeftAlpha = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+		},
+		BG_GlowA_GreenStartPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.322917, RH = { 69, 0.446181 } },
+				[969] = { 0.692708, LH = { 519, 0.569444 } },
+			}
+		},
+		BG_GlowA_GreenStartPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.694444, RH = { 69, 0.580247 } },
+				[969] = { 0.351852, LH = { 519, 0.466049 } },
+			}
+		},
+		BG_GlowA_GreenStartPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowA_GreenStartPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowA_GreenStartPathY", Source = "Value", },
+			},
+		},
+		BG_GlowA_GreenEndPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.833333, RH = { 69, 0.956597 } },
+				[969] = { 1.203125, LH = { 519, 1.079861 } },
+			}
+		},
+		BG_GlowA_GreenEndPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.694444, RH = { 69, 0.580247 } },
+				[969] = { 0.351852, LH = { 519, 0.466049 } },
+			}
+		},
+		BG_GlowA_GreenEndPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowA_GreenEndPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowA_GreenEndPathY", Source = "Value", },
+			},
+		},
+		BG_GlowA_Green = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { SourceOp = "BG_GlowA_GreenStartPath", Source = "Value", },
+				End = Input { SourceOp = "BG_GlowA_GreenEndPath", Source = "Value", },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.085294, 0.118235, 0.047059, 0.15 }, [0.45] = { 0.028431, 0.039412, 0.015686, 0.05 }, [1] = { 0, 0, 0, 0 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		},
+		BG_GlowB_CharcoalStartPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.8125, RH = { 69, 0.614583 } },
+				[969] = { 0.21875, LH = { 519, 0.416667 } },
+			}
+		},
+		BG_GlowB_CharcoalStartPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.138889, RH = { 69, 0.345679 } },
+				[969] = { 0.759259, LH = { 519, 0.552469 } },
+			}
+		},
+		BG_GlowB_CharcoalStartPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowB_CharcoalStartPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowB_CharcoalStartPathY", Source = "Value", },
+			},
+		},
+		BG_GlowB_CharcoalEndPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 1.28125, RH = { 69, 1.083333 } },
+				[969] = { 0.6875, LH = { 519, 0.885417 } },
+			}
+		},
+		BG_GlowB_CharcoalEndPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.138889, RH = { 69, 0.345679 } },
+				[969] = { 0.759259, LH = { 519, 0.552469 } },
+			}
+		},
+		BG_GlowB_CharcoalEndPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowB_CharcoalEndPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowB_CharcoalEndPathY", Source = "Value", },
+			},
+		},
+		BG_GlowB_Charcoal = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { SourceOp = "BG_GlowB_CharcoalStartPath", Source = "Value", },
+				End = Input { SourceOp = "BG_GlowB_CharcoalEndPath", Source = "Value", },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.145882, 0.157647, 0.145882, 0.6 }, [1] = { 0, 0, 0, 0 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 66 } },
+		},
+		BG_AddGlowA = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_Base", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_GlowA_Green", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 99 } },
+		},
+		BG_AddGlowB = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGlowA", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_GlowB_Charcoal", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 132 } },
+		},
+		UL_BG_Base_Glows = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Base_Glows", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, -30 },
+				Size = { 120, 195 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		BG_GridV_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.475, Y = 0.518519 },
+							{ Linear = true, X = -0.475, Y = -0.518519 },
+							{ Linear = true, X = -0.425, Y = -0.518519 },
+							{ Linear = true, X = -0.425, Y = 0.518519 },
+							{ Linear = true, X = -0.375, Y = 0.518519 },
+							{ Linear = true, X = -0.375, Y = -0.518519 },
+							{ Linear = true, X = -0.325, Y = -0.518519 },
+							{ Linear = true, X = -0.325, Y = 0.518519 },
+							{ Linear = true, X = -0.275, Y = 0.518519 },
+							{ Linear = true, X = -0.275, Y = -0.518519 },
+							{ Linear = true, X = -0.225, Y = -0.518519 },
+							{ Linear = true, X = -0.225, Y = 0.518519 },
+							{ Linear = true, X = -0.175, Y = 0.518519 },
+							{ Linear = true, X = -0.175, Y = -0.518519 },
+							{ Linear = true, X = -0.125, Y = -0.518519 },
+							{ Linear = true, X = -0.125, Y = 0.518519 },
+							{ Linear = true, X = -0.075, Y = 0.518519 },
+							{ Linear = true, X = -0.075, Y = -0.518519 },
+							{ Linear = true, X = -0.025, Y = -0.518519 },
+							{ Linear = true, X = -0.025, Y = 0.518519 },
+							{ Linear = true, X = 0.025, Y = 0.518519 },
+							{ Linear = true, X = 0.025, Y = -0.518519 },
+							{ Linear = true, X = 0.075, Y = -0.518519 },
+							{ Linear = true, X = 0.075, Y = 0.518519 },
+							{ Linear = true, X = 0.125, Y = 0.518519 },
+							{ Linear = true, X = 0.125, Y = -0.518519 },
+							{ Linear = true, X = 0.175, Y = -0.518519 },
+							{ Linear = true, X = 0.175, Y = 0.518519 },
+							{ Linear = true, X = 0.225, Y = 0.518519 },
+							{ Linear = true, X = 0.225, Y = -0.518519 },
+							{ Linear = true, X = 0.275, Y = -0.518519 },
+							{ Linear = true, X = 0.275, Y = 0.518519 },
+							{ Linear = true, X = 0.325, Y = 0.518519 },
+							{ Linear = true, X = 0.325, Y = -0.518519 },
+							{ Linear = true, X = 0.375, Y = -0.518519 },
+							{ Linear = true, X = 0.375, Y = 0.518519 },
+							{ Linear = true, X = 0.425, Y = 0.518519 },
+							{ Linear = true, X = 0.425, Y = -0.518519 },
+							{ Linear = true, X = 0.475, Y = -0.518519 },
+							{ Linear = true, X = 0.475, Y = 0.518519 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000625, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 0 } },
+		},
+		BG_GridH_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "BG_GridV_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.510417, Y = 0.488889 },
+							{ Linear = true, X = 0.520833, Y = 0.488889 },
+							{ Linear = true, X = 0.520833, Y = 0.4 },
+							{ Linear = true, X = -0.510417, Y = 0.4 },
+							{ Linear = true, X = -0.510417, Y = 0.311111 },
+							{ Linear = true, X = 0.520833, Y = 0.311111 },
+							{ Linear = true, X = 0.520833, Y = 0.222222 },
+							{ Linear = true, X = -0.510417, Y = 0.222222 },
+							{ Linear = true, X = -0.510417, Y = 0.133333 },
+							{ Linear = true, X = 0.520833, Y = 0.133333 },
+							{ Linear = true, X = 0.520833, Y = 0.044444 },
+							{ Linear = true, X = -0.510417, Y = 0.044444 },
+							{ Linear = true, X = -0.510417, Y = -0.044444 },
+							{ Linear = true, X = 0.520833, Y = -0.044444 },
+							{ Linear = true, X = 0.520833, Y = -0.133333 },
+							{ Linear = true, X = -0.510417, Y = -0.133333 },
+							{ Linear = true, X = -0.510417, Y = -0.222222 },
+							{ Linear = true, X = 0.520833, Y = -0.222222 },
+							{ Linear = true, X = 0.520833, Y = -0.311111 },
+							{ Linear = true, X = -0.510417, Y = -0.311111 },
+							{ Linear = true, X = -0.510417, Y = -0.4 },
+							{ Linear = true, X = 0.520833, Y = -0.4 },
+							{ Linear = true, X = 0.520833, Y = -0.488889 },
+							{ Linear = true, X = -0.510417, Y = -0.488889 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000625, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 33 } },
+		},
+		BG_Grid_Lines = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { Value = { 0.5, 0.564815 }, },
+				End = Input { Value = { 1.020833, 0.564815 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.055, 0.055, 0.055, 0.055 }, [0.7] = { 0.02, 0.02, 0.02, 0.02 }, [1] = { 0, 0, 0, 0 } }
+					}, },
+				EffectMask = Input { SourceOp = "BG_GridH_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 66 } },
+		},
+		BG_Grid_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "BG_Grid_Lines", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 99 } },
+		},
+		BG_Grid_DriftCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.5, RH = { 69, 0.483333 } },
+				[969] = { 0.45, LH = { 519, 0.466667 } },
+			}
+		},
+		BG_Grid_DriftCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[-381] = { 0.5, RH = { 69, 0.514815 } },
+				[969] = { 0.544444, LH = { 519, 0.52963 } },
+			}
+		},
+		BG_Grid_DriftCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_Grid_DriftCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_Grid_DriftCenterPathY", Source = "Value", },
+			},
+		},
+		BG_Grid_Drift = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "BG_Grid_Static", Source = "Output", },
+				Center = Input { SourceOp = "BG_Grid_DriftCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 132 } },
+		},
+		BG_AddGrid = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGlowB", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_Grid_Drift", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 165 } },
+		},
+		UL_BG_Grid = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Grid", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 75, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		BG_Vignette_Dark = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { Value = { 0.5, 0.5 }, },
+				End = Input { Value = { 1.098958, 0.5 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0, 0, 0, 0 }, [0.55] = { 0, 0, 0, 0 }, [1] = { 0, 0, 0, 0.7 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 0 } },
+		},
+		BG_AddVignette = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGrid", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_Vignette_Dark", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 33 } },
+		},
+		UL_BG_Vignette = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Vignette", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 205, -30 },
+				Size = { 120, 96 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Eb_Track_Eyebrow = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 0 } },
+		},
+		Eb_Track_Num = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "03", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.023913, },
+				Center = Input { Value = { 0.10625, 0.842593 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 33 } },
+		},
+		Eb_Track_Rule_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.136458, 0.842593 }, },
+				Width = Input { Value = 0.01875, },
+				Height = Input { Value = 0.001852, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 66 } },
+		},
+		Eb_Track_RuleFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.364706, },
+				TopLeftGreen = Input { Value = 0.4, },
+				TopLeftBlue = Input { Value = 0.364706, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Eb_Track_Rule_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 99 } },
+		},
+		Eb_Track_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "TRACK", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.153125, 0.842593 }, },
+				CharacterSpacing = Input { Value = 1.12, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 132 } },
+		},
+		Eb_Track_AddNum = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Track_Eyebrow", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Track_Num", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 165 } },
+		},
+		Eb_Track_AddRule = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Track_AddNum", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Track_RuleFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 198 } },
+		},
+		Eb_Track_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Track_AddRule", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Track_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 231 } },
+		},
+		Eb_Track_SlideCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.484375, RH = { 2.24, 0.5 } },
+				[14] = { 0.5, LH = { 4.2, 0.5 }, RH = { 46.666667, 0.5 } },
+				[112] = { 0.5, LH = { 79.333333, 0.5 }, RH = { 117.6, 0.5 } },
+				[120] = { 0.489583, LH = { 118.72, 0.5 } },
+			}
+		},
+		Eb_Track_SlideCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Eb_Track_SlideCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Eb_Track_SlideCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Eb_Track_SlideCenterPathY", Source = "Value", },
+			},
+		},
+		Eb_Track_SlideQuality = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-1] = { 1, RH = { -0.666667, 2 } },
+				[0] = { 4, LH = { -0.333333, 3 }, RH = { 4.666667, 4 } },
+				[14] = { 4, LH = { 9.333333, 4 }, RH = { 14.333333, 3 } },
+				[15] = { 1, LH = { 14.666667, 2 }, RH = { 47, 1 } },
+				[111] = { 1, LH = { 79, 1 }, RH = { 111.333333, 2 } },
+				[112] = { 4, LH = { 111.666667, 3 }, RH = { 114.666667, 4 } },
+				[120] = { 4, LH = { 117.333333, 4 }, RH = { 120.333333, 3 } },
+				[121] = { 1, LH = { 120.666667, 2 } },
+			}
+		},
+		Eb_Track_Slide = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Eb_Track_AddLabel", Source = "Output", },
+				Center = Input { SourceOp = "Eb_Track_SlideCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Eb_Track_SlideQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 264 } },
+		},
+		UL_Eyebrow_Eb_Track = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Eyebrow_Eb_Track", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 335, -30 },
+				Size = { 120, 327 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		HL_Realtime_Portfolio_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 0 } },
+		},
+		HL_Realtime_Portfolio_Clip0_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.717487, 0.837037 }, },
+				Width = Input { Value = 0.373359, },
+				Height = Input { Value = 0.056296, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 33 } },
+		},
+		HL_Realtime_Portfolio_Line0 = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 66 } },
+		},
+		HL_Realtime_Portfolio_W01_Realtime = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Real-time", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.043478, },
+				Center = Input { Value = { 0.541225, 0.840741 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 99 } },
+		},
+		HL_Realtime_Portfolio_W01_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Realtime_Portfolio_W01_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[5] = { 0.442593, RH = { 7.56, 0.5 } },
+				[21] = { 0.5, LH = { 9.8, 0.5 }, RH = { 51.333333, 0.5 } },
+				[112] = { 0.5, LH = { 81.666667, 0.5 }, RH = { 119, 0.5 } },
+				[122] = { 0.557407, LH = { 120.4, 0.5 } },
+			}
+		},
+		HL_Realtime_Portfolio_W01_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Realtime_Portfolio_W01_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Realtime_Portfolio_W01_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Realtime_Portfolio_W01_RiseQuality = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[4] = { 1, RH = { 4.333333, 2 } },
+				[5] = { 4, LH = { 4.666667, 3 }, RH = { 10.333333, 4 } },
+				[21] = { 4, LH = { 15.666667, 4 }, RH = { 21.333333, 3 } },
+				[22] = { 1, LH = { 21.666667, 2 }, RH = { 51.666667, 1 } },
+				[111] = { 1, LH = { 81.333333, 1 }, RH = { 111.333333, 2 } },
+				[112] = { 4, LH = { 111.666667, 3 }, RH = { 115.333333, 4 } },
+				[122] = { 4, LH = { 118.666667, 4 }, RH = { 122.333333, 3 } },
+				[123] = { 1, LH = { 122.666667, 2 } },
+			}
+		},
+		HL_Realtime_Portfolio_W01_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Realtime_Portfolio_W01_Realtime", Source = "Output", },
+				Center = Input { SourceOp = "HL_Realtime_Portfolio_W01_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Realtime_Portfolio_W01_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 132 } },
+		},
+		HL_Realtime_Portfolio_W01_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Realtime_Portfolio_Line0", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Realtime_Portfolio_W01_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 165 } },
+		},
+		HL_Realtime_Portfolio_W02_portfolio = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "portfolio", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.043478, },
+				Center = Input { Value = { 0.672816, 0.840741 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 198 } },
+		},
+		HL_Realtime_Portfolio_W02_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Realtime_Portfolio_W02_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[23] = { 0.442593, RH = { 25.56, 0.5 } },
+				[39] = { 0.5, LH = { 27.8, 0.5 }, RH = { 63.666667, 0.5 } },
+				[113] = { 0.5, LH = { 88.333333, 0.5 }, RH = { 120, 0.5 } },
+				[123] = { 0.557407, LH = { 121.4, 0.5 } },
+			}
+		},
+		HL_Realtime_Portfolio_W02_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Realtime_Portfolio_W02_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Realtime_Portfolio_W02_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Realtime_Portfolio_W02_RiseQuality = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 1, RH = { 22.333333, 2 } },
+				[23] = { 4, LH = { 22.666667, 3 }, RH = { 28.333333, 4 } },
+				[39] = { 4, LH = { 33.666667, 4 }, RH = { 39.333333, 3 } },
+				[40] = { 1, LH = { 39.666667, 2 }, RH = { 64, 1 } },
+				[112] = { 1, LH = { 88, 1 }, RH = { 112.333333, 2 } },
+				[113] = { 4, LH = { 112.666667, 3 }, RH = { 116.333333, 4 } },
+				[123] = { 4, LH = { 119.666667, 4 }, RH = { 123.333333, 3 } },
+				[124] = { 1, LH = { 123.666667, 2 } },
+			}
+		},
+		HL_Realtime_Portfolio_W02_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Realtime_Portfolio_W02_portfolio", Source = "Output", },
+				Center = Input { SourceOp = "HL_Realtime_Portfolio_W02_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Realtime_Portfolio_W02_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 231 } },
+		},
+		HL_Realtime_Portfolio_W02_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Realtime_Portfolio_W01_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Realtime_Portfolio_W02_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 264 } },
+		},
+		HL_Realtime_Portfolio_W03_tracking = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "tracking", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.043478, },
+				Center = Input { Value = { 0.787323, 0.840741 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 297 } },
+		},
+		HL_Realtime_Portfolio_W03_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Realtime_Portfolio_W03_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[43] = { 0.442593, RH = { 45.56, 0.5 } },
+				[59] = { 0.5, LH = { 47.8, 0.5 }, RH = { 77.333333, 0.5 } },
+				[114] = { 0.5, LH = { 95.666667, 0.5 }, RH = { 121, 0.5 } },
+				[124] = { 0.557407, LH = { 122.4, 0.5 } },
+			}
+		},
+		HL_Realtime_Portfolio_W03_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Realtime_Portfolio_W03_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Realtime_Portfolio_W03_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Realtime_Portfolio_W03_RiseQuality = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[42] = { 1, RH = { 42.333333, 2 } },
+				[43] = { 4, LH = { 42.666667, 3 }, RH = { 48.333333, 4 } },
+				[59] = { 4, LH = { 53.666667, 4 }, RH = { 59.333333, 3 } },
+				[60] = { 1, LH = { 59.666667, 2 }, RH = { 77.666667, 1 } },
+				[113] = { 1, LH = { 95.333333, 1 }, RH = { 113.333333, 2 } },
+				[114] = { 4, LH = { 113.666667, 3 }, RH = { 117.333333, 4 } },
+				[124] = { 4, LH = { 120.666667, 4 }, RH = { 124.333333, 3 } },
+				[125] = { 1, LH = { 124.666667, 2 } },
+			}
+		},
+		HL_Realtime_Portfolio_W03_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Realtime_Portfolio_W03_tracking", Source = "Output", },
+				Center = Input { SourceOp = "HL_Realtime_Portfolio_W03_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Realtime_Portfolio_W03_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 330 } },
+		},
+		HL_Realtime_Portfolio_W03_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Realtime_Portfolio_W02_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Realtime_Portfolio_W03_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 363 } },
+		},
+		HL_Realtime_Portfolio_Line0_Clipped = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Realtime_Portfolio_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Realtime_Portfolio_W03_Add", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "HL_Realtime_Portfolio_Clip0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 396 } },
+		},
+		UL_HL_HL_Realtime_Portfolio = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "HL_HL_Realtime_Portfolio", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 465, -30 },
+				Size = { 120, 459 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		ChartCard_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.444444 }, },
+				Width = Input { Value = 0.791667, },
+				Height = Input { Value = 0.625926, },
+				CornerRadius = Input { Value = 0.118343, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 0 } },
+		},
+		ChartCard_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.082353, },
+				TopLeftGreen = Input { Value = 0.101961, },
+				TopLeftBlue = Input { Value = 0.082353, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "ChartCard_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 33 } },
+		},
+		ChartCard_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.444444 }, },
+				Width = Input { Value = 0.791667, },
+				Height = Input { Value = 0.625926, },
+				CornerRadius = Input { Value = 0.118343, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 66 } },
+		},
+		ChartCard_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "ChartCard_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 99 } },
+		},
+		ChartCard_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "ChartCard_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 132 } },
+		},
+		Bal_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Total balance", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.023913, },
+				Center = Input { Value = { 0.135417, 0.692593 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 165 } },
+		},
+		Bal_Value = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "$48,256.80", Expression = ":local t=math.min(1,math.max(0,(time-8)/34)); t=1-(1-t)^3; local v=36000.000000+(12256.800000)*t; local s=string.format(\"%.2f\",v); local int,frac=s:match(\"(%d+)(.*)\"); int=int:reverse():gsub(\"(%d%d%d)\",\"%1,\"):reverse():gsub(\"^,\",\"\"); return Text(string.format(\"$%s\", int..frac))", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.076087, },
+				Center = Input { Value = { 0.135417, 0.618519 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 198 } },
+		},
+		Bal_Change_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.465194, 0.618519 }, },
+				Width = Input { Value = 0.078125, },
+				Height = Input { Value = 0.048148, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 231 } },
+		},
+		Bal_Change_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.133333, },
+				TopLeftGreen = Input { Value = 0.188235, },
+				TopLeftBlue = Input { Value = 0.101961, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Bal_Change_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 264 } },
+		},
+		Bal_Change_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "+12.4%", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.023913, },
+				Center = Input { Value = { 0.465194, 0.618519 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 297 } },
+		},
+		Bal_Change_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Bal_Change_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "Bal_Change_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 330 } },
+		},
+		Tab_1D = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "1D", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.623958, 0.688889 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 363 } },
+		},
+		Tab_1W = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "1W", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.667708, 0.688889 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 396 } },
+		},
+		Tab_1M = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "1M", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.711458, 0.688889 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 429 } },
+		},
+		Tab_3M = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "3M", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.755208, 0.688889 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 462 } },
+		},
+		Tab_1Y = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "1Y", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.798958, 0.688889 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 495 } },
+		},
+		Tab_ALL = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "ALL", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.842708, 0.688889 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 528 } },
+		},
+		ChartCard_Add_Bal_Label = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "Bal_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 561 } },
+		},
+		ChartCard_Add_Bal_Change_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Add_Bal_Label", Source = "Output", },
+				Foreground = Input { SourceOp = "Bal_Change_AddLabel", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 594 } },
+		},
+		ChartCard_Add_Tab_1D = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Add_Bal_Change_AddLabel", Source = "Output", },
+				Foreground = Input { SourceOp = "Tab_1D", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 627 } },
+		},
+		ChartCard_Add_Tab_1W = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Add_Tab_1D", Source = "Output", },
+				Foreground = Input { SourceOp = "Tab_1W", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 660 } },
+		},
+		ChartCard_Add_Tab_1M = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Add_Tab_1W", Source = "Output", },
+				Foreground = Input { SourceOp = "Tab_1M", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 693 } },
+		},
+		ChartCard_Add_Tab_3M = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Add_Tab_1M", Source = "Output", },
+				Foreground = Input { SourceOp = "Tab_3M", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 726 } },
+		},
+		ChartCard_Add_Tab_1Y = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Add_Tab_3M", Source = "Output", },
+				Foreground = Input { SourceOp = "Tab_1Y", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 759 } },
+		},
+		ChartCard_Add_Tab_ALL = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Add_Tab_1Y", Source = "Output", },
+				Foreground = Input { SourceOp = "Tab_ALL", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 792 } },
+		},
+		ChartCard_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "ChartCard_Add_Tab_ALL", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 825 } },
+		},
+		ChartCard_AddBalance = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_Static", Source = "Output", },
+				Foreground = Input { SourceOp = "Bal_Value", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 858 } },
+		},
+		UL_Chart_Card = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chart_Card", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 595, -30 },
+				Size = { 120, 921 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Tab_Pill_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.667708, RH = { 14.666667, 0.667708 } },
+				[44] = { 0.667708, LH = { 29.333333, 0.667708 }, RH = { 51.8, 0.667708 } },
+				[56] = { 0.711458, LH = { 48.2, 0.711458 } },
+			}
+		},
+		Tab_Pill_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.688889, RH = { 14.666667, 0.688889 } },
+				[44] = { 0.688889, LH = { 29.333333, 0.688889 }, RH = { 51.8, 0.688889 } },
+				[56] = { 0.688889, LH = { 48.2, 0.688889 } },
+			}
+		},
+		Tab_Pill_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Tab_Pill_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Tab_Pill_MCenterPathY", Source = "Value", },
+			},
+		},
+		Tab_Pill_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Tab_Pill_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.038542, },
+				Height = Input { Value = 0.040741, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 0 } },
+		},
+		Tab_PillFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.09098, },
+				TopLeftGreen = Input { Value = 0.126118, },
+				TopLeftBlue = Input { Value = 0.050196, },
+				TopLeftAlpha = Input { Value = 0.16, },
+				EffectMask = Input { SourceOp = "Tab_Pill_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 33 } },
+		},
+		Tab_PillEdge_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.667708, RH = { 14.666667, 0.667708 } },
+				[44] = { 0.667708, LH = { 29.333333, 0.667708 }, RH = { 51.8, 0.667708 } },
+				[56] = { 0.711458, LH = { 48.2, 0.711458 } },
+			}
+		},
+		Tab_PillEdge_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.688889, RH = { 14.666667, 0.688889 } },
+				[44] = { 0.688889, LH = { 29.333333, 0.688889 }, RH = { 51.8, 0.688889 } },
+				[56] = { 0.688889, LH = { 48.2, 0.688889 } },
+			}
+		},
+		Tab_PillEdge_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Tab_PillEdge_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Tab_PillEdge_MCenterPathY", Source = "Value", },
+			},
+		},
+		Tab_PillEdge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Tab_PillEdge_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.038542, },
+				Height = Input { Value = 0.040741, },
+				CornerRadius = Input { Value = 1, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 66 } },
+		},
+		Tab_PillEdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Tab_PillEdge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 99 } },
+		},
+		ChartCard_AddTabPill = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_AddBalance", Source = "Output", },
+				Foreground = Input { SourceOp = "Tab_PillFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 132 } },
+		},
+		ChartCard_AddTabEdge = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_AddTabPill", Source = "Output", },
+				Foreground = Input { SourceOp = "Tab_PillEdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 165 } },
+		},
+		UL_Tab_Highlight = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Tab_Highlight", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 725, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Grid0_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.476562, 0.52537 }, },
+				Width = Input { Value = 0.682292, },
+				Height = Input { Value = 0.001111, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 0 } },
+		},
+		YLabel0 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "$50K", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.018478, },
+				Center = Input { Value = { 0.864583, 0.525926 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 0.364706, },
+				Green1 = Input { Value = 0.4, },
+				Blue1 = Input { Value = 0.364706, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 33 } },
+		},
+		Grid1_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.476562, 0.440648 }, },
+				Width = Input { Value = 0.682292, },
+				Height = Input { Value = 0.001111, },
+				EffectMask = Input { SourceOp = "Grid0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 66 } },
+		},
+		YLabel1 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "$46K", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.018478, },
+				Center = Input { Value = { 0.864583, 0.441204 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 0.364706, },
+				Green1 = Input { Value = 0.4, },
+				Blue1 = Input { Value = 0.364706, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 99 } },
+		},
+		Grid2_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.476562, 0.355926 }, },
+				Width = Input { Value = 0.682292, },
+				Height = Input { Value = 0.001111, },
+				EffectMask = Input { SourceOp = "Grid1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 132 } },
+		},
+		YLabel2 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "$42K", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.018478, },
+				Center = Input { Value = { 0.864583, 0.356481 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 0.364706, },
+				Green1 = Input { Value = 0.4, },
+				Blue1 = Input { Value = 0.364706, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 165 } },
+		},
+		Grid3_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.476562, 0.271204 }, },
+				Width = Input { Value = 0.682292, },
+				Height = Input { Value = 0.001111, },
+				EffectMask = Input { SourceOp = "Grid2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 198 } },
+		},
+		YLabel3 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "$38K", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.018478, },
+				Center = Input { Value = { 0.864583, 0.271759 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 0.364706, },
+				Green1 = Input { Value = 0.4, },
+				Blue1 = Input { Value = 0.364706, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 231 } },
+		},
+		Grid4_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.476562, 0.186481 }, },
+				Width = Input { Value = 0.682292, },
+				Height = Input { Value = 0.001111, },
+				EffectMask = Input { SourceOp = "Grid3_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 264 } },
+		},
+		YLabel4 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "$34K", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.018478, },
+				Center = Input { Value = { 0.864583, 0.187037 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 0.364706, },
+				Green1 = Input { Value = 0.4, },
+				Blue1 = Input { Value = 0.364706, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 297 } },
+		},
+		Grid_Lines = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.06, },
+				TopLeftGreen = Input { Value = 0.06, },
+				TopLeftBlue = Input { Value = 0.06, },
+				TopLeftAlpha = Input { Value = 0.06, },
+				EffectMask = Input { SourceOp = "Grid4_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 330 } },
+		},
+		Grid_AddLabel0 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Grid_Lines", Source = "Output", },
+				Foreground = Input { SourceOp = "YLabel0", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 363 } },
+		},
+		Grid_AddLabel1 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Grid_AddLabel0", Source = "Output", },
+				Foreground = Input { SourceOp = "YLabel1", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 396 } },
+		},
+		Grid_AddLabel2 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Grid_AddLabel1", Source = "Output", },
+				Foreground = Input { SourceOp = "YLabel2", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 429 } },
+		},
+		Grid_AddLabel3 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Grid_AddLabel2", Source = "Output", },
+				Foreground = Input { SourceOp = "YLabel3", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 462 } },
+		},
+		Grid_AddLabel4 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Grid_AddLabel3", Source = "Output", },
+				Foreground = Input { SourceOp = "YLabel4", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 495 } },
+		},
+		Chart_Grid_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Grid_AddLabel4", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 528 } },
+		},
+		ChartCard_AddGrid = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_AddTabEdge", Source = "Output", },
+				Foreground = Input { SourceOp = "Chart_Grid_Static", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 561 } },
+		},
+		UL_Chart_Grid = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chart_Grid", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 855, -30 },
+				Size = { 120, 624 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Chart_Line_MLevel = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0, RH = { 22.333333, 0.333333 } },
+				[23] = { 1, LH = { 22.666667, 0.666667 } },
+			}
+		},
+		Chart_Line_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0, RH = { 48.65, 0 } },
+				[63] = { 1, LH = { 36.35, 1 } },
+			}
+		},
+		Chart_Line_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "Chart_Line_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = -0.364583, Y = -0.270602, RX = 0.002233, RY = 0.00016 },
+							{ X = -0.352178, Y = -0.269714, LX = -0.004466, LY = 0.000671, RX = 0.004466, RY = -0.000671 },
+							{ X = -0.339773, Y = -0.274332, LX = -0.004466, LY = -0.001579, RX = 0.004466, RY = 0.001579 },
+							{ X = -0.327367, Y = -0.26094, LX = -0.004466, LY = -0.001263, RX = 0.004466, RY = 0.001263 },
+							{ X = -0.314962, Y = -0.267315, LX = -0.004466, LY = -0.000697, RX = 0.004466, RY = 0.000697 },
+							{ X = -0.302557, Y = -0.257065, LX = -0.004466, LY = -0.00268, RX = 0.004466, RY = 0.00268 },
+							{ X = -0.290152, Y = -0.252426, LX = -0.004466, LY = 0.00022, RX = 0.004466, RY = -0.00022 },
+							{ X = -0.277746, Y = -0.258287, LX = -0.004466, LY = -0.000752, RX = 0.004466, RY = 0.000752 },
+							{ X = -0.265341, Y = -0.248247, LX = -0.004466, LY = -0.000671, RX = 0.004466, RY = 0.000671 },
+							{ X = -0.252936, Y = -0.254561, LX = -0.004466, LY = -0.00022, RX = 0.004466, RY = 0.00022 },
+							{ X = -0.24053, Y = -0.247024, LX = -0.004466, LY = -0.000405, RX = 0.004466, RY = 0.000405 },
+							{ X = -0.228125, Y = -0.252313, LX = -0.004466, LY = 0.001807, RX = 0.004466, RY = -0.001807 },
+							{ X = -0.21572, Y = -0.257065, LX = -0.004466, LY = -0.000342, RX = 0.004466, RY = 0.000342 },
+							{ X = -0.203314, Y = -0.250414, LX = -0.004466, LY = -0.004864, RX = 0.004466, RY = 0.004864 },
+							{ X = -0.190909, Y = -0.230042, LX = -0.004466, LY = -0.002831, RX = 0.004466, RY = 0.002831 },
+							{ X = -0.178504, Y = -0.234688, LX = -0.004466, LY = 0.001132, RX = 0.004466, RY = -0.001132 },
+							{ X = -0.166098, Y = -0.236333, LX = -0.004466, LY = -0.001859, RX = 0.004466, RY = 0.001859 },
+							{ X = -0.153693, Y = -0.224358, LX = -0.004466, LY = -0.006229, RX = 0.004466, RY = 0.006229 },
+							{ X = -0.141288, Y = -0.201729, LX = -0.004466, LY = -0.005712, RX = 0.004466, RY = 0.005712 },
+							{ X = -0.128883, Y = -0.192627, LX = -0.004466, LY = -0.00204, RX = 0.004466, RY = 0.00204 },
+							{ X = -0.116477, Y = -0.190398, LX = -0.004466, LY = -0.004355, RX = 0.004466, RY = 0.004355 },
+							{ X = -0.104072, Y = -0.168434, LX = -0.004466, LY = -0.001961, RX = 0.004466, RY = 0.001961 },
+							{ X = -0.091667, Y = -0.179505, LX = -0.004466, LY = -0.001044, RX = 0.004466, RY = 0.001044 },
+							{ X = -0.079261, Y = -0.162635, LX = -0.004466, LY = -0.002419, RX = 0.004466, RY = 0.002419 },
+							{ X = -0.066856, Y = -0.166068, LX = -0.004466, LY = 0.002211, RX = 0.004466, RY = -0.002211 },
+							{ X = -0.054451, Y = -0.174919, LX = -0.004466, LY = 0.003398, RX = 0.004466, RY = -0.003398 },
+							{ X = -0.042045, Y = -0.184946, LX = -0.004466, LY = 0.002439, RX = 0.004466, RY = -0.002439 },
+							{ X = -0.02964, Y = -0.188467, LX = -0.004466, LY = -0.001916, RX = 0.004466, RY = 0.001916 },
+							{ X = -0.017235, Y = -0.1743, LX = -0.004466, LY = -0.001103, RX = 0.004466, RY = 0.001103 },
+							{ X = -0.00483, Y = -0.182342, LX = -0.004466, LY = 0.00035, RX = 0.004466, RY = -0.00035 },
+							{ X = 0.007576, Y = -0.176245, LX = -0.004466, LY = -0.002593, RX = 0.004466, RY = 0.002593 },
+							{ X = 0.019981, Y = -0.167938, LX = -0.004466, LY = -0.001364, RX = 0.004466, RY = 0.001364 },
+							{ X = 0.032386, Y = -0.168667, LX = -0.004466, LY = -0.000908, RX = 0.004466, RY = 0.000908 },
+							{ X = 0.044792, Y = -0.162896, LX = -0.004466, LY = 0.000899, RX = 0.004466, RY = -0.000899 },
+							{ X = 0.057197, Y = -0.17366, LX = -0.004466, LY = 0.003808, RX = 0.004466, RY = -0.003808 },
+							{ X = 0.069602, Y = -0.18405, LX = -0.004466, LY = 0.002724, RX = 0.004466, RY = -0.002724 },
+							{ X = 0.082008, Y = -0.188794, LX = -0.004466, LY = -0.001379, RX = 0.004466, RY = 0.001379 },
+							{ X = 0.094413, Y = -0.176387, LX = -0.004466, LY = -0.002976, RX = 0.004466, RY = 0.002976 },
+							{ X = 0.106818, Y = -0.172262, LX = -0.004466, LY = -0.000871, RX = 0.004466, RY = 0.000871 },
+							{ X = 0.119223, Y = -0.171546, LX = -0.004466, LY = -0.002064, RX = 0.004466, RY = 0.002064 },
+							{ X = 0.131629, Y = -0.160797, LX = -0.004466, LY = -0.003127, RX = 0.004466, RY = 0.003127 },
+							{ X = 0.144034, Y = -0.154176, LX = -0.004466, LY = -0.001499, RX = 0.004466, RY = 0.001499 },
+							{ X = 0.156439, Y = -0.152467, LX = -0.004466, LY = -0.0038, RX = 0.004466, RY = 0.0038 },
+							{ X = 0.168845, Y = -0.133063, LX = -0.004466, LY = -0.006443, RX = 0.004466, RY = 0.006443 },
+							{ X = 0.18125, Y = -0.116675, LX = -0.004466, LY = -0.003078, RX = 0.004466, RY = 0.003078 },
+							{ X = 0.193655, Y = -0.115963, LX = -0.004466, LY = -0.002364, RX = 0.004466, RY = 0.002364 },
+							{ X = 0.206061, Y = -0.103543, LX = -0.004466, LY = -0.004171, RX = 0.004466, RY = 0.004171 },
+							{ X = 0.218466, Y = -0.092788, LX = -0.004466, LY = -0.006069, RX = 0.004466, RY = 0.006069 },
+							{ X = 0.230871, Y = -0.069825, LX = -0.004466, LY = -0.007326, RX = 0.004466, RY = 0.007326 },
+							{ X = 0.243277, Y = -0.052087, LX = -0.004466, LY = -0.003566, RX = 0.004466, RY = 0.003566 },
+							{ X = 0.255682, Y = -0.050013, LX = -0.004466, LY = -0.005052, RX = 0.004466, RY = 0.005052 },
+							{ X = 0.268087, Y = -0.024022, LX = -0.004466, LY = -0.00386, RX = 0.004466, RY = 0.00386 },
+							{ X = 0.280492, Y = -0.028567, LX = -0.004466, LY = -0.000174, RX = 0.004466, RY = 0.000174 },
+							{ X = 0.292898, Y = -0.023054, LX = -0.004466, LY = -0.004031, RX = 0.004466, RY = 0.004031 },
+							{ X = 0.305303, Y = -0.006174, LX = -0.004466, LY = -0.002171, RX = 0.004466, RY = 0.002171 },
+							{ X = 0.317708, Y = -0.010996, LX = -0.002233, LY = 0.000868 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.002604, },
+				WriteOnEnd = Input { SourceOp = "Chart_Line_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 0 } },
+		},
+		Chart_LineGreen = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Chart_Line_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 33 } },
+		},
+		Chart_LineGlow = SoftGlow {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Chart_LineGreen", Source = "Output", },
+				Gain = Input { Value = 0.6, },
+				XGlowSize = Input { Value = 14, },
+				Threshold = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 66 } },
+		},
+		UL_Chart_Line = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chart_Line", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 985, -30 },
+				Size = { 120, 129 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Chart_AreaShape_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = -0.364583, Y = -0.270602, RX = 0.002233, RY = 0.00016 },
+							{ X = -0.352178, Y = -0.269714, LX = -0.004466, LY = 0.000671, RX = 0.004466, RY = -0.000671 },
+							{ X = -0.339773, Y = -0.274332, LX = -0.004466, LY = -0.001579, RX = 0.004466, RY = 0.001579 },
+							{ X = -0.327367, Y = -0.26094, LX = -0.004466, LY = -0.001263, RX = 0.004466, RY = 0.001263 },
+							{ X = -0.314962, Y = -0.267315, LX = -0.004466, LY = -0.000697, RX = 0.004466, RY = 0.000697 },
+							{ X = -0.302557, Y = -0.257065, LX = -0.004466, LY = -0.00268, RX = 0.004466, RY = 0.00268 },
+							{ X = -0.290152, Y = -0.252426, LX = -0.004466, LY = 0.00022, RX = 0.004466, RY = -0.00022 },
+							{ X = -0.277746, Y = -0.258287, LX = -0.004466, LY = -0.000752, RX = 0.004466, RY = 0.000752 },
+							{ X = -0.265341, Y = -0.248247, LX = -0.004466, LY = -0.000671, RX = 0.004466, RY = 0.000671 },
+							{ X = -0.252936, Y = -0.254561, LX = -0.004466, LY = -0.00022, RX = 0.004466, RY = 0.00022 },
+							{ X = -0.24053, Y = -0.247024, LX = -0.004466, LY = -0.000405, RX = 0.004466, RY = 0.000405 },
+							{ X = -0.228125, Y = -0.252313, LX = -0.004466, LY = 0.001807, RX = 0.004466, RY = -0.001807 },
+							{ X = -0.21572, Y = -0.257065, LX = -0.004466, LY = -0.000342, RX = 0.004466, RY = 0.000342 },
+							{ X = -0.203314, Y = -0.250414, LX = -0.004466, LY = -0.004864, RX = 0.004466, RY = 0.004864 },
+							{ X = -0.190909, Y = -0.230042, LX = -0.004466, LY = -0.002831, RX = 0.004466, RY = 0.002831 },
+							{ X = -0.178504, Y = -0.234688, LX = -0.004466, LY = 0.001132, RX = 0.004466, RY = -0.001132 },
+							{ X = -0.166098, Y = -0.236333, LX = -0.004466, LY = -0.001859, RX = 0.004466, RY = 0.001859 },
+							{ X = -0.153693, Y = -0.224358, LX = -0.004466, LY = -0.006229, RX = 0.004466, RY = 0.006229 },
+							{ X = -0.141288, Y = -0.201729, LX = -0.004466, LY = -0.005712, RX = 0.004466, RY = 0.005712 },
+							{ X = -0.128883, Y = -0.192627, LX = -0.004466, LY = -0.00204, RX = 0.004466, RY = 0.00204 },
+							{ X = -0.116477, Y = -0.190398, LX = -0.004466, LY = -0.004355, RX = 0.004466, RY = 0.004355 },
+							{ X = -0.104072, Y = -0.168434, LX = -0.004466, LY = -0.001961, RX = 0.004466, RY = 0.001961 },
+							{ X = -0.091667, Y = -0.179505, LX = -0.004466, LY = -0.001044, RX = 0.004466, RY = 0.001044 },
+							{ X = -0.079261, Y = -0.162635, LX = -0.004466, LY = -0.002419, RX = 0.004466, RY = 0.002419 },
+							{ X = -0.066856, Y = -0.166068, LX = -0.004466, LY = 0.002211, RX = 0.004466, RY = -0.002211 },
+							{ X = -0.054451, Y = -0.174919, LX = -0.004466, LY = 0.003398, RX = 0.004466, RY = -0.003398 },
+							{ X = -0.042045, Y = -0.184946, LX = -0.004466, LY = 0.002439, RX = 0.004466, RY = -0.002439 },
+							{ X = -0.02964, Y = -0.188467, LX = -0.004466, LY = -0.001916, RX = 0.004466, RY = 0.001916 },
+							{ X = -0.017235, Y = -0.1743, LX = -0.004466, LY = -0.001103, RX = 0.004466, RY = 0.001103 },
+							{ X = -0.00483, Y = -0.182342, LX = -0.004466, LY = 0.00035, RX = 0.004466, RY = -0.00035 },
+							{ X = 0.007576, Y = -0.176245, LX = -0.004466, LY = -0.002593, RX = 0.004466, RY = 0.002593 },
+							{ X = 0.019981, Y = -0.167938, LX = -0.004466, LY = -0.001364, RX = 0.004466, RY = 0.001364 },
+							{ X = 0.032386, Y = -0.168667, LX = -0.004466, LY = -0.000908, RX = 0.004466, RY = 0.000908 },
+							{ X = 0.044792, Y = -0.162896, LX = -0.004466, LY = 0.000899, RX = 0.004466, RY = -0.000899 },
+							{ X = 0.057197, Y = -0.17366, LX = -0.004466, LY = 0.003808, RX = 0.004466, RY = -0.003808 },
+							{ X = 0.069602, Y = -0.18405, LX = -0.004466, LY = 0.002724, RX = 0.004466, RY = -0.002724 },
+							{ X = 0.082008, Y = -0.188794, LX = -0.004466, LY = -0.001379, RX = 0.004466, RY = 0.001379 },
+							{ X = 0.094413, Y = -0.176387, LX = -0.004466, LY = -0.002976, RX = 0.004466, RY = 0.002976 },
+							{ X = 0.106818, Y = -0.172262, LX = -0.004466, LY = -0.000871, RX = 0.004466, RY = 0.000871 },
+							{ X = 0.119223, Y = -0.171546, LX = -0.004466, LY = -0.002064, RX = 0.004466, RY = 0.002064 },
+							{ X = 0.131629, Y = -0.160797, LX = -0.004466, LY = -0.003127, RX = 0.004466, RY = 0.003127 },
+							{ X = 0.144034, Y = -0.154176, LX = -0.004466, LY = -0.001499, RX = 0.004466, RY = 0.001499 },
+							{ X = 0.156439, Y = -0.152467, LX = -0.004466, LY = -0.0038, RX = 0.004466, RY = 0.0038 },
+							{ X = 0.168845, Y = -0.133063, LX = -0.004466, LY = -0.006443, RX = 0.004466, RY = 0.006443 },
+							{ X = 0.18125, Y = -0.116675, LX = -0.004466, LY = -0.003078, RX = 0.004466, RY = 0.003078 },
+							{ X = 0.193655, Y = -0.115963, LX = -0.004466, LY = -0.002364, RX = 0.004466, RY = 0.002364 },
+							{ X = 0.206061, Y = -0.103543, LX = -0.004466, LY = -0.004171, RX = 0.004466, RY = 0.004171 },
+							{ X = 0.218466, Y = -0.092788, LX = -0.004466, LY = -0.006069, RX = 0.004466, RY = 0.006069 },
+							{ X = 0.230871, Y = -0.069825, LX = -0.004466, LY = -0.007326, RX = 0.004466, RY = 0.007326 },
+							{ X = 0.243277, Y = -0.052087, LX = -0.004466, LY = -0.003566, RX = 0.004466, RY = 0.003566 },
+							{ X = 0.255682, Y = -0.050013, LX = -0.004466, LY = -0.005052, RX = 0.004466, RY = 0.005052 },
+							{ X = 0.268087, Y = -0.024022, LX = -0.004466, LY = -0.00386, RX = 0.004466, RY = 0.00386 },
+							{ X = 0.280492, Y = -0.028567, LX = -0.004466, LY = -0.000174, RX = 0.004466, RY = 0.000174 },
+							{ X = 0.292898, Y = -0.023054, LX = -0.004466, LY = -0.004031, RX = 0.004466, RY = 0.004031 },
+							{ X = 0.305303, Y = -0.006174, LX = -0.004466, LY = -0.002171, RX = 0.004466, RY = 0.002171 },
+							{ X = 0.317708, Y = -0.010996, LX = -0.002233, LY = 0.000868 },
+							{ Linear = true, X = 0.317708, Y = -0.312963 },
+							{ Linear = true, X = -0.364583, Y = -0.312963 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 0 } },
+		},
+		Chart_AreaReveal_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0.135677, RH = { 23, 0.136174 } },
+				[25] = { 0.137167, LH = { 24, 0.13667 }, RH = { 26, 0.139156 } },
+				[28] = { 0.143133, LH = { 27, 0.141144 }, RH = { 29, 0.146707 } },
+				[31] = { 0.153856, LH = { 30, 0.150281 }, RH = { 32, 0.160281 } },
+				[34] = { 0.173133, LH = { 33, 0.166707 }, RH = { 35, 0.183756 } },
+				[37] = { 0.205002, LH = { 36, 0.194379 }, RH = { 38, 0.220738 } },
+				[40] = { 0.252209, LH = { 39, 0.236473 }, RH = { 41, 0.274666 } },
+				[43] = { 0.31958, LH = { 42, 0.297123 }, RH = { 44, 0.34149 } },
+				[46] = { 0.385309, LH = { 45, 0.3634 }, RH = { 47, 0.398948 } },
+				[49] = { 0.426226, LH = { 48, 0.412587 }, RH = { 50, 0.433633 } },
+				[52] = { 0.448447, LH = { 51, 0.44104 }, RH = { 53, 0.453454 } },
+				[55] = { 0.463469, LH = { 54, 0.458461 }, RH = { 56, 0.46614 } },
+				[58] = { 0.471484, LH = { 57, 0.468812 }, RH = { 59, 0.472931 } },
+				[61] = { 0.475825, LH = { 60, 0.474378 }, RH = { 61.666667, 0.476071 } },
+				[63] = { 0.476562, LH = { 62.333333, 0.476317 } },
+			}
+		},
+		Chart_AreaReveal_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0.393519, RH = { 23, 0.393519 } },
+				[25] = { 0.393519, LH = { 24, 0.393519 }, RH = { 26, 0.393519 } },
+				[28] = { 0.393519, LH = { 27, 0.393519 }, RH = { 29, 0.393519 } },
+				[31] = { 0.393519, LH = { 30, 0.393519 }, RH = { 32, 0.393519 } },
+				[34] = { 0.393519, LH = { 33, 0.393519 }, RH = { 35, 0.393519 } },
+				[37] = { 0.393519, LH = { 36, 0.393519 }, RH = { 38, 0.393519 } },
+				[40] = { 0.393519, LH = { 39, 0.393519 }, RH = { 41, 0.393519 } },
+				[43] = { 0.393519, LH = { 42, 0.393519 }, RH = { 44, 0.393519 } },
+				[46] = { 0.393519, LH = { 45, 0.393519 }, RH = { 47, 0.393519 } },
+				[49] = { 0.393519, LH = { 48, 0.393519 }, RH = { 50, 0.393519 } },
+				[52] = { 0.393519, LH = { 51, 0.393519 }, RH = { 53, 0.393519 } },
+				[55] = { 0.393519, LH = { 54, 0.393519 }, RH = { 56, 0.393519 } },
+				[58] = { 0.393519, LH = { 57, 0.393519 }, RH = { 59, 0.393519 } },
+				[61] = { 0.393519, LH = { 60, 0.393519 }, RH = { 61.666667, 0.393519 } },
+				[63] = { 0.393519, LH = { 62.333333, 0.393519 } },
+			}
+		},
+		Chart_AreaReveal_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Chart_AreaReveal_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Chart_AreaReveal_MCenterPathY", Source = "Value", },
+			},
+		},
+		Chart_AreaReveal_MWidth = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0.000521, RH = { 23, 0.001514 } },
+				[25] = { 0.003501, LH = { 24, 0.002507 }, RH = { 26, 0.007478 } },
+				[28] = { 0.015433, LH = { 27, 0.011455 }, RH = { 29, 0.022581 } },
+				[31] = { 0.036878, LH = { 30, 0.029729 }, RH = { 32, 0.049729 } },
+				[34] = { 0.075433, LH = { 33, 0.062581 }, RH = { 35, 0.096679 } },
+				[37] = { 0.139171, LH = { 36, 0.117925 }, RH = { 38, 0.170642 } },
+				[40] = { 0.233584, LH = { 39, 0.202113 }, RH = { 41, 0.278498 } },
+				[43] = { 0.368327, LH = { 42, 0.323413 }, RH = { 44, 0.412146 } },
+				[46] = { 0.499785, LH = { 45, 0.455966 }, RH = { 47, 0.527063 } },
+				[49] = { 0.581619, LH = { 48, 0.554341 }, RH = { 50, 0.596433 } },
+				[52] = { 0.626061, LH = { 51, 0.611247 }, RH = { 53, 0.636075 } },
+				[55] = { 0.656104, LH = { 54, 0.646089 }, RH = { 56, 0.661448 } },
+				[58] = { 0.672135, LH = { 57, 0.666791 }, RH = { 59, 0.675029 } },
+				[61] = { 0.680817, LH = { 60, 0.677923 }, RH = { 61.666667, 0.681309 } },
+				[63] = { 0.682292, LH = { 62.333333, 0.6818 } },
+			}
+		},
+		Chart_AreaReveal_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Chart_AreaReveal_MCenterPath", Source = "Value", },
+				Width = Input { SourceOp = "Chart_AreaReveal_MWidth", Source = "Value", },
+				Height = Input { Value = 0.45, },
+				PaintMode = Input { Value = FuID { "Multiply" }, },
+				EffectMask = Input { SourceOp = "Chart_AreaShape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 33 } },
+		},
+		Chart_AreaGradient = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Linear" }, },
+				Start = Input { Value = { 0, 0.525926 }, },
+				End = Input { Value = { 0, 0.187037 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.170588, 0.236471, 0.094118, 0.3 }, [1] = { 0, 0, 0, 0 } }
+					}, },
+				EffectMask = Input { SourceOp = "Chart_AreaReveal_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 66 } },
+		},
+		UL_Chart_Area = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chart_Area", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1115, -30 },
+				Size = { 120, 129 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Chart_Tip_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0.135417, RH = { 23, 0.136584 } },
+				[25] = { 0.138917, LH = { 24, 0.13775 }, RH = { 26, 0.142895 } },
+				[28] = { 0.15085, LH = { 27, 0.146872 }, RH = { 29, 0.157998 } },
+				[31] = { 0.172294, LH = { 30, 0.165146 }, RH = { 32, 0.185146 } },
+				[34] = { 0.210849, LH = { 33, 0.197998 }, RH = { 35, 0.232096 } },
+				[37] = { 0.274588, LH = { 36, 0.253342 }, RH = { 38, 0.306059 } },
+				[40] = { 0.369001, LH = { 39, 0.33753 }, RH = { 41, 0.413915 } },
+				[43] = { 0.503744, LH = { 42, 0.458829 }, RH = { 44, 0.547563 } },
+				[46] = { 0.635202, LH = { 45, 0.591382 }, RH = { 47, 0.66248 } },
+				[49] = { 0.717035, LH = { 48, 0.689757 }, RH = { 50, 0.731849 } },
+				[52] = { 0.761477, LH = { 51, 0.746663 }, RH = { 53, 0.771492 } },
+				[55] = { 0.79152, LH = { 54, 0.781506 }, RH = { 56, 0.796864 } },
+				[58] = { 0.807552, LH = { 57, 0.802208 }, RH = { 59, 0.810446 } },
+				[61] = { 0.816234, LH = { 60, 0.81334 }, RH = { 61.666667, 0.816725 } },
+				[63] = { 0.817708, LH = { 62.333333, 0.817217 } },
+			}
+		},
+		Chart_Tip_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0.229398, RH = { 23, 0.229482 } },
+				[25] = { 0.229649, LH = { 24, 0.229565 }, RH = { 26, 0.229485 } },
+				[28] = { 0.229159, LH = { 27, 0.229322 }, RH = { 29, 0.232338 } },
+				[31] = { 0.238695, LH = { 30, 0.235516 }, RH = { 32, 0.241497 } },
+				[34] = { 0.247101, LH = { 33, 0.244299 }, RH = { 35, 0.24695 } },
+				[37] = { 0.246648, LH = { 36, 0.246799 }, RH = { 38, 0.266372 } },
+				[40] = { 0.30582, LH = { 39, 0.286096 }, RH = { 41, 0.311171 } },
+				[43] = { 0.321872, LH = { 42, 0.316521 }, RH = { 44, 0.328285 } },
+				[46] = { 0.34111, LH = { 45, 0.334697 }, RH = { 47, 0.362731 } },
+				[49] = { 0.405972, LH = { 48, 0.384351 }, RH = { 50, 0.424691 } },
+				[52] = { 0.46213, LH = { 51, 0.44341 }, RH = { 53, 0.466864 } },
+				[55] = { 0.476334, LH = { 54, 0.471599 }, RH = { 56, 0.481873 } },
+				[58] = { 0.492952, LH = { 57, 0.487412 }, RH = { 59, 0.491827 } },
+				[61] = { 0.489577, LH = { 60, 0.490702 }, RH = { 61.666667, 0.489386 } },
+				[63] = { 0.489004, LH = { 62.333333, 0.489195 } },
+			}
+		},
+		Chart_Tip_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Chart_Tip_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Chart_Tip_MCenterPathY", Source = "Value", },
+			},
+		},
+		Chart_Tip_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Chart_Tip_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.009375, },
+				Height = Input { Value = 0.009375, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 0 } },
+		},
+		Chart_TipHalo_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0.135417, RH = { 23, 0.136584 } },
+				[25] = { 0.138917, LH = { 24, 0.13775 }, RH = { 26, 0.142895 } },
+				[28] = { 0.15085, LH = { 27, 0.146872 }, RH = { 29, 0.157998 } },
+				[31] = { 0.172294, LH = { 30, 0.165146 }, RH = { 32, 0.185146 } },
+				[34] = { 0.210849, LH = { 33, 0.197998 }, RH = { 35, 0.232096 } },
+				[37] = { 0.274588, LH = { 36, 0.253342 }, RH = { 38, 0.306059 } },
+				[40] = { 0.369001, LH = { 39, 0.33753 }, RH = { 41, 0.413915 } },
+				[43] = { 0.503744, LH = { 42, 0.458829 }, RH = { 44, 0.547563 } },
+				[46] = { 0.635202, LH = { 45, 0.591382 }, RH = { 47, 0.66248 } },
+				[49] = { 0.717035, LH = { 48, 0.689757 }, RH = { 50, 0.731849 } },
+				[52] = { 0.761477, LH = { 51, 0.746663 }, RH = { 53, 0.771492 } },
+				[55] = { 0.79152, LH = { 54, 0.781506 }, RH = { 56, 0.796864 } },
+				[58] = { 0.807552, LH = { 57, 0.802208 }, RH = { 59, 0.810446 } },
+				[61] = { 0.816234, LH = { 60, 0.81334 }, RH = { 61.666667, 0.816725 } },
+				[63] = { 0.817708, LH = { 62.333333, 0.817217 } },
+			}
+		},
+		Chart_TipHalo_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0.229398, RH = { 23, 0.229482 } },
+				[25] = { 0.229649, LH = { 24, 0.229565 }, RH = { 26, 0.229485 } },
+				[28] = { 0.229159, LH = { 27, 0.229322 }, RH = { 29, 0.232338 } },
+				[31] = { 0.238695, LH = { 30, 0.235516 }, RH = { 32, 0.241497 } },
+				[34] = { 0.247101, LH = { 33, 0.244299 }, RH = { 35, 0.24695 } },
+				[37] = { 0.246648, LH = { 36, 0.246799 }, RH = { 38, 0.266372 } },
+				[40] = { 0.30582, LH = { 39, 0.286096 }, RH = { 41, 0.311171 } },
+				[43] = { 0.321872, LH = { 42, 0.316521 }, RH = { 44, 0.328285 } },
+				[46] = { 0.34111, LH = { 45, 0.334697 }, RH = { 47, 0.362731 } },
+				[49] = { 0.405972, LH = { 48, 0.384351 }, RH = { 50, 0.424691 } },
+				[52] = { 0.46213, LH = { 51, 0.44341 }, RH = { 53, 0.466864 } },
+				[55] = { 0.476334, LH = { 54, 0.471599 }, RH = { 56, 0.481873 } },
+				[58] = { 0.492952, LH = { 57, 0.487412 }, RH = { 59, 0.491827 } },
+				[61] = { 0.489577, LH = { 60, 0.490702 }, RH = { 61.666667, 0.489386 } },
+				[63] = { 0.489004, LH = { 62.333333, 0.489195 } },
+			}
+		},
+		Chart_TipHalo_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Chart_TipHalo_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Chart_TipHalo_MCenterPathY", Source = "Value", },
+			},
+		},
+		Chart_TipHalo_MWidth = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[63] = { 0.022917, RH = { 67.5, 0.022917 } },
+				[73] = { 0.03125, LH = { 65.5, 0.03125 }, RH = { 77.5, 0.03125 } },
+				[83] = { 0.022917, LH = { 75.5, 0.022917 } },
+			}
+		},
+		Chart_TipHalo_MHeight = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[63] = { 0.022917, RH = { 67.5, 0.022917 } },
+				[73] = { 0.03125, LH = { 65.5, 0.03125 }, RH = { 77.5, 0.03125 } },
+				[83] = { 0.022917, LH = { 75.5, 0.022917 } },
+			}
+		},
+		Chart_TipHalo_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Chart_TipHalo_MCenterPath", Source = "Value", },
+				Width = Input { SourceOp = "Chart_TipHalo_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "Chart_TipHalo_MHeight", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 33 } },
+		},
+		Chart_TipHaloFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.159216, },
+				TopLeftGreen = Input { Value = 0.220706, },
+				TopLeftBlue = Input { Value = 0.087843, },
+				TopLeftAlpha = Input { Value = 0.28, },
+				EffectMask = Input { SourceOp = "Chart_TipHalo_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 66 } },
+		},
+		Chart_TipFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Chart_Tip_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 99 } },
+		},
+		Chart_TipAddDot = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chart_TipHaloFill", Source = "Output", },
+				Foreground = Input { SourceOp = "Chart_TipFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 132 } },
+		},
+		Chart_AreaPlusLine = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chart_AreaGradient", Source = "Output", },
+				Foreground = Input { SourceOp = "Chart_LineGlow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 165 } },
+		},
+		Chart_AddTipBlend = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[22] = { 0, RH = { 22.64, 1 } },
+				[26] = { 1, LH = { 23.2, 1 } },
+			}
+		},
+		Chart_AddTip = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chart_AreaPlusLine", Source = "Output", },
+				Foreground = Input { SourceOp = "Chart_TipAddDot", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Chart_AddTipBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 198 } },
+		},
+		ChartCard_AddChart = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_AddGrid", Source = "Output", },
+				Foreground = Input { SourceOp = "Chart_AddTip", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 231 } },
+		},
+		UL_Chart_TipDot = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chart_TipDot", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1245, -30 },
+				Size = { 120, 294 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Scrub_Crosshair_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.816667, RH = { 65, 0.771528 } },
+				[73] = { 0.68125, LH = { 69, 0.726389 }, RH = { 75, 0.68125 } },
+				[79] = { 0.68125, LH = { 77, 0.68125 }, RH = { 79.666667, 0.68125 } },
+				[81] = { 0.68125, LH = { 80.333333, 0.68125 }, RH = { 81.666667, 0.679066 } },
+				[83] = { 0.674699, LH = { 82.333333, 0.676882 }, RH = { 83.666667, 0.668846 } },
+				[85] = { 0.65714, LH = { 84.333333, 0.662993 }, RH = { 85.666667, 0.648667 } },
+				[87] = { 0.631721, LH = { 86.333333, 0.640194 }, RH = { 87.666667, 0.621675 } },
+				[89] = { 0.601584, LH = { 88.333333, 0.611629 }, RH = { 89.666667, 0.591014 } },
+				[91] = { 0.569875, LH = { 90.333333, 0.580444 }, RH = { 91.666667, 0.559829 } },
+				[93] = { 0.539738, LH = { 92.333333, 0.549783 }, RH = { 93.666667, 0.531264 } },
+				[95] = { 0.514318, LH = { 94.333333, 0.522791 }, RH = { 95.666667, 0.508465 } },
+				[97] = { 0.49676, LH = { 96.333333, 0.502613 }, RH = { 97.666667, 0.494576 } },
+				[99] = { 0.490208, LH = { 98.333333, 0.492392 } },
+			}
+		},
+		Scrub_Crosshair_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.356481, RH = { 65, 0.356481 } },
+				[73] = { 0.356481, LH = { 69, 0.356481 }, RH = { 75, 0.356481 } },
+				[79] = { 0.356481, LH = { 77, 0.356481 }, RH = { 79.666667, 0.356481 } },
+				[81] = { 0.356481, LH = { 80.333333, 0.356481 }, RH = { 81.666667, 0.356481 } },
+				[83] = { 0.356481, LH = { 82.333333, 0.356481 }, RH = { 83.666667, 0.356481 } },
+				[85] = { 0.356481, LH = { 84.333333, 0.356481 }, RH = { 85.666667, 0.356481 } },
+				[87] = { 0.356481, LH = { 86.333333, 0.356481 }, RH = { 87.666667, 0.356481 } },
+				[89] = { 0.356481, LH = { 88.333333, 0.356481 }, RH = { 89.666667, 0.356481 } },
+				[91] = { 0.356481, LH = { 90.333333, 0.356481 }, RH = { 91.666667, 0.356481 } },
+				[93] = { 0.356481, LH = { 92.333333, 0.356481 }, RH = { 93.666667, 0.356481 } },
+				[95] = { 0.356481, LH = { 94.333333, 0.356481 }, RH = { 95.666667, 0.356481 } },
+				[97] = { 0.356481, LH = { 96.333333, 0.356481 }, RH = { 97.666667, 0.356481 } },
+				[99] = { 0.356481, LH = { 98.333333, 0.356481 } },
+			}
+		},
+		Scrub_Crosshair_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Scrub_Crosshair_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Scrub_Crosshair_MCenterPathY", Source = "Value", },
+			},
+		},
+		Scrub_Crosshair_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Scrub_Crosshair_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.001042, },
+				Height = Input { Value = 0.338889, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 0 } },
+		},
+		Scrub_CrosshairFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.35, },
+				TopLeftGreen = Input { Value = 0.35, },
+				TopLeftBlue = Input { Value = 0.35, },
+				TopLeftAlpha = Input { Value = 0.35, },
+				EffectMask = Input { SourceOp = "Scrub_Crosshair_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 33 } },
+		},
+		Scrub_Cursor_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.816667, RH = { 65, 0.771528 } },
+				[73] = { 0.68125, LH = { 69, 0.726389 }, RH = { 75, 0.68125 } },
+				[79] = { 0.68125, LH = { 77, 0.68125 }, RH = { 79.666667, 0.68125 } },
+				[81] = { 0.68125, LH = { 80.333333, 0.68125 }, RH = { 81.666667, 0.679066 } },
+				[83] = { 0.674699, LH = { 82.333333, 0.676882 }, RH = { 83.666667, 0.668846 } },
+				[85] = { 0.65714, LH = { 84.333333, 0.662993 }, RH = { 85.666667, 0.648667 } },
+				[87] = { 0.631721, LH = { 86.333333, 0.640194 }, RH = { 87.666667, 0.621675 } },
+				[89] = { 0.601584, LH = { 88.333333, 0.611629 }, RH = { 89.666667, 0.591014 } },
+				[91] = { 0.569875, LH = { 90.333333, 0.580444 }, RH = { 91.666667, 0.559829 } },
+				[93] = { 0.539738, LH = { 92.333333, 0.549783 }, RH = { 93.666667, 0.531264 } },
+				[95] = { 0.514318, LH = { 94.333333, 0.522791 }, RH = { 95.666667, 0.508465 } },
+				[97] = { 0.49676, LH = { 96.333333, 0.502613 }, RH = { 97.666667, 0.494576 } },
+				[99] = { 0.490208, LH = { 98.333333, 0.492392 } },
+			}
+		},
+		Scrub_Cursor_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.075926, RH = { 65, 0.178392 } },
+				[73] = { 0.383325, LH = { 69, 0.280859 }, RH = { 75, 0.383325 } },
+				[79] = { 0.383325, LH = { 77, 0.383325 }, RH = { 79.666667, 0.383325 } },
+				[81] = { 0.383325, LH = { 80.333333, 0.383325 }, RH = { 81.666667, 0.38044 } },
+				[83] = { 0.374671, LH = { 82.333333, 0.377555 }, RH = { 83.666667, 0.36599 } },
+				[85] = { 0.348629, LH = { 84.333333, 0.35731 }, RH = { 85.666667, 0.345503 } },
+				[87] = { 0.339252, LH = { 86.333333, 0.342378 }, RH = { 87.666667, 0.334834 } },
+				[89] = { 0.325997, LH = { 88.333333, 0.330416 }, RH = { 89.666667, 0.322614 } },
+				[91] = { 0.315846, LH = { 90.333333, 0.31923 }, RH = { 91.666667, 0.322148 } },
+				[93] = { 0.334753, LH = { 92.333333, 0.328451 }, RH = { 93.666667, 0.332592 } },
+				[95] = { 0.32827, LH = { 94.333333, 0.330431 }, RH = { 95.666667, 0.324993 } },
+				[97] = { 0.318439, LH = { 96.333333, 0.321716 }, RH = { 97.666667, 0.319251 } },
+				[99] = { 0.320875, LH = { 98.333333, 0.320063 } },
+			}
+		},
+		Scrub_Cursor_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Scrub_Cursor_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Scrub_Cursor_MCenterPathY", Source = "Value", },
+			},
+		},
+		Scrub_Cursor_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Scrub_Cursor_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.016667, },
+				Height = Input { Value = 0.016667, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001563, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 66 } },
+		},
+		Scrub_CursorFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Scrub_Cursor_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 99 } },
+		},
+		Scrub_Point_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.816667, RH = { 65, 0.771528 } },
+				[73] = { 0.68125, LH = { 69, 0.726389 }, RH = { 75, 0.68125 } },
+				[79] = { 0.68125, LH = { 77, 0.68125 }, RH = { 79.666667, 0.68125 } },
+				[81] = { 0.68125, LH = { 80.333333, 0.68125 }, RH = { 81.666667, 0.679066 } },
+				[83] = { 0.674699, LH = { 82.333333, 0.676882 }, RH = { 83.666667, 0.668846 } },
+				[85] = { 0.65714, LH = { 84.333333, 0.662993 }, RH = { 85.666667, 0.648667 } },
+				[87] = { 0.631721, LH = { 86.333333, 0.640194 }, RH = { 87.666667, 0.621675 } },
+				[89] = { 0.601584, LH = { 88.333333, 0.611629 }, RH = { 89.666667, 0.591014 } },
+				[91] = { 0.569875, LH = { 90.333333, 0.580444 }, RH = { 91.666667, 0.559829 } },
+				[93] = { 0.539738, LH = { 92.333333, 0.549783 }, RH = { 93.666667, 0.531264 } },
+				[95] = { 0.514318, LH = { 94.333333, 0.522791 }, RH = { 95.666667, 0.508465 } },
+				[97] = { 0.49676, LH = { 96.333333, 0.502613 }, RH = { 97.666667, 0.494576 } },
+				[99] = { 0.490208, LH = { 98.333333, 0.492392 } },
+			}
+		},
+		Scrub_Point_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.075926, RH = { 65, 0.178392 } },
+				[73] = { 0.383325, LH = { 69, 0.280859 }, RH = { 75, 0.383325 } },
+				[79] = { 0.383325, LH = { 77, 0.383325 }, RH = { 79.666667, 0.383325 } },
+				[81] = { 0.383325, LH = { 80.333333, 0.383325 }, RH = { 81.666667, 0.38044 } },
+				[83] = { 0.374671, LH = { 82.333333, 0.377555 }, RH = { 83.666667, 0.36599 } },
+				[85] = { 0.348629, LH = { 84.333333, 0.35731 }, RH = { 85.666667, 0.345503 } },
+				[87] = { 0.339252, LH = { 86.333333, 0.342378 }, RH = { 87.666667, 0.334834 } },
+				[89] = { 0.325997, LH = { 88.333333, 0.330416 }, RH = { 89.666667, 0.322614 } },
+				[91] = { 0.315846, LH = { 90.333333, 0.31923 }, RH = { 91.666667, 0.322148 } },
+				[93] = { 0.334753, LH = { 92.333333, 0.328451 }, RH = { 93.666667, 0.332592 } },
+				[95] = { 0.32827, LH = { 94.333333, 0.330431 }, RH = { 95.666667, 0.324993 } },
+				[97] = { 0.318439, LH = { 96.333333, 0.321716 }, RH = { 97.666667, 0.319251 } },
+				[99] = { 0.320875, LH = { 98.333333, 0.320063 } },
+			}
+		},
+		Scrub_Point_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Scrub_Point_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Scrub_Point_MCenterPathY", Source = "Value", },
+			},
+		},
+		Scrub_Point_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Scrub_Point_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.007292, },
+				Height = Input { Value = 0.007292, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 132 } },
+		},
+		Scrub_PointFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Scrub_Point_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 165 } },
+		},
+		Scrub_Tooltip_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.816667, RH = { 65, 0.771528 } },
+				[73] = { 0.68125, LH = { 69, 0.726389 }, RH = { 75, 0.68125 } },
+				[79] = { 0.68125, LH = { 77, 0.68125 }, RH = { 79.666667, 0.68125 } },
+				[81] = { 0.68125, LH = { 80.333333, 0.68125 }, RH = { 81.666667, 0.679066 } },
+				[83] = { 0.674699, LH = { 82.333333, 0.676882 }, RH = { 83.666667, 0.668846 } },
+				[85] = { 0.65714, LH = { 84.333333, 0.662993 }, RH = { 85.666667, 0.648667 } },
+				[87] = { 0.631721, LH = { 86.333333, 0.640194 }, RH = { 87.666667, 0.621675 } },
+				[89] = { 0.601584, LH = { 88.333333, 0.611629 }, RH = { 89.666667, 0.591014 } },
+				[91] = { 0.569875, LH = { 90.333333, 0.580444 }, RH = { 91.666667, 0.559829 } },
+				[93] = { 0.539738, LH = { 92.333333, 0.549783 }, RH = { 93.666667, 0.531264 } },
+				[95] = { 0.514318, LH = { 94.333333, 0.522791 }, RH = { 95.666667, 0.508465 } },
+				[97] = { 0.49676, LH = { 96.333333, 0.502613 }, RH = { 97.666667, 0.494576 } },
+				[99] = { 0.490208, LH = { 98.333333, 0.492392 } },
+			}
+		},
+		Scrub_Tooltip_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.161111, RH = { 65, 0.263578 } },
+				[73] = { 0.468511, LH = { 69, 0.366044 }, RH = { 75, 0.468511 } },
+				[79] = { 0.468511, LH = { 77, 0.468511 }, RH = { 79.666667, 0.468511 } },
+				[81] = { 0.468511, LH = { 80.333333, 0.468511 }, RH = { 81.666667, 0.465626 } },
+				[83] = { 0.459856, LH = { 82.333333, 0.462741 }, RH = { 83.666667, 0.451175 } },
+				[85] = { 0.433814, LH = { 84.333333, 0.442495 }, RH = { 85.666667, 0.430689 } },
+				[87] = { 0.424437, LH = { 86.333333, 0.427563 }, RH = { 87.666667, 0.420019 } },
+				[89] = { 0.411183, LH = { 88.333333, 0.415601 }, RH = { 89.666667, 0.407799 } },
+				[91] = { 0.401031, LH = { 90.333333, 0.404415 }, RH = { 91.666667, 0.407333 } },
+				[93] = { 0.419938, LH = { 92.333333, 0.413636 }, RH = { 93.666667, 0.417777 } },
+				[95] = { 0.413455, LH = { 94.333333, 0.415616 }, RH = { 95.666667, 0.410178 } },
+				[97] = { 0.403624, LH = { 96.333333, 0.406901 }, RH = { 97.666667, 0.404436 } },
+				[99] = { 0.40606, LH = { 98.333333, 0.405248 } },
+			}
+		},
+		Scrub_Tooltip_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Scrub_Tooltip_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Scrub_Tooltip_MCenterPathY", Source = "Value", },
+			},
+		},
+		Scrub_Tooltip_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Scrub_Tooltip_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.122917, },
+				Height = Input { Value = 0.081481, },
+				CornerRadius = Input { Value = 0.454545, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 198 } },
+		},
+		Scrub_TooltipFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.109804, },
+				TopLeftGreen = Input { Value = 0.133333, },
+				TopLeftBlue = Input { Value = 0.109804, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Scrub_Tooltip_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 231 } },
+		},
+		Scrub_TooltipEdge_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.816667, RH = { 65, 0.771528 } },
+				[73] = { 0.68125, LH = { 69, 0.726389 }, RH = { 75, 0.68125 } },
+				[79] = { 0.68125, LH = { 77, 0.68125 }, RH = { 79.666667, 0.68125 } },
+				[81] = { 0.68125, LH = { 80.333333, 0.68125 }, RH = { 81.666667, 0.679066 } },
+				[83] = { 0.674699, LH = { 82.333333, 0.676882 }, RH = { 83.666667, 0.668846 } },
+				[85] = { 0.65714, LH = { 84.333333, 0.662993 }, RH = { 85.666667, 0.648667 } },
+				[87] = { 0.631721, LH = { 86.333333, 0.640194 }, RH = { 87.666667, 0.621675 } },
+				[89] = { 0.601584, LH = { 88.333333, 0.611629 }, RH = { 89.666667, 0.591014 } },
+				[91] = { 0.569875, LH = { 90.333333, 0.580444 }, RH = { 91.666667, 0.559829 } },
+				[93] = { 0.539738, LH = { 92.333333, 0.549783 }, RH = { 93.666667, 0.531264 } },
+				[95] = { 0.514318, LH = { 94.333333, 0.522791 }, RH = { 95.666667, 0.508465 } },
+				[97] = { 0.49676, LH = { 96.333333, 0.502613 }, RH = { 97.666667, 0.494576 } },
+				[99] = { 0.490208, LH = { 98.333333, 0.492392 } },
+			}
+		},
+		Scrub_TooltipEdge_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0.161111, RH = { 65, 0.263578 } },
+				[73] = { 0.468511, LH = { 69, 0.366044 }, RH = { 75, 0.468511 } },
+				[79] = { 0.468511, LH = { 77, 0.468511 }, RH = { 79.666667, 0.468511 } },
+				[81] = { 0.468511, LH = { 80.333333, 0.468511 }, RH = { 81.666667, 0.465626 } },
+				[83] = { 0.459856, LH = { 82.333333, 0.462741 }, RH = { 83.666667, 0.451175 } },
+				[85] = { 0.433814, LH = { 84.333333, 0.442495 }, RH = { 85.666667, 0.430689 } },
+				[87] = { 0.424437, LH = { 86.333333, 0.427563 }, RH = { 87.666667, 0.420019 } },
+				[89] = { 0.411183, LH = { 88.333333, 0.415601 }, RH = { 89.666667, 0.407799 } },
+				[91] = { 0.401031, LH = { 90.333333, 0.404415 }, RH = { 91.666667, 0.407333 } },
+				[93] = { 0.419938, LH = { 92.333333, 0.413636 }, RH = { 93.666667, 0.417777 } },
+				[95] = { 0.413455, LH = { 94.333333, 0.415616 }, RH = { 95.666667, 0.410178 } },
+				[97] = { 0.403624, LH = { 96.333333, 0.406901 }, RH = { 97.666667, 0.404436 } },
+				[99] = { 0.40606, LH = { 98.333333, 0.405248 } },
+			}
+		},
+		Scrub_TooltipEdge_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Scrub_TooltipEdge_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Scrub_TooltipEdge_MCenterPathY", Source = "Value", },
+			},
+		},
+		Scrub_TooltipEdge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Scrub_TooltipEdge_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.122917, },
+				Height = Input { Value = 0.081481, },
+				CornerRadius = Input { Value = 0.454545, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 264 } },
+		},
+		Scrub_TooltipEdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Scrub_TooltipEdge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 297 } },
+		},
+		Scrub_TooltipValue = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "$46,912.40", Expression = ":local v={28754.10,29963.54,31172.98,32382.42,33591.86,34801.30,36010.74,37220.18,38429.62,39639.06,40848.50,42057.94,43267.38,43267.38,43267.38,43267.38,43267.38,43267.38,43267.38,43267.38,43267.38,43063.07,42858.76,42244.02,41629.27,41407.91,41186.54,40873.65,40560.76,40321.11,40081.45,40527.80,40974.14,40821.09,40668.05,40435.98,40203.91,40261.40,40318.89,40318.89}; local i=math.max(1,math.min(40,math.floor(time)-61+1)); local s=string.format(\"%.2f\",v[i]); local a,b=s:match(\"(%d+)(.*)\"); a=a:reverse():gsub(\"(%d%d%d)\",\"%1,\"):reverse():gsub(\"^,\",\"\"); return Text(\"$\"..a..b)", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.026087, },
+				Center = Input { Value = { 0, 1 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 330 } },
+		},
+		Scrub_TooltipValueFollowCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 1.316667, RH = { 65, 1.271528 } },
+				[73] = { 1.18125, LH = { 69, 1.226389 }, RH = { 75, 1.18125 } },
+				[79] = { 1.18125, LH = { 77, 1.18125 }, RH = { 79.666667, 1.18125 } },
+				[81] = { 1.18125, LH = { 80.333333, 1.18125 }, RH = { 81.666667, 1.179066 } },
+				[83] = { 1.174699, LH = { 82.333333, 1.176882 }, RH = { 83.666667, 1.168846 } },
+				[85] = { 1.15714, LH = { 84.333333, 1.162993 }, RH = { 85.666667, 1.148667 } },
+				[87] = { 1.131721, LH = { 86.333333, 1.140194 }, RH = { 87.666667, 1.121675 } },
+				[89] = { 1.101584, LH = { 88.333333, 1.111629 }, RH = { 89.666667, 1.091014 } },
+				[91] = { 1.069875, LH = { 90.333333, 1.080444 }, RH = { 91.666667, 1.059829 } },
+				[93] = { 1.039738, LH = { 92.333333, 1.049783 }, RH = { 93.666667, 1.031264 } },
+				[95] = { 1.014318, LH = { 94.333333, 1.022791 }, RH = { 95.666667, 1.008465 } },
+				[97] = { 0.99676, LH = { 96.333333, 1.002613 }, RH = { 97.666667, 0.994576 } },
+				[99] = { 0.990208, LH = { 98.333333, 0.992392 } },
+			}
+		},
+		Scrub_TooltipValueFollowCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { -0.351852, RH = { 65, -0.249385 } },
+				[73] = { -0.044452, LH = { 69, -0.146919 }, RH = { 75, -0.044452 } },
+				[79] = { -0.044452, LH = { 77, -0.044452 }, RH = { 79.666667, -0.044452 } },
+				[81] = { -0.044452, LH = { 80.333333, -0.044452 }, RH = { 81.666667, -0.047337 } },
+				[83] = { -0.053107, LH = { 82.333333, -0.050222 }, RH = { 83.666667, -0.061788 } },
+				[85] = { -0.079149, LH = { 84.333333, -0.070468 }, RH = { 85.666667, -0.082274 } },
+				[87] = { -0.088526, LH = { 86.333333, -0.0854 }, RH = { 87.666667, -0.092944 } },
+				[89] = { -0.10178, LH = { 88.333333, -0.097362 }, RH = { 89.666667, -0.105164 } },
+				[91] = { -0.111932, LH = { 90.333333, -0.108548 }, RH = { 91.666667, -0.10563 } },
+				[93] = { -0.093025, LH = { 92.333333, -0.099327 }, RH = { 93.666667, -0.095186 } },
+				[95] = { -0.099508, LH = { 94.333333, -0.097347 }, RH = { 95.666667, -0.102785 } },
+				[97] = { -0.109338, LH = { 96.333333, -0.106062 }, RH = { 97.666667, -0.108527 } },
+				[99] = { -0.106903, LH = { 98.333333, -0.107715 } },
+			}
+		},
+		Scrub_TooltipValueFollowCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Scrub_TooltipValueFollowCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Scrub_TooltipValueFollowCenterPathY", Source = "Value", },
+			},
+		},
+		Scrub_TooltipValueFollow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Scrub_TooltipValue", Source = "Output", },
+				Center = Input { SourceOp = "Scrub_TooltipValueFollowCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 363 } },
+		},
+		Scrub_TooltipDate = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "NOV 04  ·  14:20", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.016304, },
+				Center = Input { Value = { 0, 1 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 396 } },
+		},
+		Scrub_TooltipDateFollowCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 1.316667, RH = { 65, 1.271528 } },
+				[73] = { 1.18125, LH = { 69, 1.226389 }, RH = { 75, 1.18125 } },
+				[79] = { 1.18125, LH = { 77, 1.18125 }, RH = { 79.666667, 1.18125 } },
+				[81] = { 1.18125, LH = { 80.333333, 1.18125 }, RH = { 81.666667, 1.179066 } },
+				[83] = { 1.174699, LH = { 82.333333, 1.176882 }, RH = { 83.666667, 1.168846 } },
+				[85] = { 1.15714, LH = { 84.333333, 1.162993 }, RH = { 85.666667, 1.148667 } },
+				[87] = { 1.131721, LH = { 86.333333, 1.140194 }, RH = { 87.666667, 1.121675 } },
+				[89] = { 1.101584, LH = { 88.333333, 1.111629 }, RH = { 89.666667, 1.091014 } },
+				[91] = { 1.069875, LH = { 90.333333, 1.080444 }, RH = { 91.666667, 1.059829 } },
+				[93] = { 1.039738, LH = { 92.333333, 1.049783 }, RH = { 93.666667, 1.031264 } },
+				[95] = { 1.014318, LH = { 94.333333, 1.022791 }, RH = { 95.666667, 1.008465 } },
+				[97] = { 0.99676, LH = { 96.333333, 1.002613 }, RH = { 97.666667, 0.994576 } },
+				[99] = { 0.990208, LH = { 98.333333, 0.992392 } },
+			}
+		},
+		Scrub_TooltipDateFollowCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { -0.322222, RH = { 65, -0.219756 } },
+				[73] = { -0.014823, LH = { 69, -0.117289 }, RH = { 75, -0.014823 } },
+				[79] = { -0.014823, LH = { 77, -0.014823 }, RH = { 79.666667, -0.014823 } },
+				[81] = { -0.014823, LH = { 80.333333, -0.014823 }, RH = { 81.666667, -0.017708 } },
+				[83] = { -0.023478, LH = { 82.333333, -0.020593 }, RH = { 83.666667, -0.032158 } },
+				[85] = { -0.049519, LH = { 84.333333, -0.040838 }, RH = { 85.666667, -0.052645 } },
+				[87] = { -0.058896, LH = { 86.333333, -0.05577 }, RH = { 87.666667, -0.063314 } },
+				[89] = { -0.072151, LH = { 88.333333, -0.067732 }, RH = { 89.666667, -0.075535 } },
+				[91] = { -0.082303, LH = { 90.333333, -0.078919 }, RH = { 91.666667, -0.076 } },
+				[93] = { -0.063395, LH = { 92.333333, -0.069697 }, RH = { 93.666667, -0.065556 } },
+				[95] = { -0.069878, LH = { 94.333333, -0.067717 }, RH = { 95.666667, -0.073155 } },
+				[97] = { -0.079709, LH = { 96.333333, -0.076432 }, RH = { 97.666667, -0.078897 } },
+				[99] = { -0.077273, LH = { 98.333333, -0.078085 } },
+			}
+		},
+		Scrub_TooltipDateFollowCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Scrub_TooltipDateFollowCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Scrub_TooltipDateFollowCenterPathY", Source = "Value", },
+			},
+		},
+		Scrub_TooltipDateFollow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Scrub_TooltipDate", Source = "Output", },
+				Center = Input { SourceOp = "Scrub_TooltipDateFollowCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 429 } },
+		},
+		Scrub_AddCross = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Scrub_CrosshairFill", Source = "Output", },
+				Foreground = Input { SourceOp = "Scrub_TooltipFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 462 } },
+		},
+		Scrub_AddTipEdge = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Scrub_AddCross", Source = "Output", },
+				Foreground = Input { SourceOp = "Scrub_TooltipEdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 495 } },
+		},
+		Scrub_AddValue = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Scrub_AddTipEdge", Source = "Output", },
+				Foreground = Input { SourceOp = "Scrub_TooltipValueFollow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 528 } },
+		},
+		Scrub_AddDate = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Scrub_AddValue", Source = "Output", },
+				Foreground = Input { SourceOp = "Scrub_TooltipDateFollow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 561 } },
+		},
+		Scrub_AddPoint = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Scrub_AddDate", Source = "Output", },
+				Foreground = Input { SourceOp = "Scrub_PointFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 594 } },
+		},
+		ChartCard_AddScrubBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[72] = { 0, RH = { 72.64, 1 } },
+				[76] = { 1, LH = { 73.2, 1 }, RH = { 88, 1 } },
+				[112] = { 1, LH = { 100, 1 }, RH = { 116.2, 1 } },
+				[118] = { 0, LH = { 117.04, 1 } },
+			}
+		},
+		ChartCard_AddScrub = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_AddChart", Source = "Output", },
+				Foreground = Input { SourceOp = "Scrub_AddPoint", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "ChartCard_AddScrubBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 627 } },
+		},
+		ChartCard_AddCursorBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0, RH = { 61.64, 1 } },
+				[65] = { 1, LH = { 62.2, 1 }, RH = { 80.666667, 1 } },
+				[112] = { 1, LH = { 96.333333, 1 }, RH = { 116.2, 1 } },
+				[118] = { 0, LH = { 117.04, 1 } },
+			}
+		},
+		ChartCard_AddCursor = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "ChartCard_AddScrub", Source = "Output", },
+				Foreground = Input { SourceOp = "Scrub_CursorFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "ChartCard_AddCursorBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 660 } },
+		},
+		UL_Chart_Scrub = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chart_Scrub", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1375, -30 },
+				Size = { 120, 723 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		ChartCard_MoveCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 1.385417, RH = { 2.88, 0.5 } },
+				[18] = { 0.5, LH = { 5.4, 0.5 } },
+			}
+		},
+		ChartCard_MoveCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		ChartCard_MoveCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "ChartCard_MoveCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "ChartCard_MoveCenterPathY", Source = "Value", },
+			},
+		},
+		ChartCard_MoveSize = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[112] = { 1, RH = { 121.8, 1 } },
+				[126] = { 1.18, LH = { 123.76, 1 } },
+			}
+		},
+		ChartCard_Move = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "ChartCard_AddCursor", Source = "Output", },
+				Center = Input { SourceOp = "ChartCard_MoveCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.444444 }, },
+				Size = Input { SourceOp = "ChartCard_MoveSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 0 } },
+		},
+		UL_Chart_Card_Move = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chart_Card_Move", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1505, -30 },
+				Size = { 120, 63 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Comp_01Blend = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 1.6, 1 } },
+				[10] = { 1, LH = { 3, 1 }, RH = { 44, 1 } },
+				[112] = { 1, LH = { 78, 1 }, RH = { 117.6, 1 } },
+				[120] = { 0, LH = { 118.72, 1 } },
+			}
+		},
+		Comp_01 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddVignette", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Track_Slide", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_01Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 1500 } },
+		},
+		Comp_02 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_01", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Realtime_Portfolio_Line0_Clipped", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1500 } },
+		},
+		Comp_03Blend = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[114] = { 1, RH = { 122.4, 1 } },
+				[126] = { 0, LH = { 124.08, 1 } },
+			}
+		},
+		Comp_03 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_02", Source = "Output", },
+				Foreground = Input { SourceOp = "ChartCard_Move", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_03Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 1500 } },
+		},
+		CAMERASize = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 1, RH = { 56.7, 1 } },
+				[126] = { 1.025, LH = { 31.5, 1.025 } },
+			}
+		},
+		CAMERA = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Comp_03", Source = "Output", },
+				Size = Input { SourceOp = "CAMERASize", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.5 }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 1500 } },
+		},
+		GRAIN_Noise = FastNoise {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Detail = Input { Value = 1, },
+				Contrast = Input { Value = 2.2, },
+				XScale = Input { Value = 220, },
+				SeetheRate = Input { Value = 4, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 1434 } },
+		},
+		GRAIN_Overlay = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "CAMERA", Source = "Output", },
+				Foreground = Input { SourceOp = "GRAIN_Noise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				ApplyMode = Input { Value = FuID { "Overlay" }, },
+				Blend = Input { Value = 0.035, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 1500 } },
+		},
+		MediaOut1 = MediaOut {
+			NameSet = true,
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input { SourceOp = "GRAIN_Overlay", Source = "Output", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 1500 } },
+		},
+		UL_OUTPUT_SPINE___layers_merged_left_to_right__then_camera__grain__MediaOut = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "OUTPUT SPINE - layers merged left to right, then camera, grain, MediaOut", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, 1460 },
+				Size = { 930, 90 }
+			},
+			Colors = { TileColor = { R = 0.35, G = 0.2, B = 0.2 }, }
+		}
+	},
+	Frames = {
+	},
+	Prefs = {
+		Comp = {
+			FrameFormat = {
+				Name = "HD 1080",
+				Width = 1920,
+				Height = 1080,
+				Rate = 30,
+				AspectX = 1,
+				AspectY = 1,
+				GuideRatio = 1.77777777777778,
+				DepthFull = 2,
+				DepthPreview = 2,
+				DepthInteractive = 2,
+			},
+			Unsorted = {
+				GlobalEnd = 125
+			},
+		}
+	},
+}

@@ -1,0 +1,5115 @@
+Composition {
+	CurrentTime = 0,
+	RenderRange = { 0, 200 },
+	GlobalRange = { 0, 200 },
+	CurrentID = 441,
+	HiQ = true,
+	PlaybackUpdateMode = 0,
+	Version = "DaVinci Resolve Fusion 21.2",
+	SavedOutputs = 0,
+	HeldTools = 0,
+	DisabledTools = 0,
+	LockedTools = 0,
+	AudioOffset = 0,
+	AutoRenderRange = true,
+	Resumable = true,
+	OutputClips = {
+	},
+	Tools = ordered() {
+		BG_Base = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.043137, },
+				TopLeftGreen = Input { Value = 0.054902, },
+				TopLeftBlue = Input { Value = 0.043137, },
+				TopLeftAlpha = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+		},
+		BG_GlowA_GreenStartPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.322917, RH = { -297, 0.446181 } },
+				[603] = { 0.692708, LH = { 153, 0.569444 } },
+			}
+		},
+		BG_GlowA_GreenStartPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.694444, RH = { -297, 0.580247 } },
+				[603] = { 0.351852, LH = { 153, 0.466049 } },
+			}
+		},
+		BG_GlowA_GreenStartPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowA_GreenStartPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowA_GreenStartPathY", Source = "Value", },
+			},
+		},
+		BG_GlowA_GreenEndPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.833333, RH = { -297, 0.956597 } },
+				[603] = { 1.203125, LH = { 153, 1.079861 } },
+			}
+		},
+		BG_GlowA_GreenEndPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.694444, RH = { -297, 0.580247 } },
+				[603] = { 0.351852, LH = { 153, 0.466049 } },
+			}
+		},
+		BG_GlowA_GreenEndPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowA_GreenEndPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowA_GreenEndPathY", Source = "Value", },
+			},
+		},
+		BG_GlowA_Green = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { SourceOp = "BG_GlowA_GreenStartPath", Source = "Value", },
+				End = Input { SourceOp = "BG_GlowA_GreenEndPath", Source = "Value", },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.085294, 0.118235, 0.047059, 0.15 }, [0.45] = { 0.028431, 0.039412, 0.015686, 0.05 }, [1] = { 0, 0, 0, 0 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		},
+		BG_GlowB_CharcoalStartPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.8125, RH = { -297, 0.614583 } },
+				[603] = { 0.21875, LH = { 153, 0.416667 } },
+			}
+		},
+		BG_GlowB_CharcoalStartPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.138889, RH = { -297, 0.345679 } },
+				[603] = { 0.759259, LH = { 153, 0.552469 } },
+			}
+		},
+		BG_GlowB_CharcoalStartPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowB_CharcoalStartPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowB_CharcoalStartPathY", Source = "Value", },
+			},
+		},
+		BG_GlowB_CharcoalEndPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 1.28125, RH = { -297, 1.083333 } },
+				[603] = { 0.6875, LH = { 153, 0.885417 } },
+			}
+		},
+		BG_GlowB_CharcoalEndPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.138889, RH = { -297, 0.345679 } },
+				[603] = { 0.759259, LH = { 153, 0.552469 } },
+			}
+		},
+		BG_GlowB_CharcoalEndPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowB_CharcoalEndPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowB_CharcoalEndPathY", Source = "Value", },
+			},
+		},
+		BG_GlowB_Charcoal = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { SourceOp = "BG_GlowB_CharcoalStartPath", Source = "Value", },
+				End = Input { SourceOp = "BG_GlowB_CharcoalEndPath", Source = "Value", },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.145882, 0.157647, 0.145882, 0.6 }, [1] = { 0, 0, 0, 0 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 66 } },
+		},
+		BG_AddGlowA = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_Base", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_GlowA_Green", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 99 } },
+		},
+		BG_AddGlowB = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGlowA", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_GlowB_Charcoal", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 132 } },
+		},
+		UL_BG_Base_Glows = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Base_Glows", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, -30 },
+				Size = { 120, 195 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		BG_GridV_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.475, Y = 0.518519 },
+							{ Linear = true, X = -0.475, Y = -0.518519 },
+							{ Linear = true, X = -0.425, Y = -0.518519 },
+							{ Linear = true, X = -0.425, Y = 0.518519 },
+							{ Linear = true, X = -0.375, Y = 0.518519 },
+							{ Linear = true, X = -0.375, Y = -0.518519 },
+							{ Linear = true, X = -0.325, Y = -0.518519 },
+							{ Linear = true, X = -0.325, Y = 0.518519 },
+							{ Linear = true, X = -0.275, Y = 0.518519 },
+							{ Linear = true, X = -0.275, Y = -0.518519 },
+							{ Linear = true, X = -0.225, Y = -0.518519 },
+							{ Linear = true, X = -0.225, Y = 0.518519 },
+							{ Linear = true, X = -0.175, Y = 0.518519 },
+							{ Linear = true, X = -0.175, Y = -0.518519 },
+							{ Linear = true, X = -0.125, Y = -0.518519 },
+							{ Linear = true, X = -0.125, Y = 0.518519 },
+							{ Linear = true, X = -0.075, Y = 0.518519 },
+							{ Linear = true, X = -0.075, Y = -0.518519 },
+							{ Linear = true, X = -0.025, Y = -0.518519 },
+							{ Linear = true, X = -0.025, Y = 0.518519 },
+							{ Linear = true, X = 0.025, Y = 0.518519 },
+							{ Linear = true, X = 0.025, Y = -0.518519 },
+							{ Linear = true, X = 0.075, Y = -0.518519 },
+							{ Linear = true, X = 0.075, Y = 0.518519 },
+							{ Linear = true, X = 0.125, Y = 0.518519 },
+							{ Linear = true, X = 0.125, Y = -0.518519 },
+							{ Linear = true, X = 0.175, Y = -0.518519 },
+							{ Linear = true, X = 0.175, Y = 0.518519 },
+							{ Linear = true, X = 0.225, Y = 0.518519 },
+							{ Linear = true, X = 0.225, Y = -0.518519 },
+							{ Linear = true, X = 0.275, Y = -0.518519 },
+							{ Linear = true, X = 0.275, Y = 0.518519 },
+							{ Linear = true, X = 0.325, Y = 0.518519 },
+							{ Linear = true, X = 0.325, Y = -0.518519 },
+							{ Linear = true, X = 0.375, Y = -0.518519 },
+							{ Linear = true, X = 0.375, Y = 0.518519 },
+							{ Linear = true, X = 0.425, Y = 0.518519 },
+							{ Linear = true, X = 0.425, Y = -0.518519 },
+							{ Linear = true, X = 0.475, Y = -0.518519 },
+							{ Linear = true, X = 0.475, Y = 0.518519 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000625, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 0 } },
+		},
+		BG_GridH_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "BG_GridV_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.510417, Y = 0.488889 },
+							{ Linear = true, X = 0.520833, Y = 0.488889 },
+							{ Linear = true, X = 0.520833, Y = 0.4 },
+							{ Linear = true, X = -0.510417, Y = 0.4 },
+							{ Linear = true, X = -0.510417, Y = 0.311111 },
+							{ Linear = true, X = 0.520833, Y = 0.311111 },
+							{ Linear = true, X = 0.520833, Y = 0.222222 },
+							{ Linear = true, X = -0.510417, Y = 0.222222 },
+							{ Linear = true, X = -0.510417, Y = 0.133333 },
+							{ Linear = true, X = 0.520833, Y = 0.133333 },
+							{ Linear = true, X = 0.520833, Y = 0.044444 },
+							{ Linear = true, X = -0.510417, Y = 0.044444 },
+							{ Linear = true, X = -0.510417, Y = -0.044444 },
+							{ Linear = true, X = 0.520833, Y = -0.044444 },
+							{ Linear = true, X = 0.520833, Y = -0.133333 },
+							{ Linear = true, X = -0.510417, Y = -0.133333 },
+							{ Linear = true, X = -0.510417, Y = -0.222222 },
+							{ Linear = true, X = 0.520833, Y = -0.222222 },
+							{ Linear = true, X = 0.520833, Y = -0.311111 },
+							{ Linear = true, X = -0.510417, Y = -0.311111 },
+							{ Linear = true, X = -0.510417, Y = -0.4 },
+							{ Linear = true, X = 0.520833, Y = -0.4 },
+							{ Linear = true, X = 0.520833, Y = -0.488889 },
+							{ Linear = true, X = -0.510417, Y = -0.488889 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000625, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 33 } },
+		},
+		BG_Grid_Lines = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { Value = { 0.5, 0.564815 }, },
+				End = Input { Value = { 1.020833, 0.564815 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.055, 0.055, 0.055, 0.055 }, [0.7] = { 0.02, 0.02, 0.02, 0.02 }, [1] = { 0, 0, 0, 0 } }
+					}, },
+				EffectMask = Input { SourceOp = "BG_GridH_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 66 } },
+		},
+		BG_Grid_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "BG_Grid_Lines", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 99 } },
+		},
+		BG_Grid_DriftCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.5, RH = { -297, 0.483333 } },
+				[603] = { 0.45, LH = { 153, 0.466667 } },
+			}
+		},
+		BG_Grid_DriftCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[-747] = { 0.5, RH = { -297, 0.514815 } },
+				[603] = { 0.544444, LH = { 153, 0.52963 } },
+			}
+		},
+		BG_Grid_DriftCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_Grid_DriftCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_Grid_DriftCenterPathY", Source = "Value", },
+			},
+		},
+		BG_Grid_Drift = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "BG_Grid_Static", Source = "Output", },
+				Center = Input { SourceOp = "BG_Grid_DriftCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 132 } },
+		},
+		BG_AddGrid = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGlowB", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_Grid_Drift", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 165 } },
+		},
+		UL_BG_Grid = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Grid", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 75, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		BG_Vignette_Dark = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { Value = { 0.5, 0.5 }, },
+				End = Input { Value = { 1.098958, 0.5 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0, 0, 0, 0 }, [0.55] = { 0, 0, 0, 0 }, [1] = { 0, 0, 0, 0.7 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 0 } },
+		},
+		BG_AddVignette = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGrid", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_Vignette_Dark", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 33 } },
+		},
+		BG_Dim = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 66 } },
+		},
+		BG_DimForSecurityBlend = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.45, RH = { 1.6, 0.35 } },
+				[10] = { 0.35, LH = { 3, 0.35 }, RH = { 69.666667, 0.35 } },
+				[189] = { 0.35, LH = { 129.333333, 0.35 }, RH = { 197.4, 0.35 } },
+				[201] = { 0.5, LH = { 199.08, 0.35 } },
+			}
+		},
+		BG_DimForSecurity = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddVignette", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_Dim", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "BG_DimForSecurityBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 99 } },
+		},
+		UL_BG_Vignette = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Vignette", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 205, -30 },
+				Size = { 120, 162 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Hex_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 0 } },
+		},
+		Hex_Col1 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "79 42 BD\nF2 21 06\nF0 84 77\n62 F0 F3\nCB 4D 76\n4D C7 07\n20 51 15\n9A 0F 89\nF2 C6 DA\nCA E3 44\nBB 31 12\n45 FD 6F\n84 DF 9A\nD7 C5 B3\nD0 76 AC\n0E 8F 53\nA7 35 6C\n88 91 3F\n20 F6 F7\n2D B0 22\nD2 4D 0A\n96 DA D4\n3C 16 17\nC1 A9 8E\n78 12 9E\n03 27 37", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.130208, 0.5 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 33 } },
+		},
+		Hex_Col1_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col1", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 66 } },
+		},
+		Hex_Col1_ScrollCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Hex_Col1_ScrollCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.388889, RH = { 67, 0.506173 } },
+				[201] = { 0.740741, LH = { 134, 0.623457 } },
+			}
+		},
+		Hex_Col1_ScrollCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Hex_Col1_ScrollCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Hex_Col1_ScrollCenterPathY", Source = "Value", },
+			},
+		},
+		Hex_Col1_Scroll = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col1_Static", Source = "Output", },
+				Center = Input { SourceOp = "Hex_Col1_ScrollCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 99 } },
+		},
+		Hex_AddCol1 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Hex_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "Hex_Col1_Scroll", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 132 } },
+		},
+		Hex_Col2 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "10 65 D0\n95 86 4F\n15 AD A0\nB8 46 C1\nC0 EB C5\n34 8A DC\n79 9A DF\n84 9B AD\n05 D4 A1\n0A C0 44\n1E AA EE\nB4 B4 8E\nFA 0B 1F\n0A BD 80\nE9 98 A3\n5A BA 5E\nA0 BD 87\n99 C1 35\n0D 43 9E\n71 89 7A\nA7 5F DE\n31 34 A4\nAA 72 E0\n56 28 AC\n6F E6 8A\n73 3D 11", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.21875, 0.5 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 165 } },
+		},
+		Hex_Col2_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col2", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 198 } },
+		},
+		Hex_Col2_ScrollCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Hex_Col2_ScrollCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.361111, RH = { 67, 0.493827 } },
+				[201] = { 0.759259, LH = { 134, 0.626543 } },
+			}
+		},
+		Hex_Col2_ScrollCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Hex_Col2_ScrollCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Hex_Col2_ScrollCenterPathY", Source = "Value", },
+			},
+		},
+		Hex_Col2_Scroll = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col2_Static", Source = "Output", },
+				Center = Input { SourceOp = "Hex_Col2_ScrollCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 231 } },
+		},
+		Hex_AddCol2 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Hex_AddCol1", Source = "Output", },
+				Foreground = Input { SourceOp = "Hex_Col2_Scroll", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 264 } },
+		},
+		Hex_Col3 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "61 A1 5D\n8E AE 2B\nB0 42 D7\n95 8A ED\nB1 D5 94\nD6 D1 12\nD3 4F 66\n02 F4 DE\n71 10 E9\n93 AE 74\n22 92 3D\n7D 17 11\n65 DC 19\n06 F6 3D\n57 99 7A\n0A D3 1B\n3A AE 40\n81 F4 1F\nB4 71 65\n3E 3D 57\n7A 8C 41\n03 F9 CC\n19 8A 7F\n89 D8 1A\nF2 A5 00\n1C 40 17", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.307292, 0.5 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 297 } },
+		},
+		Hex_Col3_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col3", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 330 } },
+		},
+		Hex_Col3_ScrollCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Hex_Col3_ScrollCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.333333, RH = { 67, 0.481481 } },
+				[201] = { 0.777778, LH = { 134, 0.62963 } },
+			}
+		},
+		Hex_Col3_ScrollCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Hex_Col3_ScrollCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Hex_Col3_ScrollCenterPathY", Source = "Value", },
+			},
+		},
+		Hex_Col3_Scroll = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col3_Static", Source = "Output", },
+				Center = Input { SourceOp = "Hex_Col3_ScrollCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 363 } },
+		},
+		Hex_AddCol3 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Hex_AddCol2", Source = "Output", },
+				Foreground = Input { SourceOp = "Hex_Col3_Scroll", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 396 } },
+		},
+		Hex_Col4 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "3F 19 23\nF7 10 2C\nFA A1 50\nA1 24 B3\nC5 C7 9B\nB8 87 61\nA8 DB 3F\n41 01 C2\n28 5B 15\nBF EB C2\n16 DC 1B\nBE FE A1\nD7 D6 EB\n09 7D 6F\n8A 24 D9\n72 DA 42\n0E A6 BF\n86 3E ED\n3F C0 37\nA3 34 02\nF2 49 78\nC7 16 2F\n32 C0 5B\n0C AE 3E\n0D 3A F6\n91 99 2D", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.692708, 0.5 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 429 } },
+		},
+		Hex_Col4_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col4", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 462 } },
+		},
+		Hex_Col4_ScrollCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Hex_Col4_ScrollCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.305556, RH = { 67, 0.469136 } },
+				[201] = { 0.796296, LH = { 134, 0.632716 } },
+			}
+		},
+		Hex_Col4_ScrollCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Hex_Col4_ScrollCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Hex_Col4_ScrollCenterPathY", Source = "Value", },
+			},
+		},
+		Hex_Col4_Scroll = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col4_Static", Source = "Output", },
+				Center = Input { SourceOp = "Hex_Col4_ScrollCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 495 } },
+		},
+		Hex_AddCol4 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Hex_AddCol3", Source = "Output", },
+				Foreground = Input { SourceOp = "Hex_Col4_Scroll", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 528 } },
+		},
+		Hex_Col5 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "12 7A 36\n33 1F A6\n5C 27 7B\n5C 7F E8\nC9 81 BC\nCB B3 D6\n2A C0 78\nD3 52 D4\nF7 4F CD\n4C 53 31\nFE F7 E2\n5F 45 88\n65 4B A1\n76 97 D3\n88 6F 9D\n0B 89 F5\nC3 66 58\nB8 7A A4\nF7 49 D6\nF5 69 EF\n0E F6 25\nCC 17 EF\n75 78 23\n6F 82 7B\n61 84 46\n5F 12 82", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.78125, 0.5 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 561 } },
+		},
+		Hex_Col5_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col5", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 594 } },
+		},
+		Hex_Col5_ScrollCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Hex_Col5_ScrollCenterPathY = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.277778, RH = { 67, 0.45679 } },
+				[201] = { 0.814815, LH = { 134, 0.635802 } },
+			}
+		},
+		Hex_Col5_ScrollCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Hex_Col5_ScrollCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Hex_Col5_ScrollCenterPathY", Source = "Value", },
+			},
+		},
+		Hex_Col5_Scroll = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col5_Static", Source = "Output", },
+				Center = Input { SourceOp = "Hex_Col5_ScrollCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 627 } },
+		},
+		Hex_AddCol5 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Hex_AddCol4", Source = "Output", },
+				Foreground = Input { SourceOp = "Hex_Col5_Scroll", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 660 } },
+		},
+		Hex_Col6 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "56 17 A0\n5D D8 2E\n2B 3C 2F\n87 95 12\nB6 E7 AC\n03 0F AB\nA9 DF C2\nF8 27 6B\nFA C8 40\nA3 3D 8C\n27 DD 39\nE0 80 31\nBF BC E6\n97 87 36\nAD 3A FC\nB4 1E 96\n5D 4C 5B\nBD E8 3F\n37 48 A9\nD7 99 5F\nEA F6 9F\n5A 23 36\n5C C8 B7\n33 88 8A\nC4 1B 45\n15 F5 8A", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.869792, 0.5 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 693 } },
+		},
+		Hex_Col6_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col6", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 726 } },
+		},
+		Hex_Col6_ScrollCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Hex_Col6_ScrollCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.25, RH = { 67, 0.444444 } },
+				[201] = { 0.833333, LH = { 134, 0.638889 } },
+			}
+		},
+		Hex_Col6_ScrollCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Hex_Col6_ScrollCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Hex_Col6_ScrollCenterPathY", Source = "Value", },
+			},
+		},
+		Hex_Col6_Scroll = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Hex_Col6_Static", Source = "Output", },
+				Center = Input { SourceOp = "Hex_Col6_ScrollCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 759 } },
+		},
+		Hex_AddCol6 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Hex_AddCol5", Source = "Output", },
+				Foreground = Input { SourceOp = "Hex_Col6_Scroll", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 792 } },
+		},
+		Hex_Fade_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				SoftEdge = Input { Value = 0.166667, },
+				Center = Input { Value = { 0.5, 0.518519 }, },
+				Width = Input { Value = 0.9375, },
+				Height = Input { Value = 0.4375, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 825 } },
+		},
+		Hex_MaskCanvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 858 } },
+		},
+		Hex_Masked = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Hex_MaskCanvas", Source = "Output", },
+				Foreground = Input { SourceOp = "Hex_AddCol6", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "Hex_Fade_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 891 } },
+		},
+		UL_Encryption_Stream = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Encryption_Stream", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 335, -30 },
+				Size = { 120, 954 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Shield_Body_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0, Y = 0.231327 },
+							{ Linear = true, X = 0.069987, Y = 0.181559 },
+							{ X = 0.069987, Y = 0.090316, RX = 0, RY = -0.077971 },
+							{ X = 0, Y = -0.07392, LX = 0.041059, LY = 0.023225, RX = -0.041059, RY = 0.023225 },
+							{ X = -0.069987, Y = 0.090316, LX = 0, LY = -0.077971 },
+							{ Linear = true, X = -0.069987, Y = 0.181559 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 0 } },
+		},
+		Shield_BodyFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Linear" }, },
+				Start = Input { Value = { 0.5, 0.763889 }, },
+				End = Input { Value = { 0.5, 0.375 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.111765, 0.156471, 0.089412, 0.95 }, [1] = { 0.052157, 0.067059, 0.048431, 0.95 } }
+					}, },
+				EffectMask = Input { SourceOp = "Shield_Body_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 33 } },
+		},
+		Shield_Body_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Shield_BodyFill", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 66 } },
+		},
+		Shield_Stroke_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 0.333333, 0.333333 } },
+				[1] = { 1, LH = { 0.666667, 0.666667 } },
+			}
+		},
+		Shield_Stroke_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 5.12, 1 } },
+				[32] = { 1, LH = { 9.6, 1 } },
+			}
+		},
+		Shield_Stroke_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "Shield_Stroke_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0, Y = 0.231327 },
+							{ Linear = true, X = 0.069987, Y = 0.181559 },
+							{ X = 0.069987, Y = 0.090316, RX = 0, RY = -0.077971 },
+							{ X = 0, Y = -0.07392, LX = 0.041059, LY = 0.023225, RX = -0.041059, RY = 0.023225 },
+							{ X = -0.069987, Y = 0.090316, LX = 0, LY = -0.077971 },
+							{ Linear = true, X = -0.069987, Y = 0.181559 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004687, },
+				WriteOnEnd = Input { SourceOp = "Shield_Stroke_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 99 } },
+		},
+		Shield_StrokeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Shield_Stroke_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 132 } },
+		},
+		Shield_StrokeGlow = SoftGlow {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Shield_StrokeFill", Source = "Output", },
+				Gain = Input { Value = 0.9, },
+				XGlowSize = Input { Value = 22, },
+				Threshold = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 165 } },
+		},
+		Shield_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 198 } },
+		},
+		Shield_AddBodyBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[4] = { 0, RH = { 8.48, 1 } },
+				[32] = { 1, LH = { 12.4, 1 } },
+			}
+		},
+		Shield_AddBody = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Shield_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "Shield_Body_Static", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Shield_AddBodyBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 231 } },
+		},
+		Shield_AddStroke = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Shield_AddBody", Source = "Output", },
+				Foreground = Input { SourceOp = "Shield_StrokeGlow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 264 } },
+		},
+		UL_Shield_Outline = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Shield_Outline", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 465, -30 },
+				Size = { 120, 327 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Lock_Body_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.515741 }, },
+				Width = Input { Value = 0.08125, },
+				Height = Input { Value = 0.114815, },
+				CornerRadius = Input { Value = 0.419355, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 0 } },
+		},
+		Lock_BodyFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Lock_Body_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 33 } },
+		},
+		Lock_Keyhole_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.526852 }, },
+				Width = Input { Value = 0.015625, },
+				Height = Input { Value = 0.015625, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 66 } },
+		},
+		Lock_KeySlot_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.506481 }, },
+				Width = Input { Value = 0.00625, },
+				Height = Input { Value = 0.033333, },
+				CornerRadius = Input { Value = 0.666667, },
+				EffectMask = Input { SourceOp = "Lock_Keyhole_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 99 } },
+		},
+		Lock_KeyholeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.086275, },
+				TopLeftGreen = Input { Value = 0.12549, },
+				TopLeftBlue = Input { Value = 0.058824, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Lock_KeySlot_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 132 } },
+		},
+		Lock_AddKeyhole = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Lock_BodyFill", Source = "Output", },
+				Foreground = Input { SourceOp = "Lock_KeyholeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 165 } },
+		},
+		Lock_Body_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Lock_AddKeyhole", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 198 } },
+		},
+		Lock_Shackle_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.026042, Y = 0.071296 },
+							{ X = -0.026042, Y = 0.115741, RX = 0, RY = 0.02963 },
+							{ X = 0, Y = 0.163889, LX = -0.015625, LY = 0, RX = 0.015625, RY = 0 },
+							{ X = 0.026042, Y = 0.115741, LX = 0, LY = 0.02963 },
+							{ Linear = true, X = 0.026042, Y = 0.071296 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.009375, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 231 } },
+		},
+		Lock_ShackleFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Lock_Shackle_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 264 } },
+		},
+		Lock_ShackleCloseCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Lock_ShackleCloseCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[30] = { 0.542593, RH = { 33.4, 0.480833 } },
+				[40] = { 0.5, LH = { 36.4, 0.5 } },
+			}
+		},
+		Lock_ShackleCloseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Lock_ShackleCloseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Lock_ShackleCloseCenterPathY", Source = "Value", },
+			},
+		},
+		Lock_ShackleCloseQuality = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[29] = { 1, RH = { 29.333333, 2 } },
+				[30] = { 4, LH = { 29.666667, 3 }, RH = { 33.333333, 4 } },
+				[40] = { 4, LH = { 36.666667, 4 }, RH = { 40.333333, 3 } },
+				[41] = { 1, LH = { 40.666667, 2 } },
+			}
+		},
+		Lock_ShackleClose = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Lock_ShackleFill", Source = "Output", },
+				Center = Input { SourceOp = "Lock_ShackleCloseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Lock_ShackleCloseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 297 } },
+		},
+		Lock_AddShackle = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Lock_Body_Static", Source = "Output", },
+				Foreground = Input { SourceOp = "Lock_ShackleClose", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 330 } },
+		},
+		Lock_PopInSize = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[20] = { 0.3, RH = { 24.76, 1.315 } },
+				[34] = { 1, LH = { 28.96, 1 } },
+			}
+		},
+		Lock_PopIn = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Lock_AddShackle", Source = "Output", },
+				Pivot = Input { Value = { 0.5, 0.541667 }, },
+				Size = Input { SourceOp = "Lock_PopInSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 363 } },
+		},
+		Shield_AddLockBlend = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[20] = { 0, RH = { 20.96, 1 } },
+				[26] = { 1, LH = { 21.8, 1 } },
+			}
+		},
+		Shield_AddLock = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Shield_AddStroke", Source = "Output", },
+				Foreground = Input { SourceOp = "Lock_PopIn", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Shield_AddLockBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 396 } },
+		},
+		UL_Lock = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Lock", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 595, -30 },
+				Size = { 120, 459 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Click_Ring_MWidth = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[40] = { 0.083333, RH = { 42.88, 0.34375 } },
+				[58] = { 0.34375, LH = { 45.4, 0.34375 } },
+			}
+		},
+		Click_Ring_MHeight = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[40] = { 0.083333, RH = { 42.88, 0.34375 } },
+				[58] = { 0.34375, LH = { 45.4, 0.34375 } },
+			}
+		},
+		Click_Ring_MBorderWidth = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[40] = { 0.005208, RH = { 42.88, 0.000521 } },
+				[58] = { 0.000521, LH = { 45.4, 0.000521 } },
+			}
+		},
+		Click_Ring_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.550926 }, },
+				Width = Input { SourceOp = "Click_Ring_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "Click_Ring_MHeight", Source = "Value", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { SourceOp = "Click_Ring_MBorderWidth", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 0 } },
+		},
+		Click_RingFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Click_Ring_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 33 } },
+		},
+		Shield_AddClickBlend = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[39] = { 0, RH = { 39.333333, 0.3 } },
+				[40] = { 0.9, LH = { 39.666667, 0.6 }, RH = { 42.88, 0 } },
+				[58] = { 0, LH = { 45.4, 0 } },
+			}
+		},
+		Shield_AddClick = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Shield_AddLock", Source = "Output", },
+				Foreground = Input { SourceOp = "Click_RingFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Shield_AddClickBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 66 } },
+		},
+		UL_Lock_ClickFlash = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Lock_ClickFlash", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 725, -30 },
+				Size = { 120, 129 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Shield_MoveCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[58] = { 0.5, RH = { 68.4, 0.5 } },
+				[74] = { 0.3125, LH = { 63.6, 0.3125 }, RH = { 87, 0.3125 } },
+				[113] = { 0.3125, LH = { 100, 0.3125 }, RH = { 123.4, 0.3125 } },
+				[129] = { 0.5, LH = { 118.6, 0.5 } },
+			}
+		},
+		Shield_MoveCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Shield_MoveCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Shield_MoveCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Shield_MoveCenterPathY", Source = "Value", },
+			},
+		},
+		Shield_MoveSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[58] = { 1, RH = { 68.4, 1 } },
+				[74] = { 0.82, LH = { 63.6, 0.82 }, RH = { 87, 0.82 } },
+				[113] = { 0.82, LH = { 100, 0.82 }, RH = { 123.4, 0.82 } },
+				[129] = { 0.92, LH = { 118.6, 0.92 } },
+			}
+		},
+		Shield_Move = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Shield_AddClick", Source = "Output", },
+				Center = Input { SourceOp = "Shield_MoveCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.578704 }, },
+				Size = Input { SourceOp = "Shield_MoveSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 0 } },
+		},
+		UL_Shield_Move = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Shield_Move", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 855, -30 },
+				Size = { 120, 63 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Chip_Encryption_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.268519 }, },
+				Width = Input { Value = 0.268676, },
+				Height = Input { Value = 0.081481, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 0 } },
+		},
+		Chip_Encryption_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.109804, },
+				TopLeftGreen = Input { Value = 0.133333, },
+				TopLeftBlue = Input { Value = 0.109804, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Chip_Encryption_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 33 } },
+		},
+		Chip_Encryption_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.268519 }, },
+				Width = Input { Value = 0.268676, },
+				Height = Input { Value = 0.081481, },
+				CornerRadius = Input { Value = 1, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 66 } },
+		},
+		Chip_Encryption_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Chip_Encryption_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 99 } },
+		},
+		Chip_Encryption_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chip_Encryption_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Encryption_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 132 } },
+		},
+		Chip_Encryption_Ic_lock0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = -0.112723, Y = -0.23017, LX = -0.000812, LY = 0 },
+							{ X = -0.103869, Y = -0.23017, RX = 0.000812, RY = 0 },
+							{ X = -0.102393, Y = -0.232793, LX = 0, LY = 0.001443 },
+							{ X = -0.102393, Y = -0.240664, RX = 0, RY = -0.001443 },
+							{ X = -0.103869, Y = -0.243287, LX = 0.000812, LY = 0 },
+							{ X = -0.112723, Y = -0.243287, RX = -0.000812, RY = 0 },
+							{ X = -0.114199, Y = -0.240664, LX = 0, LY = -0.001443 },
+							{ X = -0.114199, Y = -0.232793, RX = 0, RY = 0.001443 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001875, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 165 } },
+		},
+		Chip_Encryption_Ic_lock1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "Chip_Encryption_Ic_lock0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.111248, Y = -0.23017 },
+							{ X = -0.111248, Y = -0.225579, RX = 0, RY = 0.002886 },
+							{ X = -0.108296, Y = -0.220332, LX = -0.001623, LY = 0, RX = 0.001623, RY = 0 },
+							{ X = -0.105345, Y = -0.225579, LX = 0, LY = 0.002886 },
+							{ Linear = true, X = -0.105345, Y = -0.23017 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001875, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 198 } },
+		},
+		Chip_Encryption_Ic_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Chip_Encryption_Ic_lock1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 231 } },
+		},
+		Chip_Encryption_AddIc = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chip_Encryption_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Encryption_Ic_Icon", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 264 } },
+		},
+		Chip_Encryption_Lab = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Bank-level encryption", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.028261, },
+				Center = Input { Value = { 0.411496, 0.268519 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 297 } },
+		},
+		Chip_Encryption_AddLab = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chip_Encryption_AddIc", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Encryption_Lab", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 330 } },
+		},
+		Chip_Encryption_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Chip_Encryption_AddLab", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 363 } },
+		},
+		Chip_Encryption_PopCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Chip_Encryption_PopCenterPathY = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[16] = { 0.472222, RH = { 18.24, 0.5 } },
+				[30] = { 0.5, LH = { 20.2, 0.5 }, RH = { 38.666667, 0.5 } },
+				[56] = { 0.5, LH = { 47.333333, 0.5 }, RH = { 63, 0.5 } },
+				[66] = { 0.518519, LH = { 64.4, 0.5 } },
+			}
+		},
+		Chip_Encryption_PopCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Chip_Encryption_PopCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Chip_Encryption_PopCenterPathY", Source = "Value", },
+			},
+		},
+		Chip_Encryption_PopSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[16] = { 0.7, RH = { 20.76, 1.135 } },
+				[30] = { 1, LH = { 24.96, 1 }, RH = { 38.666667, 1 } },
+				[56] = { 1, LH = { 47.333333, 1 }, RH = { 63, 1 } },
+				[66] = { 0.9, LH = { 64.4, 1 } },
+			}
+		},
+		Chip_Encryption_PopQuality = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[15] = { 1, RH = { 15.333333, 2 } },
+				[16] = { 4, LH = { 15.666667, 3 }, RH = { 20.666667, 4 } },
+				[30] = { 4, LH = { 25.333333, 4 }, RH = { 30.333333, 3 } },
+				[31] = { 1, LH = { 30.666667, 2 }, RH = { 39, 1 } },
+				[55] = { 1, LH = { 47, 1 }, RH = { 55.333333, 2 } },
+				[56] = { 4, LH = { 55.666667, 3 }, RH = { 59.333333, 4 } },
+				[66] = { 4, LH = { 62.666667, 4 }, RH = { 66.333333, 3 } },
+				[67] = { 1, LH = { 66.666667, 2 } },
+			}
+		},
+		Chip_Encryption_Pop = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Chip_Encryption_Static", Source = "Output", },
+				Center = Input { SourceOp = "Chip_Encryption_PopCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.268519 }, },
+				Size = Input { SourceOp = "Chip_Encryption_PopSize", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Chip_Encryption_PopQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 396 } },
+		},
+		Chip_Encryption_Sub = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "AES-256  ·  END-TO-END", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.020652, },
+				Center = Input { Value = { 0.5, 0.196296 }, },
+				CharacterSpacing = Input { Value = 1.08, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 429 } },
+		},
+		Chip_Encryption_SubRiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Chip_Encryption_SubRiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[24] = { 0.485185, RH = { 25.92, 0.5 } },
+				[36] = { 0.5, LH = { 27.6, 0.5 } },
+			}
+		},
+		Chip_Encryption_SubRiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Chip_Encryption_SubRiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Chip_Encryption_SubRiseCenterPathY", Source = "Value", },
+			},
+		},
+		Chip_Encryption_SubRiseQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[23] = { 1, RH = { 23.333333, 2 } },
+				[24] = { 4, LH = { 23.666667, 3 }, RH = { 28, 4 } },
+				[36] = { 4, LH = { 32, 4 }, RH = { 36.333333, 3 } },
+				[37] = { 1, LH = { 36.666667, 2 } },
+			}
+		},
+		Chip_Encryption_SubRise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Chip_Encryption_Sub", Source = "Output", },
+				Center = Input { SourceOp = "Chip_Encryption_SubRiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Chip_Encryption_SubRiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 462 } },
+		},
+		UL_Chip_Chip_Encryption = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chip_Chip_Encryption", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 985, -30 },
+				Size = { 120, 525 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		FP_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 0 } },
+		},
+		FP_Ridge01_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[66] = { 0, RH = { 66.333333, 0.333333 } },
+				[67] = { 1, LH = { 66.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge01_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[66] = { 0, RH = { 68.56, 1 } },
+				[82] = { 1, LH = { 70.8, 1 } },
+			}
+		},
+		FP_Ridge01_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge01_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.153135, Y = 0.09287, RX = 0.001993, RY = 0.007488 },
+							{ X = 0.162185, Y = 0.108391, LX = -0.003819, LY = -0.00248, RX = 0.003819, RY = 0.00248 },
+							{ X = 0.173679, Y = 0.10621, LX = -0.003563, LY = 0.003881, RX = 0.003563, RY = -0.003881 },
+							{ X = 0.181349, Y = 0.087517, LX = -0.001364, LY = 0.008125 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge01_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 33 } },
+		},
+		FP_Ridge01_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge01_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 66 } },
+		},
+		FP_AddRidge01 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge01_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 99 } },
+		},
+		FP_Ridge02_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[68] = { 0, RH = { 68.333333, 0.333333 } },
+				[69] = { 1, LH = { 68.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge02_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[68] = { 0, RH = { 70.56, 1 } },
+				[84] = { 1, LH = { 72.8, 1 } },
+			}
+		},
+		FP_Ridge02_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge02_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.182232, Y = 0.072972, RX = -0.000259, RY = -0.006426 },
+							{ X = 0.179063, Y = 0.055296, LX = 0.001811, LY = 0.005118, RX = -0.001811, RY = -0.005118 },
+							{ X = 0.172011, Y = 0.044081, LX = 0.002795, LY = 0.002206 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge02_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 132 } },
+		},
+		FP_Ridge02_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge02_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 165 } },
+		},
+		FP_AddRidge02 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge01", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge02_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 198 } },
+		},
+		FP_Ridge03_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[70] = { 0, RH = { 70.333333, 0.333333 } },
+				[71] = { 1, LH = { 70.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge03_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[70] = { 0, RH = { 72.56, 1 } },
+				[86] = { 1, LH = { 74.8, 1 } },
+			}
+		},
+		FP_Ridge03_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge03_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.140238, Y = 0.055063, RX = -0.002551, RY = 0.015203 },
+							{ X = 0.141177, Y = 0.101706, LX = -0.003152, LY = -0.014662, RX = 0.003152, RY = 0.014662 },
+							{ X = 0.157047, Y = 0.133247, LX = -0.007009, LY = -0.005533, RX = 0.007009, RY = 0.005533 },
+							{ X = 0.178553, Y = 0.131211, LX = -0.00676, LY = 0.006837 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge03_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 231 } },
+		},
+		FP_Ridge03_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge03_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 264 } },
+		},
+		FP_AddRidge03 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge02", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge03_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 297 } },
+		},
+		FP_Ridge04_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[72] = { 0, RH = { 72.333333, 0.333333 } },
+				[73] = { 1, LH = { 72.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge04_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[72] = { 0, RH = { 74.56, 1 } },
+				[88] = { 1, LH = { 76.8, 1 } },
+			}
+		},
+		FP_Ridge04_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge04_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.188212, Y = 0.115136, RX = 0.004431, RY = -0.011454 },
+							{ X = 0.19478, Y = 0.074152, LX = 0.000201, LY = 0.014946, RX = -0.000201, RY = -0.014946 },
+							{ X = 0.187124, Y = 0.034065, LX = 0.004731, LY = 0.010876, RX = -0.004731, RY = -0.010876 },
+							{ X = 0.169118, Y = 0.015158, LX = 0.006868, LY = 0.001303 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge04_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 330 } },
+		},
+		FP_Ridge04_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge04_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 363 } },
+		},
+		FP_AddRidge04 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge03", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge04_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 396 } },
+		},
+		FP_Ridge05_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[74] = { 0, RH = { 74.333333, 0.333333 } },
+				[75] = { 1, LH = { 74.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge05_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[74] = { 0, RH = { 76.56, 1 } },
+				[90] = { 1, LH = { 78.8, 1 } },
+			}
+		},
+		FP_Ridge05_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge05_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.146354, Y = -0.000381, RX = -0.008271, RY = 0.010358 },
+							{ X = 0.128492, Y = 0.04579, LX = 0.003267, LY = -0.019466, RX = -0.003267, RY = 0.019466 },
+							{ X = 0.128492, Y = 0.106062, LX = -0.003267, LY = -0.019466, RX = 0.003267, RY = 0.019466 },
+							{ X = 0.146354, Y = 0.152232, LX = -0.008271, LY = -0.010358 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge05_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 429 } },
+		},
+		FP_Ridge05_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge05_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 462 } },
+		},
+		FP_AddRidge05 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge04", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge05_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 495 } },
+		},
+		FP_Ridge06_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[76] = { 0, RH = { 76.333333, 0.333333 } },
+				[77] = { 1, LH = { 76.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge06_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[76] = { 0, RH = { 78.56, 1 } },
+				[92] = { 1, LH = { 80.8, 1 } },
+			}
+		},
+		FP_Ridge06_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge06_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.166667, Y = 0.164037, RX = 0.009551, RY = 0 },
+							{ X = 0.19278, Y = 0.143423, LX = -0.007317, LY = 0.013315, RX = 0.007317, RY = -0.013315 },
+							{ X = 0.206674, Y = 0.091226, LX = -0.001659, LY = 0.0204, RX = 0.001659, RY = -0.0204 },
+							{ X = 0.201849, Y = 0.03187, LX = 0.004776, LY = 0.01794 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge06_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 528 } },
+		},
+		FP_Ridge06_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge06_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 561 } },
+		},
+		FP_AddRidge06 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge05", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge06_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 594 } },
+		},
+		FP_Ridge07_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[78] = { 0, RH = { 78.333333, 0.333333 } },
+				[79] = { 1, LH = { 78.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge07_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[78] = { 0, RH = { 80.56, 1 } },
+				[94] = { 1, LH = { 82.8, 1 } },
+			}
+		},
+		FP_Ridge07_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge07_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.152917, Y = -0.03537, RX = -0.01168, RY = 0.006788 },
+							{ X = 0.123824, Y = 0.007794, LX = 0.00715, LY = -0.02115, RX = -0.00715, RY = 0.02115 },
+							{ X = 0.113592, Y = 0.080952, LX = -0.000527, LY = -0.026201, RX = 0.000527, RY = 0.026201 },
+							{ X = 0.126725, Y = 0.151897, LX = -0.007973, LY = -0.019718, RX = 0.007973, RY = 0.019718 },
+							{ X = 0.157442, Y = 0.189398, LX = -0.011908, LY = -0.004554 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge07_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 627 } },
+		},
+		FP_Ridge07_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge07_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 660 } },
+		},
+		FP_AddRidge07 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge06", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge07_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 693 } },
+		},
+		FP_Ridge08_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[80] = { 0, RH = { 80.333333, 0.333333 } },
+				[81] = { 1, LH = { 80.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge08_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[80] = { 0, RH = { 82.56, 1 } },
+				[96] = { 1, LH = { 84.8, 1 } },
+			}
+		},
+		FP_Ridge08_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge08_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.184836, Y = 0.184199, RX = 0.012737, RY = -0.010055 },
+							{ X = 0.214141, Y = 0.127638, LX = -0.006083, LY = 0.026272, RX = 0.006083, RY = -0.026272 },
+							{ X = 0.21756, Y = 0.04288, LX = 0.003888, LY = 0.028164, RX = -0.003888, RY = -0.028164 },
+							{ X = 0.193229, Y = -0.023859, LX = 0.011739, LY = 0.0147 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge08_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 726 } },
+		},
+		FP_Ridge08_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge08_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 759 } },
+		},
+		FP_AddRidge08 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge07", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge08_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 792 } },
+		},
+		FP_Ridge09_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[82] = { 0, RH = { 82.333333, 0.333333 } },
+				[83] = { 1, LH = { 82.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge09_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[82] = { 0, RH = { 84.56, 1 } },
+				[98] = { 1, LH = { 86.8, 1 } },
+			}
+		},
+		FP_Ridge09_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge09_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.133854, Y = -0.047338, RX = -0.013849, RY = 0.017342 },
+							{ X = 0.104459, Y = 0.030595, LX = 0.005093, LY = -0.032878, RX = -0.005093, RY = 0.032878 },
+							{ X = 0.106195, Y = 0.131213, LX = -0.006212, LY = -0.031961, RX = 0.006212, RY = 0.031961 },
+							{ X = 0.138193, Y = 0.204164, LX = -0.014408, LY = -0.015049, RX = 0.014408, RY = 0.015049 },
+							{ X = 0.184441, Y = 0.212939, LX = -0.015394, LY = 0.009394, RX = 0.015394, RY = -0.009394 },
+							{ X = 0.221793, Y = 0.153148, LX = -0.008676, LY = 0.029135, RX = 0.008676, RY = -0.029135 },
+							{ X = 0.231559, Y = 0.054712, LX = 0.002383, LY = 0.034297, RX = -0.002383, RY = -0.034297 },
+							{ X = 0.20885, Y = -0.033108, LX = 0.01225, LY = 0.022294 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge09_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 825 } },
+		},
+		FP_Ridge09_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge09_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 858 } },
+		},
+		FP_AddRidge09 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge08", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge09_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 891 } },
+		},
+		FP_Ridge10_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[84] = { 0, RH = { 84.333333, 0.333333 } },
+				[85] = { 1, LH = { 84.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge10_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[84] = { 0, RH = { 86.56, 1 } },
+				[100] = { 1, LH = { 88.8, 1 } },
+			}
+		},
+		FP_Ridge10_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge10_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.111424, Y = -0.043889, RX = -0.014651, RY = 0.031777 },
+							{ X = 0.088542, Y = 0.075926, LX = 0, LY = -0.044939, RX = 0, RY = 0.044939 },
+							{ X = 0.111424, Y = 0.195741, LX = -0.014651, LY = -0.031777, RX = 0.014651, RY = 0.031777 },
+							{ X = 0.166667, Y = 0.24537, LX = -0.02072, LY = 0 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge10_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 924 } },
+		},
+		FP_Ridge10_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge10_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 957 } },
+		},
+		FP_AddRidge10 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge09", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge10_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 990 } },
+		},
+		FP_Ridge11_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[86] = { 0, RH = { 86.333333, 0.333333 } },
+				[87] = { 1, LH = { 86.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge11_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[86] = { 0, RH = { 88.56, 1 } },
+				[102] = { 1, LH = { 90.8, 1 } },
+			}
+		},
+		FP_Ridge11_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge11_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.199684, Y = 0.229495, RX = 0.013829, RY = -0.013986 },
+							{ X = 0.23316, Y = 0.16488, LX = -0.00801, LY = 0.028166, RX = 0.00801, RY = -0.028166 },
+							{ X = 0.244759, Y = 0.070998, LX = 0.000444, LY = 0.033079, RX = -0.000444, RY = -0.033079 },
+							{ X = 0.230663, Y = -0.021263, LX = 0.008752, LY = 0.027108 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge11_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1023 } },
+		},
+		FP_Ridge11_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge11_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1056 } },
+		},
+		FP_AddRidge11 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge10", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge11_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1089 } },
+		},
+		FP_Ridge12_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[88] = { 0, RH = { 88.333333, 0.333333 } },
+				[89] = { 1, LH = { 88.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge12_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[88] = { 0, RH = { 90.56, 1 } },
+				[104] = { 1, LH = { 92.8, 1 } },
+			}
+		},
+		FP_Ridge12_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge12_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.088183, Y = -0.022352, RX = -0.010427, RY = 0.039169 },
+							{ X = 0.077199, Y = 0.107239, LX = -0.003322, LY = -0.044651, RX = 0.003322, RY = 0.044651 },
+							{ X = 0.10642, Y = 0.222758, LX = -0.015578, LY = -0.030068, RX = 0.015578, RY = 0.030068 },
+							{ X = 0.162714, Y = 0.272294, LX = -0.020834, LY = -0.001973, RX = 0.020834, RY = 0.001973 },
+							{ X = 0.220784, Y = 0.233588, LX = -0.016727, LY = 0.027009, RX = 0.016727, RY = -0.027009 },
+							{ X = 0.254536, Y = 0.124032, LX = -0.005104, LY = 0.043853, RX = 0.005104, RY = -0.043853 },
+							{ X = 0.248801, Y = -0.007142, LX = 0.008813, LY = 0.040991 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge12_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1122 } },
+		},
+		FP_Ridge12_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge12_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1155 } },
+		},
+		FP_AddRidge12 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge11", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge12_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1188 } },
+		},
+		FP_Ridge13_MLevel = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[90] = { 0, RH = { 90.333333, 0.333333 } },
+				[91] = { 1, LH = { 90.666667, 0.666667 } },
+			}
+		},
+		FP_Ridge13_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[90] = { 0, RH = { 92.56, 1 } },
+				[106] = { 1, LH = { 94.8, 1 } },
+			}
+		},
+		FP_Ridge13_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "FP_Ridge13_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.067056, Y = 0.018037, RX = -0.006435, RY = 0.05209 },
+							{ X = 0.073979, Y = 0.173975, LX = -0.0109, LY = -0.04847, RX = 0.0109, RY = 0.04847 },
+							{ X = 0.126373, Y = 0.281812, LX = -0.022887, LY = -0.021071, RX = 0.022887, RY = 0.021071 },
+							{ X = 0.198534, Y = 0.288646, LX = -0.023647, LY = 0.016664, RX = 0.023647, RY = -0.016664 },
+							{ X = 0.255062, Y = 0.191123, LX = -0.012806, LY = 0.046225, RX = 0.012806, RY = -0.046225 },
+							{ X = 0.268225, Y = 0.037087, LX = 0.004318, LY = 0.053108 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004167, },
+				WriteOnEnd = Input { SourceOp = "FP_Ridge13_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1221 } },
+		},
+		FP_Ridge13_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Ridge13_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1254 } },
+		},
+		FP_AddRidge13 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddRidge12", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Ridge13_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1287 } },
+		},
+		FP_Glow = SoftGlow {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "FP_AddRidge13", Source = "Output", },
+				Gain = Input { Value = 0.5, },
+				XGlowSize = Input { Value = 12, },
+				Threshold = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1320 } },
+		},
+		UL_Fingerprint = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Fingerprint", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1115, -30 },
+				Size = { 120, 1383 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		FP_ScanLine_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[70] = { 0.666667, RH = { 92.1, 0.666667 } },
+				[104] = { 0.666667, LH = { 81.9, 0.666667 } },
+			}
+		},
+		FP_ScanLine_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[70] = { 0.824074, RH = { 92.1, 0.824074 } },
+				[104] = { 0.351852, LH = { 81.9, 0.351852 } },
+			}
+		},
+		FP_ScanLine_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "FP_ScanLine_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "FP_ScanLine_MCenterPathY", Source = "Value", },
+			},
+		},
+		FP_ScanLine_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "FP_ScanLine_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.197917, },
+				Height = Input { Value = 0.005556, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 0 } },
+		},
+		FP_ScanFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_ScanLine_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 33 } },
+		},
+		FP_ScanGlow = SoftGlow {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "FP_ScanFill", Source = "Output", },
+				Gain = Input { Value = 1.4, },
+				XGlowSize = Input { Value = 24, },
+				Threshold = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 66 } },
+		},
+		FP_AddScanBlend = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[68] = { 0, RH = { 68.64, 1 } },
+				[72] = { 1, LH = { 69.2, 1 }, RH = { 82, 1 } },
+				[102] = { 1, LH = { 92, 1 }, RH = { 102.96, 0 } },
+				[108] = { 0, LH = { 103.8, 0 } },
+			}
+		},
+		FP_AddScan = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_Glow", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_ScanGlow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "FP_AddScanBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 99 } },
+		},
+		FP_Verified_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.744792, 0.416667 }, },
+				Width = Input { Value = 0.039583, },
+				Height = Input { Value = 0.039583, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 132 } },
+		},
+		FP_VerifiedFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_Verified_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 165 } },
+		},
+		FP_VerifiedCheck_check0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = 0.238303, Y = -0.084221 },
+							{ Linear = true, X = 0.242795, Y = -0.092207 },
+							{ Linear = true, X = 0.25128, Y = -0.075347 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.003125, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 198 } },
+		},
+		FP_VerifiedCheck_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.043137, },
+				TopLeftGreen = Input { Value = 0.054902, },
+				TopLeftBlue = Input { Value = 0.043137, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "FP_VerifiedCheck_check0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 231 } },
+		},
+		FP_VerifiedAddCheck = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_VerifiedFill", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_VerifiedCheck_Icon", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 264 } },
+		},
+		FP_Verified_PopCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		FP_Verified_PopCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[104] = { 0.5, RH = { 105.92, 0.5 } },
+				[116] = { 0.5, LH = { 107.6, 0.5 } },
+			}
+		},
+		FP_Verified_PopCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "FP_Verified_PopCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "FP_Verified_PopCenterPathY", Source = "Value", },
+			},
+		},
+		FP_Verified_PopSize = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[104] = { 0.2, RH = { 108.08, 1.36 } },
+				[116] = { 1, LH = { 111.68, 1 } },
+			}
+		},
+		FP_Verified_PopQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[103] = { 1, RH = { 103.333333, 2 } },
+				[104] = { 4, LH = { 103.666667, 3 }, RH = { 108, 4 } },
+				[116] = { 4, LH = { 112, 4 }, RH = { 116.333333, 3 } },
+				[117] = { 1, LH = { 116.666667, 2 } },
+			}
+		},
+		FP_Verified_Pop = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "FP_VerifiedAddCheck", Source = "Output", },
+				Center = Input { SourceOp = "FP_Verified_PopCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.744792, 0.416667 }, },
+				Size = Input { SourceOp = "FP_Verified_PopSize", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "FP_Verified_PopQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 297 } },
+		},
+		FP_AddVerifiedBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[104] = { 0, RH = { 104.96, 1 } },
+				[110] = { 1, LH = { 105.8, 1 } },
+			}
+		},
+		FP_AddVerified = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "FP_AddScan", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_Verified_Pop", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "FP_AddVerifiedBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 330 } },
+		},
+		FP_ToShieldCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.5, RH = { 123.4, 0.5 } },
+				[129] = { 0.333333, LH = { 118.6, 0.333333 } },
+			}
+		},
+		FP_ToShieldCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		FP_ToShieldCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "FP_ToShieldCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "FP_ToShieldCenterPathY", Source = "Value", },
+			},
+		},
+		FP_ToShieldSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 1, RH = { 124.2, 1 } },
+				[129] = { 0, LH = { 126.44, 1 } },
+			}
+		},
+		FP_ToShield = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "FP_AddVerified", Source = "Output", },
+				Center = Input { SourceOp = "FP_ToShieldCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.666667, 0.592593 }, },
+				Size = Input { SourceOp = "FP_ToShieldSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 363 } },
+		},
+		UL_Fingerprint_Scan = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Fingerprint_Scan", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1245, -30 },
+				Size = { 120, 426 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Chip_Biometric_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.666667, 0.268519 }, },
+				Width = Input { Value = 0.233947, },
+				Height = Input { Value = 0.081481, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 0 } },
+		},
+		Chip_Biometric_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.109804, },
+				TopLeftGreen = Input { Value = 0.133333, },
+				TopLeftBlue = Input { Value = 0.109804, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Chip_Biometric_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 33 } },
+		},
+		Chip_Biometric_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.666667, 0.268519 }, },
+				Width = Input { Value = 0.233947, },
+				Height = Input { Value = 0.081481, },
+				CornerRadius = Input { Value = 1, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 66 } },
+		},
+		Chip_Biometric_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Chip_Biometric_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 99 } },
+		},
+		Chip_Biometric_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chip_Biometric_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Biometric_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 132 } },
+		},
+		Chip_Biometric_Ic_user0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = 0.075735, Y = -0.220988, LX = -0.001623, LY = 0, RX = 0.001623, RY = 0 },
+							{ X = 0.078686, Y = -0.226235, LX = 0, LY = 0.002886, RX = 0, RY = -0.002886 },
+							{ X = 0.075735, Y = -0.231481, LX = 0.001623, LY = 0, RX = -0.001623, RY = 0 },
+							{ X = 0.072783, Y = -0.226235, LX = 0, LY = -0.002886, RX = 0, RY = 0.002886 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001875, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 165 } },
+		},
+		Chip_Biometric_Ic_user1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "Chip_Biometric_Ic_user0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.070201, Y = -0.241975, RX = 0.000516, RY = 0.004722 },
+							{ X = 0.075735, Y = -0.234105, LX = -0.002804, LY = 0, RX = 0.002804, RY = 0 },
+							{ X = 0.081269, Y = -0.241975, LX = -0.000516, LY = 0.004722 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001875, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 198 } },
+		},
+		Chip_Biometric_Ic_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Chip_Biometric_Ic_user1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 231 } },
+		},
+		Chip_Biometric_AddIc = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chip_Biometric_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Biometric_Ic_Icon", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 264 } },
+		},
+		Chip_Biometric_Lab = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Biometric security", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.028261, },
+				Center = Input { Value = { 0.595526, 0.268519 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 297 } },
+		},
+		Chip_Biometric_AddLab = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Chip_Biometric_AddIc", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Biometric_Lab", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 330 } },
+		},
+		Chip_Biometric_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Chip_Biometric_AddLab", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 363 } },
+		},
+		Chip_Biometric_PopCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Chip_Biometric_PopCenterPathY = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[68] = { 0.472222, RH = { 70.24, 0.5 } },
+				[82] = { 0.5, LH = { 72.2, 0.5 }, RH = { 90.333333, 0.5 } },
+				[107] = { 0.5, LH = { 98.666667, 0.5 }, RH = { 114, 0.5 } },
+				[117] = { 0.518519, LH = { 115.4, 0.5 } },
+			}
+		},
+		Chip_Biometric_PopCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Chip_Biometric_PopCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Chip_Biometric_PopCenterPathY", Source = "Value", },
+			},
+		},
+		Chip_Biometric_PopSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[68] = { 0.7, RH = { 72.76, 1.135 } },
+				[82] = { 1, LH = { 76.96, 1 }, RH = { 90.333333, 1 } },
+				[107] = { 1, LH = { 98.666667, 1 }, RH = { 114, 1 } },
+				[117] = { 0.9, LH = { 115.4, 1 } },
+			}
+		},
+		Chip_Biometric_PopQuality = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[67] = { 1, RH = { 67.333333, 2 } },
+				[68] = { 4, LH = { 67.666667, 3 }, RH = { 72.666667, 4 } },
+				[82] = { 4, LH = { 77.333333, 4 }, RH = { 82.333333, 3 } },
+				[83] = { 1, LH = { 82.666667, 2 }, RH = { 90.666667, 1 } },
+				[106] = { 1, LH = { 98.333333, 1 }, RH = { 106.333333, 2 } },
+				[107] = { 4, LH = { 106.666667, 3 }, RH = { 110.333333, 4 } },
+				[117] = { 4, LH = { 113.666667, 4 }, RH = { 117.333333, 3 } },
+				[118] = { 1, LH = { 117.666667, 2 } },
+			}
+		},
+		Chip_Biometric_Pop = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Chip_Biometric_Static", Source = "Output", },
+				Center = Input { SourceOp = "Chip_Biometric_PopCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.666667, 0.268519 }, },
+				Size = Input { SourceOp = "Chip_Biometric_PopSize", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Chip_Biometric_PopQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 396 } },
+		},
+		Chip_Biometric_Sub = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "FINGERPRINT  ·  FACE UNLOCK", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.020652, },
+				Center = Input { Value = { 0.666667, 0.196296 }, },
+				CharacterSpacing = Input { Value = 1.08, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 429 } },
+		},
+		Chip_Biometric_SubRiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Chip_Biometric_SubRiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[76] = { 0.485185, RH = { 77.92, 0.5 } },
+				[88] = { 0.5, LH = { 79.6, 0.5 } },
+			}
+		},
+		Chip_Biometric_SubRiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Chip_Biometric_SubRiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Chip_Biometric_SubRiseCenterPathY", Source = "Value", },
+			},
+		},
+		Chip_Biometric_SubRiseQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[75] = { 1, RH = { 75.333333, 2 } },
+				[76] = { 4, LH = { 75.666667, 3 }, RH = { 80, 4 } },
+				[88] = { 4, LH = { 84, 4 }, RH = { 88.333333, 3 } },
+				[89] = { 1, LH = { 88.666667, 2 } },
+			}
+		},
+		Chip_Biometric_SubRise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Chip_Biometric_Sub", Source = "Output", },
+				Center = Input { SourceOp = "Chip_Biometric_SubRiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Chip_Biometric_SubRiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 462 } },
+		},
+		UL_Chip_Chip_Biometric = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Chip_Chip_Biometric", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1375, -30 },
+				Size = { 120, 525 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Rings_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 0 } },
+		},
+		Pulse1_MWidth = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[127] = { 0.239583, RH = { 131.8, 0.645833 } },
+				[157] = { 0.645833, LH = { 136, 0.645833 } },
+			}
+		},
+		Pulse1_MHeight = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[127] = { 0.239583, RH = { 131.8, 0.645833 } },
+				[157] = { 0.645833, LH = { 136, 0.645833 } },
+			}
+		},
+		Pulse1_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.578704 }, },
+				Width = Input { SourceOp = "Pulse1_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "Pulse1_MHeight", Source = "Value", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001563, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 33 } },
+		},
+		Pulse1_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Pulse1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 66 } },
+		},
+		Pulse1_AddBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[126] = { 0, RH = { 126.333333, 0.233333 } },
+				[127] = { 0.7, LH = { 126.666667, 0.466667 }, RH = { 131.8, 0 } },
+				[157] = { 0, LH = { 136, 0 } },
+			}
+		},
+		Pulse1_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Rings_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "Pulse1_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Pulse1_AddBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 99 } },
+		},
+		Pulse2_MWidth = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[145] = { 0.239583, RH = { 149.8, 0.645833 } },
+				[175] = { 0.645833, LH = { 154, 0.645833 } },
+			}
+		},
+		Pulse2_MHeight = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[145] = { 0.239583, RH = { 149.8, 0.645833 } },
+				[175] = { 0.645833, LH = { 154, 0.645833 } },
+			}
+		},
+		Pulse2_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.578704 }, },
+				Width = Input { SourceOp = "Pulse2_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "Pulse2_MHeight", Source = "Value", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001563, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 132 } },
+		},
+		Pulse2_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Pulse2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 165 } },
+		},
+		Pulse2_AddBlend = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[144] = { 0, RH = { 144.333333, 0.233333 } },
+				[145] = { 0.7, LH = { 144.666667, 0.466667 }, RH = { 149.8, 0 } },
+				[175] = { 0, LH = { 154, 0 } },
+			}
+		},
+		Pulse2_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Pulse1_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "Pulse2_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Pulse2_AddBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 198 } },
+		},
+		Pulse3_MWidth = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[163] = { 0.239583, RH = { 167.8, 0.645833 } },
+				[193] = { 0.645833, LH = { 172, 0.645833 } },
+			}
+		},
+		Pulse3_MHeight = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[163] = { 0.239583, RH = { 167.8, 0.645833 } },
+				[193] = { 0.645833, LH = { 172, 0.645833 } },
+			}
+		},
+		Pulse3_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.578704 }, },
+				Width = Input { SourceOp = "Pulse3_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "Pulse3_MHeight", Source = "Value", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001563, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 231 } },
+		},
+		Pulse3_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Pulse3_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 264 } },
+		},
+		Pulse3_AddBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[162] = { 0, RH = { 162.333333, 0.233333 } },
+				[163] = { 0.7, LH = { 162.666667, 0.466667 }, RH = { 167.8, 0 } },
+				[193] = { 0, LH = { 172, 0 } },
+			}
+		},
+		Pulse3_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Pulse2_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "Pulse3_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Pulse3_AddBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 297 } },
+		},
+		UL_Protected_Rings = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Protected_Rings", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1505, -30 },
+				Size = { 120, 360 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Orbit_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 0 } },
+		},
+		Orbit_Path_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.569444 }, },
+				Width = Input { Value = 0.4375, },
+				Height = Input { Value = 0.125, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 33 } },
+		},
+		Orbit_PathFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Orbit_Path_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 66 } },
+		},
+		Orbit_AddPath = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Orbit_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "Orbit_PathFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { Value = 0.25, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 99 } },
+		},
+		Orbit_BTC_Disc_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.578704 }, },
+				Width = Input { Value = 0.035417, },
+				Height = Input { Value = 0.035417, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 132 } },
+		},
+		Orbit_BTC_DiscFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.968627, },
+				TopLeftGreen = Input { Value = 0.576471, },
+				TopLeftBlue = Input { Value = 0.101961, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Orbit_BTC_Disc_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 165 } },
+		},
+		Orbit_BTC_Glyph = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "₿", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.035109, },
+				Center = Input { Value = { 0.5, 0.578704 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 198 } },
+		},
+		Orbit_BTC_Coin = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Orbit_BTC_DiscFill", Source = "Output", },
+				Foreground = Input { SourceOp = "Orbit_BTC_Glyph", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 231 } },
+		},
+		Orbit_BTC_MoveCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.5, RH = { 114, 0.509139 } },
+				[116] = { 0.527417, LH = { 115, 0.518278 }, RH = { 117, 0.536411 } },
+				[119] = { 0.554401, LH = { 118, 0.545406 }, RH = { 120, 0.56311 } },
+				[122] = { 0.580527, LH = { 121, 0.571818 }, RH = { 123, 0.588813 } },
+				[125] = { 0.605384, LH = { 124, 0.597098 }, RH = { 126, 0.613115 } },
+				[128] = { 0.628578, LH = { 127, 0.620847 }, RH = { 129, 0.635634 } },
+				[131] = { 0.649745, LH = { 130, 0.642689 }, RH = { 132, 0.656013 } },
+				[134] = { 0.66855, LH = { 133, 0.662281 }, RH = { 135, 0.673932 } },
+				[137] = { 0.684697, LH = { 136, 0.679314 }, RH = { 138, 0.689108 } },
+				[140] = { 0.697931, LH = { 139, 0.69352 }, RH = { 141, 0.701302 } },
+				[143] = { 0.708044, LH = { 142, 0.704673 }, RH = { 144, 0.710321 } },
+				[146] = { 0.714875, LH = { 145, 0.712598 }, RH = { 147, 0.716023 } },
+				[149] = { 0.718318, LH = { 148, 0.717171 }, RH = { 150, 0.718318 } },
+				[152] = { 0.718318, LH = { 151, 0.718318 }, RH = { 153, 0.717171 } },
+				[155] = { 0.714875, LH = { 154, 0.716023 }, RH = { 156, 0.712598 } },
+				[158] = { 0.708044, LH = { 157, 0.710321 }, RH = { 159, 0.704673 } },
+				[161] = { 0.697931, LH = { 160, 0.701302 }, RH = { 162, 0.69352 } },
+				[164] = { 0.684697, LH = { 163, 0.689108 }, RH = { 165, 0.679314 } },
+				[167] = { 0.66855, LH = { 166, 0.673932 }, RH = { 168, 0.662281 } },
+				[170] = { 0.649745, LH = { 169, 0.656013 }, RH = { 171, 0.642689 } },
+				[173] = { 0.628578, LH = { 172, 0.635634 }, RH = { 174, 0.620847 } },
+				[176] = { 0.605384, LH = { 175, 0.613115 }, RH = { 177, 0.597098 } },
+				[179] = { 0.580527, LH = { 178, 0.588813 }, RH = { 180, 0.571818 } },
+				[182] = { 0.554401, LH = { 181, 0.56311 }, RH = { 183, 0.545406 } },
+				[185] = { 0.527417, LH = { 184, 0.536411 }, RH = { 186, 0.518278 } },
+				[188] = { 0.5, LH = { 187, 0.509139 }, RH = { 189, 0.490861 } },
+				[191] = { 0.472583, LH = { 190, 0.481722 }, RH = { 192, 0.463589 } },
+				[194] = { 0.445599, LH = { 193, 0.454594 }, RH = { 195, 0.43689 } },
+				[197] = { 0.419473, LH = { 196, 0.428182 }, RH = { 198, 0.411187 } },
+				[200] = { 0.394616, LH = { 199, 0.402902 } },
+			}
+		},
+		Orbit_BTC_MoveCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.37963, RH = { 114, 0.379922 } },
+				[116] = { 0.380506, LH = { 115, 0.380214 }, RH = { 117, 0.381377 } },
+				[119] = { 0.38312, LH = { 118, 0.382249 }, RH = { 120, 0.384558 } },
+				[122] = { 0.387432, LH = { 121, 0.385995 }, RH = { 123, 0.389413 } },
+				[125] = { 0.393373, LH = { 124, 0.391393 }, RH = { 126, 0.395866 } },
+				[128] = { 0.40085, LH = { 127, 0.398358 }, RH = { 129, 0.403815 } },
+				[131] = { 0.409744, LH = { 130, 0.406779 }, RH = { 132, 0.413135 } },
+				[134] = { 0.419916, LH = { 133, 0.416525 }, RH = { 135, 0.423679 } },
+				[137] = { 0.431204, LH = { 136, 0.427442 }, RH = { 138, 0.43528 } },
+				[140] = { 0.443432, LH = { 139, 0.439356 }, RH = { 141, 0.447756 } },
+				[143] = { 0.456406, LH = { 142, 0.452081 }, RH = { 144, 0.460911 } },
+				[146] = { 0.469921, LH = { 145, 0.465416 }, RH = { 147, 0.474535 } },
+				[149] = { 0.483764, LH = { 148, 0.47915 }, RH = { 150, 0.488415 } },
+				[152] = { 0.497717, LH = { 151, 0.493066 }, RH = { 153, 0.502332 } },
+				[155] = { 0.511561, LH = { 154, 0.506946 }, RH = { 156, 0.516066 } },
+				[158] = { 0.525076, LH = { 157, 0.520571 }, RH = { 159, 0.5294 } },
+				[161] = { 0.53805, LH = { 160, 0.533725 }, RH = { 162, 0.542125 } },
+				[164] = { 0.550277, LH = { 163, 0.546201 }, RH = { 165, 0.55404 } },
+				[167] = { 0.561566, LH = { 166, 0.557803 }, RH = { 168, 0.564956 } },
+				[170] = { 0.571737, LH = { 169, 0.568347 }, RH = { 171, 0.574702 } },
+				[173] = { 0.580632, LH = { 172, 0.577667 }, RH = { 174, 0.583124 } },
+				[176] = { 0.588108, LH = { 175, 0.585616 }, RH = { 177, 0.590089 } },
+				[179] = { 0.594049, LH = { 178, 0.592069 }, RH = { 180, 0.595487 } },
+				[182] = { 0.598361, LH = { 181, 0.596924 }, RH = { 183, 0.599233 } },
+				[185] = { 0.600976, LH = { 184, 0.600104 }, RH = { 186, 0.601268 } },
+				[188] = { 0.601852, LH = { 187, 0.60156 }, RH = { 189, 0.60156 } },
+				[191] = { 0.600976, LH = { 190, 0.601268 }, RH = { 192, 0.600104 } },
+				[194] = { 0.598361, LH = { 193, 0.599233 }, RH = { 195, 0.596924 } },
+				[197] = { 0.594049, LH = { 196, 0.595487 }, RH = { 198, 0.592069 } },
+				[200] = { 0.588108, LH = { 199, 0.590089 } },
+			}
+		},
+		Orbit_BTC_MoveCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Orbit_BTC_MoveCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Orbit_BTC_MoveCenterPathY", Source = "Value", },
+			},
+		},
+		Orbit_BTC_MoveSize = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 1.05, RH = { 114, 1.049343 } },
+				[116] = { 1.048029, LH = { 115, 1.048686 }, RH = { 117, 1.046068 } },
+				[119] = { 1.042146, LH = { 118, 1.044107 }, RH = { 120, 1.038912 } },
+				[122] = { 1.032444, LH = { 121, 1.035678 }, RH = { 123, 1.027988 } },
+				[125] = { 1.019077, LH = { 124, 1.023532 }, RH = { 126, 1.013469 } },
+				[128] = { 1.002254, LH = { 127, 1.007862 }, RH = { 129, 0.995584 } },
+				[131] = { 0.982242, LH = { 130, 0.988913 }, RH = { 132, 0.974613 } },
+				[134] = { 0.959356, LH = { 133, 0.966985 }, RH = { 135, 0.95089 } },
+				[137] = { 0.933957, LH = { 136, 0.942423 }, RH = { 138, 0.924786 } },
+				[140] = { 0.906445, LH = { 139, 0.915615 }, RH = { 141, 0.896715 } },
+				[143] = { 0.877254, LH = { 142, 0.886984 }, RH = { 144, 0.867118 } },
+				[146] = { 0.846845, LH = { 145, 0.856982 }, RH = { 147, 0.836463 } },
+				[149] = { 0.815698, LH = { 148, 0.82608 }, RH = { 150, 0.805233 } },
+				[152] = { 0.784302, LH = { 151, 0.794767 }, RH = { 153, 0.77392 } },
+				[155] = { 0.753155, LH = { 154, 0.763537 }, RH = { 156, 0.743018 } },
+				[158] = { 0.722746, LH = { 157, 0.732882 }, RH = { 159, 0.713016 } },
+				[161] = { 0.693555, LH = { 160, 0.703285 }, RH = { 162, 0.684385 } },
+				[164] = { 0.666043, LH = { 163, 0.675214 }, RH = { 165, 0.657577 } },
+				[167] = { 0.640644, LH = { 166, 0.64911 }, RH = { 168, 0.633015 } },
+				[170] = { 0.617758, LH = { 169, 0.625387 }, RH = { 171, 0.611087 } },
+				[173] = { 0.597746, LH = { 172, 0.604416 }, RH = { 174, 0.592138 } },
+				[176] = { 0.580923, LH = { 175, 0.586531 }, RH = { 177, 0.576468 } },
+				[179] = { 0.567556, LH = { 178, 0.572012 }, RH = { 180, 0.564322 } },
+				[182] = { 0.557854, LH = { 181, 0.561088 }, RH = { 183, 0.555893 } },
+				[185] = { 0.551971, LH = { 184, 0.553932 }, RH = { 186, 0.551314 } },
+				[188] = { 0.55, LH = { 187, 0.550657 }, RH = { 189, 0.550657 } },
+				[191] = { 0.551971, LH = { 190, 0.551314 }, RH = { 192, 0.553932 } },
+				[194] = { 0.557854, LH = { 193, 0.555893 }, RH = { 195, 0.561088 } },
+				[197] = { 0.567556, LH = { 196, 0.564322 }, RH = { 198, 0.572012 } },
+				[200] = { 0.580923, LH = { 199, 0.576468 } },
+			}
+		},
+		Orbit_BTC_Move = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Orbit_BTC_Coin", Source = "Output", },
+				Center = Input { SourceOp = "Orbit_BTC_MoveCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.578704 }, },
+				Size = Input { SourceOp = "Orbit_BTC_MoveSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 264 } },
+		},
+		Orbit_AddBTC = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Orbit_AddPath", Source = "Output", },
+				Foreground = Input { SourceOp = "Orbit_BTC_Move", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 297 } },
+		},
+		Orbit_ETH_Disc_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.578704 }, },
+				Width = Input { Value = 0.035417, },
+				Height = Input { Value = 0.035417, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 330 } },
+		},
+		Orbit_ETH_DiscFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.54902, },
+				TopLeftGreen = Input { Value = 0.619608, },
+				TopLeftBlue = Input { Value = 0.94902, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Orbit_ETH_Disc_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 363 } },
+		},
+		Orbit_ETH_EthTop_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0, Y = 0.102315 },
+							{ Linear = true, X = 0.008116, Y = 0.077392 },
+							{ Linear = true, X = 0, Y = 0.070309 },
+							{ Linear = true, X = -0.008116, Y = 0.077392 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 396 } },
+		},
+		Orbit_ETH_EthBot_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "Orbit_ETH_EthTop_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0, Y = 0.066636 },
+							{ Linear = true, X = 0.008116, Y = 0.073719 },
+							{ Linear = true, X = 0, Y = 0.055093 },
+							{ Linear = true, X = -0.008116, Y = 0.073719 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 429 } },
+		},
+		Orbit_ETH_EthGlyph = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Orbit_ETH_EthBot_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 462 } },
+		},
+		Orbit_ETH_Coin = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Orbit_ETH_DiscFill", Source = "Output", },
+				Foreground = Input { SourceOp = "Orbit_ETH_EthGlyph", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 495 } },
+		},
+		Orbit_ETH_MoveCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.689443, RH = { 114, 0.684376 } },
+				[116] = { 0.674241, LH = { 115, 0.679308 }, RH = { 117, 0.668258 } },
+				[119] = { 0.656291, LH = { 118, 0.662274 }, RH = { 120, 0.649486 } },
+				[122] = { 0.635876, LH = { 121, 0.642681 }, RH = { 123, 0.628357 } },
+				[125] = { 0.613318, LH = { 124, 0.620838 }, RH = { 126, 0.605203 } },
+				[128] = { 0.588974, LH = { 127, 0.597089 }, RH = { 129, 0.580391 } },
+				[131] = { 0.563226, LH = { 130, 0.571808 }, RH = { 132, 0.554311 } },
+				[134] = { 0.536481, LH = { 133, 0.545396 }, RH = { 135, 0.527374 } },
+				[137] = { 0.50916, LH = { 136, 0.518267 }, RH = { 138, 0.500005 } },
+				[140] = { 0.481695, LH = { 139, 0.49085 }, RH = { 141, 0.472637 } },
+				[143] = { 0.454519, LH = { 142, 0.463578 }, RH = { 144, 0.4457 } },
+				[146] = { 0.42806, LH = { 145, 0.43688 }, RH = { 147, 0.419619 } },
+				[149] = { 0.402736, LH = { 148, 0.411178 }, RH = { 150, 0.394806 } },
+				[152] = { 0.378946, LH = { 151, 0.386876 }, RH = { 153, 0.371652 } },
+				[155] = { 0.357064, LH = { 154, 0.364358 }, RH = { 156, 0.350522 } },
+				[158] = { 0.337437, LH = { 157, 0.343979 }, RH = { 159, 0.331749 } },
+				[161] = { 0.320374, LH = { 160, 0.326061 }, RH = { 162, 0.31563 } },
+				[164] = { 0.306143, LH = { 163, 0.310887 }, RH = { 165, 0.302418 } },
+				[167] = { 0.29497, LH = { 166, 0.298694 }, RH = { 168, 0.292323 } },
+				[170] = { 0.28703, LH = { 169, 0.289676 }, RH = { 171, 0.285503 } },
+				[173] = { 0.282448, LH = { 172, 0.283975 }, RH = { 174, 0.282065 } },
+				[176] = { 0.281298, LH = { 175, 0.281681 }, RH = { 177, 0.282064 } },
+				[179] = { 0.283597, LH = { 178, 0.28283 }, RH = { 180, 0.285501 } },
+				[182] = { 0.289308, LH = { 181, 0.287404 }, RH = { 183, 0.29232 } },
+				[185] = { 0.298342, LH = { 184, 0.295331 }, RH = { 186, 0.302414 } },
+				[188] = { 0.310557, LH = { 187, 0.306485 }, RH = { 189, 0.315624 } },
+				[191] = { 0.325759, LH = { 190, 0.320692 }, RH = { 192, 0.331742 } },
+				[194] = { 0.343709, LH = { 193, 0.337726 }, RH = { 195, 0.350514 } },
+				[197] = { 0.364124, LH = { 196, 0.357319 }, RH = { 198, 0.371643 } },
+				[200] = { 0.386682, LH = { 199, 0.379162 } },
+			}
+		},
+		Orbit_ETH_MoveCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.546296, RH = { 114, 0.55017 } },
+				[116] = { 0.557918, LH = { 115, 0.554044 }, RH = { 117, 0.561439 } },
+				[119] = { 0.568481, LH = { 118, 0.56496 }, RH = { 120, 0.571593 } },
+				[122] = { 0.577818, LH = { 121, 0.574706 }, RH = { 123, 0.580472 } },
+				[125] = { 0.585781, LH = { 124, 0.583127 }, RH = { 126, 0.587936 } },
+				[128] = { 0.592246, LH = { 127, 0.590091 }, RH = { 129, 0.593867 } },
+				[131] = { 0.59711, LH = { 130, 0.595488 }, RH = { 132, 0.598172 } },
+				[134] = { 0.600296, LH = { 133, 0.599234 }, RH = { 135, 0.600782 } },
+				[137] = { 0.601754, LH = { 136, 0.601268 }, RH = { 138, 0.601657 } },
+				[140] = { 0.601462, LH = { 139, 0.60156 }, RH = { 141, 0.600783 } },
+				[143] = { 0.599424, LH = { 142, 0.600103 }, RH = { 144, 0.598173 } },
+				[146] = { 0.595671, LH = { 145, 0.596922 }, RH = { 147, 0.593869 } },
+				[149] = { 0.590264, LH = { 148, 0.592067 }, RH = { 150, 0.587939 } },
+				[152] = { 0.583288, LH = { 151, 0.585613 }, RH = { 153, 0.580475 } },
+				[155] = { 0.574851, LH = { 154, 0.577663 }, RH = { 156, 0.571597 } },
+				[158] = { 0.565089, LH = { 157, 0.568343 }, RH = { 159, 0.561444 } },
+				[161] = { 0.554153, LH = { 160, 0.557798 }, RH = { 162, 0.550175 } },
+				[164] = { 0.542218, LH = { 163, 0.546197 }, RH = { 165, 0.537969 } },
+				[167] = { 0.529471, LH = { 166, 0.53372 }, RH = { 168, 0.525018 } },
+				[170] = { 0.516113, LH = { 169, 0.520566 }, RH = { 171, 0.511527 } },
+				[173] = { 0.502355, LH = { 172, 0.506941 }, RH = { 174, 0.497708 } },
+				[176] = { 0.488414, LH = { 175, 0.493061 }, RH = { 177, 0.483779 } },
+				[179] = { 0.474509, LH = { 178, 0.479144 }, RH = { 180, 0.46996 } },
+				[182] = { 0.460861, LH = { 181, 0.46541 }, RH = { 183, 0.456468 } },
+				[185] = { 0.447683, LH = { 184, 0.452076 }, RH = { 186, 0.443517 } },
+				[188] = { 0.435185, LH = { 187, 0.439351 }, RH = { 189, 0.431311 } },
+				[191] = { 0.423563, LH = { 190, 0.427437 }, RH = { 192, 0.420042 } },
+				[194] = { 0.413, LH = { 193, 0.416521 }, RH = { 195, 0.409888 } },
+				[197] = { 0.403664, LH = { 196, 0.406776 }, RH = { 198, 0.401009 } },
+				[200] = { 0.3957, LH = { 199, 0.398355 } },
+			}
+		},
+		Orbit_ETH_MoveCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Orbit_ETH_MoveCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Orbit_ETH_MoveCenterPathY", Source = "Value", },
+			},
+		},
+		Orbit_ETH_MoveSize = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.675, RH = { 114, 0.666283 } },
+				[116] = { 0.64885, LH = { 115, 0.657567 }, RH = { 117, 0.640928 } },
+				[119] = { 0.625084, LH = { 118, 0.633006 }, RH = { 120, 0.618082 } },
+				[122] = { 0.604077, LH = { 121, 0.611079 }, RH = { 123, 0.598104 } },
+				[125] = { 0.586159, LH = { 124, 0.592132 }, RH = { 126, 0.581311 } },
+				[128] = { 0.571614, LH = { 127, 0.576462 }, RH = { 129, 0.567966 } },
+				[131] = { 0.56067, LH = { 130, 0.564318 }, RH = { 132, 0.55828 } },
+				[134] = { 0.553501, LH = { 133, 0.555891 }, RH = { 135, 0.552407 } },
+				[137] = { 0.550219, LH = { 136, 0.551313 }, RH = { 138, 0.550438 } },
+				[140] = { 0.550877, LH = { 139, 0.550658 }, RH = { 141, 0.552406 } },
+				[143] = { 0.555463, LH = { 142, 0.553934 }, RH = { 144, 0.558277 } },
+				[146] = { 0.563906, LH = { 145, 0.561092 }, RH = { 147, 0.567961 } },
+				[149] = { 0.576072, LH = { 148, 0.572017 }, RH = { 150, 0.581305 } },
+				[152] = { 0.59177, LH = { 151, 0.586537 }, RH = { 153, 0.598097 } },
+				[155] = { 0.610751, LH = { 154, 0.604424 }, RH = { 156, 0.618073 } },
+				[158] = { 0.632717, LH = { 157, 0.625395 }, RH = { 159, 0.640919 } },
+				[161] = { 0.657322, LH = { 160, 0.64912 }, RH = { 162, 0.666273 } },
+				[164] = { 0.684176, LH = { 163, 0.675225 }, RH = { 165, 0.693736 } },
+				[167] = { 0.712857, LH = { 166, 0.703297 }, RH = { 168, 0.722875 } },
+				[170] = { 0.742912, LH = { 169, 0.732894 }, RH = { 171, 0.753231 } },
+				[173] = { 0.773868, LH = { 172, 0.763549 }, RH = { 174, 0.784324 } },
+				[176] = { 0.805236, LH = { 175, 0.79478 }, RH = { 177, 0.815664 } },
+				[179] = { 0.836521, LH = { 178, 0.826092 }, RH = { 180, 0.846757 } },
+				[182] = { 0.86723, LH = { 181, 0.856994 }, RH = { 183, 0.877113 } },
+				[185] = { 0.896879, LH = { 184, 0.886996 }, RH = { 186, 0.906253 } },
+				[188] = { 0.925, LH = { 187, 0.915626 }, RH = { 189, 0.933717 } },
+				[191] = { 0.95115, LH = { 190, 0.942433 }, RH = { 192, 0.959072 } },
+				[194] = { 0.974916, LH = { 193, 0.966994 }, RH = { 195, 0.981918 } },
+				[197] = { 0.995923, LH = { 196, 0.988921 }, RH = { 198, 1.001896 } },
+				[200] = { 1.013841, LH = { 199, 1.007868 } },
+			}
+		},
+		Orbit_ETH_Move = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Orbit_ETH_Coin", Source = "Output", },
+				Center = Input { SourceOp = "Orbit_ETH_MoveCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.578704 }, },
+				Size = Input { SourceOp = "Orbit_ETH_MoveSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 528 } },
+		},
+		Orbit_AddETH = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Orbit_AddBTC", Source = "Output", },
+				Foreground = Input { SourceOp = "Orbit_ETH_Move", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 561 } },
+		},
+		Orbit_SOL_Disc_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.578704 }, },
+				Width = Input { Value = 0.035417, },
+				Height = Input { Value = 0.035417, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 594 } },
+		},
+		Orbit_SOL_DiscFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.635294, },
+				TopLeftGreen = Input { Value = 0.419608, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Orbit_SOL_Disc_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 627 } },
+		},
+		Orbit_SOL_SolBar0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = -0.005608, Y = 0.095756 },
+							{ Linear = true, X = 0.012839, Y = 0.095756 },
+							{ Linear = true, X = 0.005608, Y = 0.087886 },
+							{ Linear = true, X = -0.012839, Y = 0.087886 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 660 } },
+		},
+		Orbit_SOL_SolBar1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "Orbit_SOL_SolBar0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = -0.012101, Y = 0.082639 },
+							{ Linear = true, X = 0.006345, Y = 0.082639 },
+							{ Linear = true, X = 0.012101, Y = 0.074769 },
+							{ Linear = true, X = -0.006345, Y = 0.074769 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 693 } },
+		},
+		Orbit_SOL_SolBar2_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "Orbit_SOL_SolBar1_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = -0.005608, Y = 0.069522 },
+							{ Linear = true, X = 0.012839, Y = 0.069522 },
+							{ Linear = true, X = 0.005608, Y = 0.061651 },
+							{ Linear = true, X = -0.012839, Y = 0.061651 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 726 } },
+		},
+		Orbit_SOL_SolGlyph = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Orbit_SOL_SolBar2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 759 } },
+		},
+		Orbit_SOL_Coin = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Orbit_SOL_DiscFill", Source = "Output", },
+				Foreground = Input { SourceOp = "Orbit_SOL_SolGlyph", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 792 } },
+		},
+		Orbit_SOL_MoveCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.310557, RH = { 114, 0.306485 } },
+				[116] = { 0.298342, LH = { 115, 0.302414 }, RH = { 117, 0.295331 } },
+				[119] = { 0.289308, LH = { 118, 0.29232 }, RH = { 120, 0.287404 } },
+				[122] = { 0.283597, LH = { 121, 0.285501 }, RH = { 123, 0.28283 } },
+				[125] = { 0.281298, LH = { 124, 0.282064 }, RH = { 126, 0.281681 } },
+				[128] = { 0.282448, LH = { 127, 0.282065 }, RH = { 129, 0.283975 } },
+				[131] = { 0.28703, LH = { 130, 0.285503 }, RH = { 132, 0.289676 } },
+				[134] = { 0.29497, LH = { 133, 0.292323 }, RH = { 135, 0.298694 } },
+				[137] = { 0.306143, LH = { 136, 0.302418 }, RH = { 138, 0.310887 } },
+				[140] = { 0.320374, LH = { 139, 0.31563 }, RH = { 141, 0.326061 } },
+				[143] = { 0.337437, LH = { 142, 0.331749 }, RH = { 144, 0.343979 } },
+				[146] = { 0.357064, LH = { 145, 0.350522 }, RH = { 147, 0.364358 } },
+				[149] = { 0.378946, LH = { 148, 0.371652 }, RH = { 150, 0.386876 } },
+				[152] = { 0.402736, LH = { 151, 0.394806 }, RH = { 153, 0.411178 } },
+				[155] = { 0.42806, LH = { 154, 0.419619 }, RH = { 156, 0.43688 } },
+				[158] = { 0.454519, LH = { 157, 0.4457 }, RH = { 159, 0.463578 } },
+				[161] = { 0.481695, LH = { 160, 0.472637 }, RH = { 162, 0.49085 } },
+				[164] = { 0.50916, LH = { 163, 0.500005 }, RH = { 165, 0.518267 } },
+				[167] = { 0.536481, LH = { 166, 0.527374 }, RH = { 168, 0.545396 } },
+				[170] = { 0.563226, LH = { 169, 0.554311 }, RH = { 171, 0.571808 } },
+				[173] = { 0.588974, LH = { 172, 0.580391 }, RH = { 174, 0.597089 } },
+				[176] = { 0.613318, LH = { 175, 0.605203 }, RH = { 177, 0.620838 } },
+				[179] = { 0.635876, LH = { 178, 0.628357 }, RH = { 180, 0.642681 } },
+				[182] = { 0.656291, LH = { 181, 0.649486 }, RH = { 183, 0.662274 } },
+				[185] = { 0.674241, LH = { 184, 0.668258 }, RH = { 186, 0.679308 } },
+				[188] = { 0.689443, LH = { 187, 0.684376 }, RH = { 189, 0.693515 } },
+				[191] = { 0.701658, LH = { 190, 0.697586 }, RH = { 192, 0.704669 } },
+				[194] = { 0.710692, LH = { 193, 0.70768 }, RH = { 195, 0.712596 } },
+				[197] = { 0.716403, LH = { 196, 0.714499 }, RH = { 198, 0.71717 } },
+				[200] = { 0.718702, LH = { 199, 0.717936 } },
+			}
+		},
+		Orbit_SOL_MoveCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.546296, RH = { 114, 0.54213 } },
+				[116] = { 0.533798, LH = { 115, 0.537964 }, RH = { 117, 0.529406 } },
+				[119] = { 0.520621, LH = { 118, 0.525013 }, RH = { 120, 0.516071 } },
+				[122] = { 0.506972, LH = { 121, 0.511522 }, RH = { 123, 0.502337 } },
+				[125] = { 0.493068, LH = { 124, 0.497703 }, RH = { 126, 0.488421 } },
+				[128] = { 0.479126, LH = { 127, 0.483774 }, RH = { 129, 0.47454 } },
+				[131] = { 0.465368, LH = { 130, 0.469954 }, RH = { 132, 0.460916 } },
+				[134] = { 0.452011, LH = { 133, 0.456463 }, RH = { 135, 0.447761 } },
+				[137] = { 0.439263, LH = { 136, 0.443512 }, RH = { 138, 0.435285 } },
+				[140] = { 0.427328, LH = { 139, 0.431307 }, RH = { 141, 0.423683 } },
+				[143] = { 0.416393, LH = { 142, 0.420038 }, RH = { 144, 0.413139 } },
+				[146] = { 0.40663, LH = { 145, 0.409884 }, RH = { 147, 0.403818 } },
+				[149] = { 0.398194, LH = { 148, 0.401006 }, RH = { 150, 0.395868 } },
+				[152] = { 0.391217, LH = { 151, 0.393543 }, RH = { 153, 0.389415 } },
+				[155] = { 0.38581, LH = { 154, 0.387612 }, RH = { 156, 0.384559 } },
+				[158] = { 0.382058, LH = { 157, 0.383308 }, RH = { 159, 0.381378 } },
+				[161] = { 0.380019, LH = { 160, 0.380699 }, RH = { 162, 0.379922 } },
+				[164] = { 0.379727, LH = { 163, 0.379824 }, RH = { 165, 0.380213 } },
+				[167] = { 0.381186, LH = { 166, 0.380699 }, RH = { 168, 0.382248 } },
+				[170] = { 0.384372, LH = { 169, 0.38331 }, RH = { 171, 0.385993 } },
+				[173] = { 0.389236, LH = { 172, 0.387614 }, RH = { 174, 0.391391 } },
+				[176] = { 0.3957, LH = { 175, 0.393545 }, RH = { 177, 0.398355 } },
+				[179] = { 0.403664, LH = { 178, 0.401009 }, RH = { 180, 0.406776 } },
+				[182] = { 0.413, LH = { 181, 0.409888 }, RH = { 183, 0.416521 } },
+				[185] = { 0.423563, LH = { 184, 0.420042 }, RH = { 186, 0.427437 } },
+				[188] = { 0.435185, LH = { 187, 0.431311 }, RH = { 189, 0.439351 } },
+				[191] = { 0.447683, LH = { 190, 0.443517 }, RH = { 192, 0.452076 } },
+				[194] = { 0.460861, LH = { 193, 0.456468 }, RH = { 195, 0.46541 } },
+				[197] = { 0.474509, LH = { 196, 0.46996 }, RH = { 198, 0.479144 } },
+				[200] = { 0.488414, LH = { 199, 0.483779 } },
+			}
+		},
+		Orbit_SOL_MoveCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Orbit_SOL_MoveCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Orbit_SOL_MoveCenterPathY", Source = "Value", },
+			},
+		},
+		Orbit_SOL_MoveSize = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[113] = { 0.675, RH = { 114, 0.684374 } },
+				[116] = { 0.703121, LH = { 115, 0.693747 }, RH = { 117, 0.713004 } },
+				[119] = { 0.73277, LH = { 118, 0.722887 }, RH = { 120, 0.743006 } },
+				[122] = { 0.763479, LH = { 121, 0.753243 }, RH = { 123, 0.773908 } },
+				[125] = { 0.794764, LH = { 124, 0.784336 }, RH = { 126, 0.80522 } },
+				[128] = { 0.826132, LH = { 127, 0.815676 }, RH = { 129, 0.836451 } },
+				[131] = { 0.857088, LH = { 130, 0.846769 }, RH = { 132, 0.867106 } },
+				[134] = { 0.887143, LH = { 133, 0.877125 }, RH = { 135, 0.896703 } },
+				[137] = { 0.915824, LH = { 136, 0.906264 }, RH = { 138, 0.924775 } },
+				[140] = { 0.942678, LH = { 139, 0.933727 }, RH = { 141, 0.95088 } },
+				[143] = { 0.967283, LH = { 142, 0.959081 }, RH = { 144, 0.974605 } },
+				[146] = { 0.989249, LH = { 145, 0.981927 }, RH = { 147, 0.995576 } },
+				[149] = { 1.00823, LH = { 148, 1.001903 }, RH = { 150, 1.013463 } },
+				[152] = { 1.023928, LH = { 151, 1.018695 }, RH = { 153, 1.027983 } },
+				[155] = { 1.036094, LH = { 154, 1.032039 }, RH = { 156, 1.038908 } },
+				[158] = { 1.044537, LH = { 157, 1.041723 }, RH = { 159, 1.046066 } },
+				[161] = { 1.049123, LH = { 160, 1.047594 }, RH = { 162, 1.049342 } },
+				[164] = { 1.049781, LH = { 163, 1.049562 }, RH = { 165, 1.048687 } },
+				[167] = { 1.046499, LH = { 166, 1.047593 }, RH = { 168, 1.044109 } },
+				[170] = { 1.03933, LH = { 169, 1.04172 }, RH = { 171, 1.035682 } },
+				[173] = { 1.028386, LH = { 172, 1.032034 }, RH = { 174, 1.023538 } },
+				[176] = { 1.013841, LH = { 175, 1.018689 }, RH = { 177, 1.007868 } },
+				[179] = { 0.995923, LH = { 178, 1.001896 }, RH = { 180, 0.988921 } },
+				[182] = { 0.974916, LH = { 181, 0.981918 }, RH = { 183, 0.966994 } },
+				[185] = { 0.95115, LH = { 184, 0.959072 }, RH = { 186, 0.942433 } },
+				[188] = { 0.925, LH = { 187, 0.933717 }, RH = { 189, 0.915626 } },
+				[191] = { 0.896879, LH = { 190, 0.906253 }, RH = { 192, 0.886996 } },
+				[194] = { 0.86723, LH = { 193, 0.877113 }, RH = { 195, 0.856994 } },
+				[197] = { 0.836521, LH = { 196, 0.846757 }, RH = { 198, 0.826092 } },
+				[200] = { 0.805236, LH = { 199, 0.815664 } },
+			}
+		},
+		Orbit_SOL_Move = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Orbit_SOL_Coin", Source = "Output", },
+				Center = Input { SourceOp = "Orbit_SOL_MoveCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.578704 }, },
+				Size = Input { SourceOp = "Orbit_SOL_MoveSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 825 } },
+		},
+		Orbit_AddSOL = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Orbit_AddETH", Source = "Output", },
+				Foreground = Input { SourceOp = "Orbit_SOL_Move", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 858 } },
+		},
+		UL_Protected_Orbit = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Protected_Orbit", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1635, -30 },
+				Size = { 120, 921 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		HL_Protected_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 0 } },
+		},
+		HL_Protected_Clip0_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.236667 }, },
+				Width = Input { Value = 0.412073, },
+				Height = Input { Value = 0.061926, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 33 } },
+		},
+		HL_Protected_Line0 = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 66 } },
+		},
+		HL_Protected_W01_Your = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Your", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.305422, 0.240741 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 99 } },
+		},
+		HL_Protected_W01_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W01_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[111] = { 0.436852, RH = { 113.56, 0.5 } },
+				[127] = { 0.5, LH = { 115.8, 0.5 } },
+			}
+		},
+		HL_Protected_W01_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W01_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W01_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W01_RiseQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[110] = { 1, RH = { 110.333333, 2 } },
+				[111] = { 4, LH = { 110.666667, 3 }, RH = { 116.333333, 4 } },
+				[127] = { 4, LH = { 121.666667, 4 }, RH = { 127.333333, 3 } },
+				[128] = { 1, LH = { 127.666667, 2 } },
+			}
+		},
+		HL_Protected_W01_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W01_Your", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W01_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W01_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 132 } },
+		},
+		HL_Protected_W01_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_Line0", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W01_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 165 } },
+		},
+		HL_Protected_W02_assets = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "assets", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.381112, 0.240741 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 198 } },
+		},
+		HL_Protected_W02_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W02_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[115] = { 0.436852, RH = { 117.56, 0.5 } },
+				[131] = { 0.5, LH = { 119.8, 0.5 } },
+			}
+		},
+		HL_Protected_W02_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W02_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W02_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W02_RiseQuality = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[114] = { 1, RH = { 114.333333, 2 } },
+				[115] = { 4, LH = { 114.666667, 3 }, RH = { 120.333333, 4 } },
+				[131] = { 4, LH = { 125.666667, 4 }, RH = { 131.333333, 3 } },
+				[132] = { 1, LH = { 131.666667, 2 } },
+			}
+		},
+		HL_Protected_W02_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W02_assets", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W02_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W02_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 231 } },
+		},
+		HL_Protected_W02_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_W01_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W02_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 264 } },
+		},
+		HL_Protected_W03_stay = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "stay", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.482458, 0.240741 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 297 } },
+		},
+		HL_Protected_W03_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W03_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[126] = { 0.436852, RH = { 128.56, 0.5 } },
+				[142] = { 0.5, LH = { 130.8, 0.5 } },
+			}
+		},
+		HL_Protected_W03_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W03_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W03_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W03_RiseQuality = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[125] = { 1, RH = { 125.333333, 2 } },
+				[126] = { 4, LH = { 125.666667, 3 }, RH = { 131.333333, 4 } },
+				[142] = { 4, LH = { 136.666667, 4 }, RH = { 142.333333, 3 } },
+				[143] = { 1, LH = { 142.666667, 2 } },
+			}
+		},
+		HL_Protected_W03_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W03_stay", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W03_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W03_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 330 } },
+		},
+		HL_Protected_W03_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_W02_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W03_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 363 } },
+		},
+		HL_Protected_W04_protected = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "protected", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.550814, 0.240741 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 396 } },
+		},
+		HL_Protected_W04_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W04_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[140] = { 0.436852, RH = { 142.56, 0.5 } },
+				[156] = { 0.5, LH = { 144.8, 0.5 } },
+			}
+		},
+		HL_Protected_W04_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W04_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W04_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W04_RiseQuality = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[139] = { 1, RH = { 139.333333, 2 } },
+				[140] = { 4, LH = { 139.666667, 3 }, RH = { 145.333333, 4 } },
+				[156] = { 4, LH = { 150.666667, 4 }, RH = { 156.333333, 3 } },
+				[157] = { 1, LH = { 156.666667, 2 } },
+			}
+		},
+		HL_Protected_W04_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W04_protected", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W04_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W04_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 429 } },
+		},
+		HL_Protected_W04_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_W03_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W04_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 462 } },
+		},
+		HL_Protected_Line0_Clipped = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W04_Add", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "HL_Protected_Clip0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 495 } },
+		},
+		HL_Protected_Clip1_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.5, 0.173519 }, },
+				Width = Input { Value = 0.337515, },
+				Height = Input { Value = 0.061926, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 528 } },
+		},
+		HL_Protected_Line1 = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 561 } },
+		},
+		HL_Protected_W05_every = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "every", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.342701, 0.177593 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 594 } },
+		},
+		HL_Protected_W05_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W05_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[155] = { 0.436852, RH = { 157.56, 0.5 } },
+				[171] = { 0.5, LH = { 159.8, 0.5 } },
+			}
+		},
+		HL_Protected_W05_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W05_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W05_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W05_RiseQuality = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[154] = { 1, RH = { 154.333333, 2 } },
+				[155] = { 4, LH = { 154.666667, 3 }, RH = { 160.333333, 4 } },
+				[171] = { 4, LH = { 165.666667, 4 }, RH = { 171.333333, 3 } },
+				[172] = { 1, LH = { 171.666667, 2 } },
+			}
+		},
+		HL_Protected_W05_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W05_every", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W05_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W05_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 627 } },
+		},
+		HL_Protected_W05_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_Line1", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W05_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 660 } },
+		},
+		HL_Protected_W06_step = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "step", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.430228, 0.177593 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 693 } },
+		},
+		HL_Protected_W06_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W06_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[169] = { 0.436852, RH = { 171.56, 0.5 } },
+				[185] = { 0.5, LH = { 173.8, 0.5 } },
+			}
+		},
+		HL_Protected_W06_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W06_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W06_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W06_RiseQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[168] = { 1, RH = { 168.333333, 2 } },
+				[169] = { 4, LH = { 168.666667, 3 }, RH = { 174.333333, 4 } },
+				[185] = { 4, LH = { 179.666667, 4 }, RH = { 185.333333, 3 } },
+				[186] = { 1, LH = { 185.666667, 2 } },
+			}
+		},
+		HL_Protected_W06_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W06_step", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W06_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W06_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 726 } },
+		},
+		HL_Protected_W06_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_W05_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W06_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 759 } },
+		},
+		HL_Protected_W07_of = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "of", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.500252, 0.177593 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 792 } },
+		},
+		HL_Protected_W07_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W07_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[177] = { 0.436852, RH = { 179.56, 0.5 } },
+				[193] = { 0.5, LH = { 181.8, 0.5 } },
+			}
+		},
+		HL_Protected_W07_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W07_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W07_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W07_RiseQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[176] = { 1, RH = { 176.333333, 2 } },
+				[177] = { 4, LH = { 176.666667, 3 }, RH = { 182.333333, 4 } },
+				[193] = { 4, LH = { 187.666667, 4 }, RH = { 193.333333, 3 } },
+				[194] = { 1, LH = { 193.666667, 2 } },
+			}
+		},
+		HL_Protected_W07_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W07_of", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W07_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W07_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 825 } },
+		},
+		HL_Protected_W07_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_W06_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W07_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 858 } },
+		},
+		HL_Protected_W08_the = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "the", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.535744, 0.177593 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 891 } },
+		},
+		HL_Protected_W08_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W08_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[184] = { 0.436852, RH = { 186.56, 0.5 } },
+				[200] = { 0.5, LH = { 188.8, 0.5 } },
+			}
+		},
+		HL_Protected_W08_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W08_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W08_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W08_RiseQuality = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[183] = { 1, RH = { 183.333333, 2 } },
+				[184] = { 4, LH = { 183.666667, 3 }, RH = { 189.333333, 4 } },
+				[200] = { 4, LH = { 194.666667, 4 }, RH = { 200.333333, 3 } },
+				[201] = { 1, LH = { 200.666667, 2 } },
+			}
+		},
+		HL_Protected_W08_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W08_the", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W08_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W08_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 924 } },
+		},
+		HL_Protected_W08_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_W07_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W08_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 957 } },
+		},
+		HL_Protected_W09_way = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "way.", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.047826, },
+				Center = Input { Value = { 0.58899, 0.177593 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 990 } },
+		},
+		HL_Protected_W09_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Protected_W09_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[188] = { 0.436852, RH = { 190.56, 0.5 } },
+				[204] = { 0.5, LH = { 192.8, 0.5 } },
+			}
+		},
+		HL_Protected_W09_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Protected_W09_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Protected_W09_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Protected_W09_RiseQuality = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[187] = { 1, RH = { 187.333333, 2 } },
+				[188] = { 4, LH = { 187.666667, 3 }, RH = { 193.333333, 4 } },
+				[204] = { 4, LH = { 198.666667, 4 }, RH = { 204.333333, 3 } },
+				[205] = { 1, LH = { 204.666667, 2 } },
+			}
+		},
+		HL_Protected_W09_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Protected_W09_way", Source = "Output", },
+				Center = Input { SourceOp = "HL_Protected_W09_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Protected_W09_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 1023 } },
+		},
+		HL_Protected_W09_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_W08_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W09_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 1056 } },
+		},
+		HL_Protected_Line1_Clipped = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Protected_Line0_Clipped", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_W09_Add", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "HL_Protected_Clip1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 1089 } },
+		},
+		UL_HL_HL_Protected = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "HL_HL_Protected", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1765, -30 },
+				Size = { 120, 1152 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Exit_Dip = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1950, 0 } },
+		},
+		UL_Exit_Dip_To_Dark = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Exit_Dip_To_Dark", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1895, -30 },
+				Size = { 120, 63 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Comp_01Blend = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[2] = { 0, RH = { 4.24, 0.14 } },
+				[16] = { 0.14, LH = { 6.2, 0.14 }, RH = { 18.56, 0.22 } },
+				[32] = { 0.22, LH = { 20.8, 0.22 }, RH = { 42.666667, 0.22 } },
+				[64] = { 0.22, LH = { 53.333333, 0.22 }, RH = { 66.24, 0.08 } },
+				[78] = { 0.08, LH = { 68.2, 0.08 }, RH = { 89.666667, 0.08 } },
+				[113] = { 0.08, LH = { 101.333333, 0.08 }, RH = { 167.6, 0.08 } },
+				[191] = { 0, LH = { 178.52, 0.08 } },
+			}
+		},
+		Comp_01 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_DimForSecurity", Source = "Output", },
+				Foreground = Input { SourceOp = "Hex_Masked", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_01Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 1500 } },
+		},
+		Comp_02 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_01", Source = "Output", },
+				Foreground = Input { SourceOp = "Shield_Move", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1500 } },
+		},
+		Comp_03Blend = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[16] = { 0, RH = { 17.12, 1 } },
+				[23] = { 1, LH = { 18.1, 1 }, RH = { 34, 1 } },
+				[56] = { 1, LH = { 45, 1 }, RH = { 63, 1 } },
+				[66] = { 0, LH = { 64.4, 1 } },
+			}
+		},
+		Comp_03 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_02", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Encryption_Pop", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_03Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 1500 } },
+		},
+		Comp_04Blend = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[24] = { 0, RH = { 25.28, 1 } },
+				[32] = { 1, LH = { 26.4, 1 }, RH = { 40, 1 } },
+				[56] = { 1, LH = { 48, 1 }, RH = { 61.6, 1 } },
+				[64] = { 0, LH = { 62.72, 1 } },
+			}
+		},
+		Comp_04 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_03", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Encryption_SubRise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_04Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 1500 } },
+		},
+		Comp_05Blend = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[64] = { 0, RH = { 64.64, 1 } },
+				[68] = { 1, LH = { 65.2, 1 }, RH = { 86.333333, 1 } },
+				[123] = { 1, LH = { 104.666667, 1 }, RH = { 127.2, 1 } },
+				[129] = { 0, LH = { 128.04, 1 } },
+			}
+		},
+		Comp_05 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_04", Source = "Output", },
+				Foreground = Input { SourceOp = "FP_ToShield", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_05Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 1500 } },
+		},
+		Comp_06Blend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[68] = { 0, RH = { 69.12, 1 } },
+				[75] = { 1, LH = { 70.1, 1 }, RH = { 85.666667, 1 } },
+				[107] = { 1, LH = { 96.333333, 1 }, RH = { 114, 1 } },
+				[117] = { 0, LH = { 115.4, 1 } },
+			}
+		},
+		Comp_06 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_05", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Biometric_Pop", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_06Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 1500 } },
+		},
+		Comp_07Blend = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[76] = { 0, RH = { 77.28, 1 } },
+				[84] = { 1, LH = { 78.4, 1 }, RH = { 91.666667, 1 } },
+				[107] = { 1, LH = { 99.333333, 1 }, RH = { 112.6, 1 } },
+				[115] = { 0, LH = { 113.72, 1 } },
+			}
+		},
+		Comp_07 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_06", Source = "Output", },
+				Foreground = Input { SourceOp = "Chip_Biometric_SubRise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_07Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 1500 } },
+		},
+		Comp_08 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_07", Source = "Output", },
+				Foreground = Input { SourceOp = "Pulse3_Add", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 1500 } },
+		},
+		Comp_09Blend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[119] = { 0, RH = { 121.24, 1 } },
+				[133] = { 1, LH = { 123.2, 1 }, RH = { 152.333333, 1 } },
+				[191] = { 1, LH = { 171.666667, 1 }, RH = { 198, 1 } },
+				[201] = { 0, LH = { 199.4, 1 } },
+			}
+		},
+		Comp_09 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_08", Source = "Output", },
+				Foreground = Input { SourceOp = "Orbit_AddSOL", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_09Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 1500 } },
+		},
+		Comp_10 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_09", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Protected_Line1_Clipped", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1500 } },
+		},
+		Comp_11Blend = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[196] = { 0, RH = { 199.5, 0 } },
+				[201] = { 0.8, LH = { 200.2, 0 } },
+			}
+		},
+		Comp_11 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_10", Source = "Output", },
+				Foreground = Input { SourceOp = "Exit_Dip", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_11Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 1500 } },
+		},
+		CAMERASize = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 1.08, RH = { 2.56, 1 } },
+				[16] = { 1, LH = { 4.8, 1 }, RH = { 94.75, 1 } },
+				[191] = { 1.03, LH = { 59.75, 1.03 }, RH = { 198, 1.03 } },
+				[201] = { 1.15, LH = { 199.4, 1.03 } },
+			}
+		},
+		CAMERA = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Comp_11", Source = "Output", },
+				Size = Input { SourceOp = "CAMERASize", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.52 }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 1500 } },
+		},
+		GRAIN_Noise = FastNoise {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Detail = Input { Value = 1, },
+				Contrast = Input { Value = 2.2, },
+				XScale = Input { Value = 220, },
+				SeetheRate = Input { Value = 4, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 1434 } },
+		},
+		GRAIN_Overlay = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "CAMERA", Source = "Output", },
+				Foreground = Input { SourceOp = "GRAIN_Noise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				ApplyMode = Input { Value = FuID { "Overlay" }, },
+				Blend = Input { Value = 0.035, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 1500 } },
+		},
+		MediaOut1 = MediaOut {
+			NameSet = true,
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input { SourceOp = "GRAIN_Overlay", Source = "Output", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 1500 } },
+		},
+		UL_OUTPUT_SPINE___layers_merged_left_to_right__then_camera__grain__MediaOut = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "OUTPUT SPINE - layers merged left to right, then camera, grain, MediaOut", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, 1460 },
+				Size = { 1970, 90 }
+			},
+			Colors = { TileColor = { R = 0.35, G = 0.2, B = 0.2 }, }
+		}
+	},
+	Frames = {
+	},
+	Prefs = {
+		Comp = {
+			FrameFormat = {
+				Name = "HD 1080",
+				Width = 1920,
+				Height = 1080,
+				Rate = 30,
+				AspectX = 1,
+				AspectY = 1,
+				GuideRatio = 1.77777777777778,
+				DepthFull = 2,
+				DepthPreview = 2,
+				DepthInteractive = 2,
+			},
+			Unsorted = {
+				GlobalEnd = 200
+			},
+		}
+	},
+}

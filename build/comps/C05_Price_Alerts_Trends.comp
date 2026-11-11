@@ -1,0 +1,3634 @@
+Composition {
+	CurrentTime = 0,
+	RenderRange = { 0, 98 },
+	GlobalRange = { 0, 98 },
+	CurrentID = 316,
+	HiQ = true,
+	PlaybackUpdateMode = 0,
+	Version = "DaVinci Resolve Fusion 21.2",
+	SavedOutputs = 0,
+	HeldTools = 0,
+	DisabledTools = 0,
+	LockedTools = 0,
+	AudioOffset = 0,
+	AutoRenderRange = true,
+	Resumable = true,
+	OutputClips = {
+	},
+	Tools = ordered() {
+		BG_Base = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.043137, },
+				TopLeftGreen = Input { Value = 0.054902, },
+				TopLeftBlue = Input { Value = 0.043137, },
+				TopLeftAlpha = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+		},
+		BG_GlowA_GreenStartPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.322917, RH = { -57, 0.446181 } },
+				[843] = { 0.692708, LH = { 393, 0.569444 } },
+			}
+		},
+		BG_GlowA_GreenStartPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.694444, RH = { -57, 0.580247 } },
+				[843] = { 0.351852, LH = { 393, 0.466049 } },
+			}
+		},
+		BG_GlowA_GreenStartPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowA_GreenStartPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowA_GreenStartPathY", Source = "Value", },
+			},
+		},
+		BG_GlowA_GreenEndPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.833333, RH = { -57, 0.956597 } },
+				[843] = { 1.203125, LH = { 393, 1.079861 } },
+			}
+		},
+		BG_GlowA_GreenEndPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.694444, RH = { -57, 0.580247 } },
+				[843] = { 0.351852, LH = { 393, 0.466049 } },
+			}
+		},
+		BG_GlowA_GreenEndPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowA_GreenEndPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowA_GreenEndPathY", Source = "Value", },
+			},
+		},
+		BG_GlowA_Green = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { SourceOp = "BG_GlowA_GreenStartPath", Source = "Value", },
+				End = Input { SourceOp = "BG_GlowA_GreenEndPath", Source = "Value", },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.085294, 0.118235, 0.047059, 0.15 }, [0.45] = { 0.028431, 0.039412, 0.015686, 0.05 }, [1] = { 0, 0, 0, 0 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		},
+		BG_GlowB_CharcoalStartPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.8125, RH = { -57, 0.614583 } },
+				[843] = { 0.21875, LH = { 393, 0.416667 } },
+			}
+		},
+		BG_GlowB_CharcoalStartPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.138889, RH = { -57, 0.345679 } },
+				[843] = { 0.759259, LH = { 393, 0.552469 } },
+			}
+		},
+		BG_GlowB_CharcoalStartPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowB_CharcoalStartPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowB_CharcoalStartPathY", Source = "Value", },
+			},
+		},
+		BG_GlowB_CharcoalEndPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 1.28125, RH = { -57, 1.083333 } },
+				[843] = { 0.6875, LH = { 393, 0.885417 } },
+			}
+		},
+		BG_GlowB_CharcoalEndPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.138889, RH = { -57, 0.345679 } },
+				[843] = { 0.759259, LH = { 393, 0.552469 } },
+			}
+		},
+		BG_GlowB_CharcoalEndPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_GlowB_CharcoalEndPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_GlowB_CharcoalEndPathY", Source = "Value", },
+			},
+		},
+		BG_GlowB_Charcoal = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { SourceOp = "BG_GlowB_CharcoalStartPath", Source = "Value", },
+				End = Input { SourceOp = "BG_GlowB_CharcoalEndPath", Source = "Value", },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.145882, 0.157647, 0.145882, 0.6 }, [1] = { 0, 0, 0, 0 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 66 } },
+		},
+		BG_AddGlowA = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_Base", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_GlowA_Green", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 99 } },
+		},
+		BG_AddGlowB = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGlowA", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_GlowB_Charcoal", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 132 } },
+		},
+		UL_BG_Base_Glows = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Base_Glows", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, -30 },
+				Size = { 120, 195 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		BG_GridV_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.475, Y = 0.518519 },
+							{ Linear = true, X = -0.475, Y = -0.518519 },
+							{ Linear = true, X = -0.425, Y = -0.518519 },
+							{ Linear = true, X = -0.425, Y = 0.518519 },
+							{ Linear = true, X = -0.375, Y = 0.518519 },
+							{ Linear = true, X = -0.375, Y = -0.518519 },
+							{ Linear = true, X = -0.325, Y = -0.518519 },
+							{ Linear = true, X = -0.325, Y = 0.518519 },
+							{ Linear = true, X = -0.275, Y = 0.518519 },
+							{ Linear = true, X = -0.275, Y = -0.518519 },
+							{ Linear = true, X = -0.225, Y = -0.518519 },
+							{ Linear = true, X = -0.225, Y = 0.518519 },
+							{ Linear = true, X = -0.175, Y = 0.518519 },
+							{ Linear = true, X = -0.175, Y = -0.518519 },
+							{ Linear = true, X = -0.125, Y = -0.518519 },
+							{ Linear = true, X = -0.125, Y = 0.518519 },
+							{ Linear = true, X = -0.075, Y = 0.518519 },
+							{ Linear = true, X = -0.075, Y = -0.518519 },
+							{ Linear = true, X = -0.025, Y = -0.518519 },
+							{ Linear = true, X = -0.025, Y = 0.518519 },
+							{ Linear = true, X = 0.025, Y = 0.518519 },
+							{ Linear = true, X = 0.025, Y = -0.518519 },
+							{ Linear = true, X = 0.075, Y = -0.518519 },
+							{ Linear = true, X = 0.075, Y = 0.518519 },
+							{ Linear = true, X = 0.125, Y = 0.518519 },
+							{ Linear = true, X = 0.125, Y = -0.518519 },
+							{ Linear = true, X = 0.175, Y = -0.518519 },
+							{ Linear = true, X = 0.175, Y = 0.518519 },
+							{ Linear = true, X = 0.225, Y = 0.518519 },
+							{ Linear = true, X = 0.225, Y = -0.518519 },
+							{ Linear = true, X = 0.275, Y = -0.518519 },
+							{ Linear = true, X = 0.275, Y = 0.518519 },
+							{ Linear = true, X = 0.325, Y = 0.518519 },
+							{ Linear = true, X = 0.325, Y = -0.518519 },
+							{ Linear = true, X = 0.375, Y = -0.518519 },
+							{ Linear = true, X = 0.375, Y = 0.518519 },
+							{ Linear = true, X = 0.425, Y = 0.518519 },
+							{ Linear = true, X = 0.425, Y = -0.518519 },
+							{ Linear = true, X = 0.475, Y = -0.518519 },
+							{ Linear = true, X = 0.475, Y = 0.518519 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000625, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 0 } },
+		},
+		BG_GridH_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "BG_GridV_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.510417, Y = 0.488889 },
+							{ Linear = true, X = 0.520833, Y = 0.488889 },
+							{ Linear = true, X = 0.520833, Y = 0.4 },
+							{ Linear = true, X = -0.510417, Y = 0.4 },
+							{ Linear = true, X = -0.510417, Y = 0.311111 },
+							{ Linear = true, X = 0.520833, Y = 0.311111 },
+							{ Linear = true, X = 0.520833, Y = 0.222222 },
+							{ Linear = true, X = -0.510417, Y = 0.222222 },
+							{ Linear = true, X = -0.510417, Y = 0.133333 },
+							{ Linear = true, X = 0.520833, Y = 0.133333 },
+							{ Linear = true, X = 0.520833, Y = 0.044444 },
+							{ Linear = true, X = -0.510417, Y = 0.044444 },
+							{ Linear = true, X = -0.510417, Y = -0.044444 },
+							{ Linear = true, X = 0.520833, Y = -0.044444 },
+							{ Linear = true, X = 0.520833, Y = -0.133333 },
+							{ Linear = true, X = -0.510417, Y = -0.133333 },
+							{ Linear = true, X = -0.510417, Y = -0.222222 },
+							{ Linear = true, X = 0.520833, Y = -0.222222 },
+							{ Linear = true, X = 0.520833, Y = -0.311111 },
+							{ Linear = true, X = -0.510417, Y = -0.311111 },
+							{ Linear = true, X = -0.510417, Y = -0.4 },
+							{ Linear = true, X = 0.520833, Y = -0.4 },
+							{ Linear = true, X = 0.520833, Y = -0.488889 },
+							{ Linear = true, X = -0.510417, Y = -0.488889 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000625, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 33 } },
+		},
+		BG_Grid_Lines = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { Value = { 0.5, 0.564815 }, },
+				End = Input { Value = { 1.020833, 0.564815 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.055, 0.055, 0.055, 0.055 }, [0.7] = { 0.02, 0.02, 0.02, 0.02 }, [1] = { 0, 0, 0, 0 } }
+					}, },
+				EffectMask = Input { SourceOp = "BG_GridH_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 66 } },
+		},
+		BG_Grid_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "BG_Grid_Lines", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 99 } },
+		},
+		BG_Grid_DriftCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.5, RH = { -57, 0.483333 } },
+				[843] = { 0.45, LH = { 393, 0.466667 } },
+			}
+		},
+		BG_Grid_DriftCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[-507] = { 0.5, RH = { -57, 0.514815 } },
+				[843] = { 0.544444, LH = { 393, 0.52963 } },
+			}
+		},
+		BG_Grid_DriftCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BG_Grid_DriftCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "BG_Grid_DriftCenterPathY", Source = "Value", },
+			},
+		},
+		BG_Grid_Drift = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "BG_Grid_Static", Source = "Output", },
+				Center = Input { SourceOp = "BG_Grid_DriftCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 132 } },
+		},
+		BG_AddGrid = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGlowB", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_Grid_Drift", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 165 } },
+		},
+		UL_BG_Grid = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Grid", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 75, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		BG_Vignette_Dark = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Radial" }, },
+				Start = Input { Value = { 0.5, 0.5 }, },
+				End = Input { Value = { 1.098958, 0.5 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0, 0, 0, 0 }, [0.55] = { 0, 0, 0, 0 }, [1] = { 0, 0, 0, 0.7 } }
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 0 } },
+		},
+		BG_AddVignette = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddGrid", Source = "Output", },
+				Foreground = Input { SourceOp = "BG_Vignette_Dark", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 33 } },
+		},
+		UL_BG_Vignette = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "BG_Vignette", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 205, -30 },
+				Size = { 120, 96 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Eb_Alerts_Eyebrow = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 0 } },
+		},
+		Eb_Alerts_Num = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "04", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.023913, },
+				Center = Input { Value = { 0.089583, 0.666667 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 33 } },
+		},
+		Eb_Alerts_Rule_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.119792, 0.666667 }, },
+				Width = Input { Value = 0.01875, },
+				Height = Input { Value = 0.001852, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 66 } },
+		},
+		Eb_Alerts_RuleFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.364706, },
+				TopLeftGreen = Input { Value = 0.4, },
+				TopLeftBlue = Input { Value = 0.364706, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Eb_Alerts_Rule_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 99 } },
+		},
+		Eb_Alerts_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "ALERTS", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.136458, 0.666667 }, },
+				CharacterSpacing = Input { Value = 1.12, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 132 } },
+		},
+		Eb_Alerts_AddNum = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Alerts_Eyebrow", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Alerts_Num", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 165 } },
+		},
+		Eb_Alerts_AddRule = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Alerts_AddNum", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Alerts_RuleFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 198 } },
+		},
+		Eb_Alerts_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Alerts_AddRule", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Alerts_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 231 } },
+		},
+		Eb_Alerts_SlideCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[2] = { 0.484375, RH = { 4.24, 0.5 } },
+				[16] = { 0.5, LH = { 6.2, 0.5 }, RH = { 27.333333, 0.5 } },
+				[50] = { 0.5, LH = { 38.666667, 0.5 }, RH = { 55.6, 0.5 } },
+				[58] = { 0.489583, LH = { 56.72, 0.5 } },
+			}
+		},
+		Eb_Alerts_SlideCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Eb_Alerts_SlideCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Eb_Alerts_SlideCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Eb_Alerts_SlideCenterPathY", Source = "Value", },
+			},
+		},
+		Eb_Alerts_SlideQuality = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[1] = { 1, RH = { 1.333333, 2 } },
+				[2] = { 4, LH = { 1.666667, 3 }, RH = { 6.666667, 4 } },
+				[16] = { 4, LH = { 11.333333, 4 }, RH = { 16.333333, 3 } },
+				[17] = { 1, LH = { 16.666667, 2 }, RH = { 27.666667, 1 } },
+				[49] = { 1, LH = { 38.333333, 1 }, RH = { 49.333333, 2 } },
+				[50] = { 4, LH = { 49.666667, 3 }, RH = { 52.666667, 4 } },
+				[58] = { 4, LH = { 55.333333, 4 }, RH = { 58.333333, 3 } },
+				[59] = { 1, LH = { 58.666667, 2 } },
+			}
+		},
+		Eb_Alerts_Slide = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Eb_Alerts_AddLabel", Source = "Output", },
+				Center = Input { SourceOp = "Eb_Alerts_SlideCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Eb_Alerts_SlideQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 264 } },
+		},
+		UL_Eyebrow_Eb_Alerts = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Eyebrow_Eb_Alerts", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 335, -30 },
+				Size = { 120, 327 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		HL_Price_Alerts_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 0 } },
+		},
+		HL_Price_Alerts_Clip0_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.223224, 0.565556 }, },
+				Width = Input { Value = 0.317282, },
+				Height = Input { Value = 0.129481, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 33 } },
+		},
+		HL_Price_Alerts_Line0 = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 66 } },
+		},
+		HL_Price_Alerts_W01_Set = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Set", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.1, },
+				Center = Input { Value = { 0.088542, 0.574074 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 99 } },
+		},
+		HL_Price_Alerts_W01_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Price_Alerts_W01_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[7] = { 0.367963, RH = { 9.56, 0.5 } },
+				[23] = { 0.5, LH = { 11.8, 0.5 }, RH = { 32, 0.5 } },
+				[50] = { 0.5, LH = { 41, 0.5 }, RH = { 57, 0.5 } },
+				[60] = { 0.632037, LH = { 58.4, 0.5 } },
+			}
+		},
+		HL_Price_Alerts_W01_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Price_Alerts_W01_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Price_Alerts_W01_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Price_Alerts_W01_RiseQuality = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[6] = { 1, RH = { 6.333333, 2 } },
+				[7] = { 4, LH = { 6.666667, 3 }, RH = { 12.333333, 4 } },
+				[23] = { 4, LH = { 17.666667, 4 }, RH = { 23.333333, 3 } },
+				[24] = { 1, LH = { 23.666667, 2 }, RH = { 32.333333, 1 } },
+				[49] = { 1, LH = { 40.666667, 1 }, RH = { 49.333333, 2 } },
+				[50] = { 4, LH = { 49.666667, 3 }, RH = { 53.333333, 4 } },
+				[60] = { 4, LH = { 56.666667, 4 }, RH = { 60.333333, 3 } },
+				[61] = { 1, LH = { 60.666667, 2 } },
+			}
+		},
+		HL_Price_Alerts_W01_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Price_Alerts_W01_Set", Source = "Output", },
+				Center = Input { SourceOp = "HL_Price_Alerts_W01_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Price_Alerts_W01_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 132 } },
+		},
+		HL_Price_Alerts_W01_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Price_Alerts_Line0", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Price_Alerts_W01_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 165 } },
+		},
+		HL_Price_Alerts_W02_price = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "price", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.1, },
+				Center = Input { Value = { 0.204284, 0.574074 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 198 } },
+		},
+		HL_Price_Alerts_W02_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Price_Alerts_W02_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[14] = { 0.367963, RH = { 16.56, 0.5 } },
+				[30] = { 0.5, LH = { 18.8, 0.5 }, RH = { 37, 0.5 } },
+				[51] = { 0.5, LH = { 44, 0.5 }, RH = { 58, 0.5 } },
+				[61] = { 0.632037, LH = { 59.4, 0.5 } },
+			}
+		},
+		HL_Price_Alerts_W02_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Price_Alerts_W02_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Price_Alerts_W02_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Price_Alerts_W02_RiseQuality = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[13] = { 1, RH = { 13.333333, 2 } },
+				[14] = { 4, LH = { 13.666667, 3 }, RH = { 19.333333, 4 } },
+				[30] = { 4, LH = { 24.666667, 4 }, RH = { 30.333333, 3 } },
+				[31] = { 1, LH = { 30.666667, 2 }, RH = { 37.333333, 1 } },
+				[50] = { 1, LH = { 43.666667, 1 }, RH = { 50.333333, 2 } },
+				[51] = { 4, LH = { 50.666667, 3 }, RH = { 54.333333, 4 } },
+				[61] = { 4, LH = { 57.666667, 4 }, RH = { 61.333333, 3 } },
+				[62] = { 1, LH = { 61.666667, 2 } },
+			}
+		},
+		HL_Price_Alerts_W02_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Price_Alerts_W02_price", Source = "Output", },
+				Center = Input { SourceOp = "HL_Price_Alerts_W02_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Price_Alerts_W02_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 231 } },
+		},
+		HL_Price_Alerts_W02_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Price_Alerts_W01_Add", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Price_Alerts_W02_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 264 } },
+		},
+		HL_Price_Alerts_Line0_Clipped = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Price_Alerts_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Price_Alerts_W02_Add", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "HL_Price_Alerts_Clip0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 297 } },
+		},
+		HL_Price_Alerts_Clip1_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.182927, 0.427556 }, },
+				Width = Input { Value = 0.236687, },
+				Height = Input { Value = 0.129481, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 330 } },
+		},
+		HL_Price_Alerts_Line1 = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 363 } },
+		},
+		HL_Price_Alerts_W03_alerts = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "alerts.", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.1, },
+				Center = Input { Value = { 0.088542, 0.436074 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 396 } },
+		},
+		HL_Price_Alerts_W03_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Price_Alerts_W03_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[28] = { 0.367963, RH = { 30.56, 0.5 } },
+				[44] = { 0.5, LH = { 32.8, 0.5 }, RH = { 46.666667, 0.5 } },
+				[52] = { 0.5, LH = { 49.333333, 0.5 }, RH = { 59, 0.5 } },
+				[62] = { 0.632037, LH = { 60.4, 0.5 } },
+			}
+		},
+		HL_Price_Alerts_W03_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Price_Alerts_W03_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Price_Alerts_W03_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Price_Alerts_W03_RiseQuality = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[27] = { 1, RH = { 27.333333, 2 } },
+				[28] = { 4, LH = { 27.666667, 3 }, RH = { 33.333333, 4 } },
+				[44] = { 4, LH = { 38.666667, 4 }, RH = { 44.333333, 3 } },
+				[45] = { 1, LH = { 44.666667, 2 }, RH = { 47, 1 } },
+				[51] = { 1, LH = { 49, 1 }, RH = { 51.333333, 2 } },
+				[52] = { 4, LH = { 51.666667, 3 }, RH = { 55.333333, 4 } },
+				[62] = { 4, LH = { 58.666667, 4 }, RH = { 62.333333, 3 } },
+				[63] = { 1, LH = { 62.666667, 2 } },
+			}
+		},
+		HL_Price_Alerts_W03_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Price_Alerts_W03_alerts", Source = "Output", },
+				Center = Input { SourceOp = "HL_Price_Alerts_W03_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Price_Alerts_W03_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 429 } },
+		},
+		HL_Price_Alerts_W03_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Price_Alerts_Line1", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Price_Alerts_W03_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 462 } },
+		},
+		HL_Price_Alerts_Line1_Clipped = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Price_Alerts_Line0_Clipped", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Price_Alerts_W03_Add", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "HL_Price_Alerts_Clip1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 495 } },
+		},
+		UL_HL_HL_Price_Alerts = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "HL_HL_Price_Alerts", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 465, -30 },
+				Size = { 120, 558 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Eb_Trends_Eyebrow = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 0 } },
+		},
+		Eb_Trends_Num = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "05", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.023913, },
+				Center = Input { Value = { 0.089583, 0.666667 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 33 } },
+		},
+		Eb_Trends_Rule_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.119792, 0.666667 }, },
+				Width = Input { Value = 0.01875, },
+				Height = Input { Value = 0.001852, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 66 } },
+		},
+		Eb_Trends_RuleFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.364706, },
+				TopLeftGreen = Input { Value = 0.4, },
+				TopLeftBlue = Input { Value = 0.364706, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Eb_Trends_Rule_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 99 } },
+		},
+		Eb_Trends_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "TRENDS", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.136458, 0.666667 }, },
+				CharacterSpacing = Input { Value = 1.12, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 132 } },
+		},
+		Eb_Trends_AddNum = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Trends_Eyebrow", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Trends_Num", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 165 } },
+		},
+		Eb_Trends_AddRule = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Trends_AddNum", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Trends_RuleFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 198 } },
+		},
+		Eb_Trends_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Eb_Trends_AddRule", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Trends_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 231 } },
+		},
+		Eb_Trends_SlideCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[57] = { 0.484375, RH = { 59.24, 0.5 } },
+				[71] = { 0.5, LH = { 61.2, 0.5 }, RH = { 77.333333, 0.5 } },
+				[90] = { 0.5, LH = { 83.666667, 0.5 }, RH = { 95.6, 0.5 } },
+				[98] = { 0.489583, LH = { 96.72, 0.5 } },
+			}
+		},
+		Eb_Trends_SlideCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Eb_Trends_SlideCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Eb_Trends_SlideCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Eb_Trends_SlideCenterPathY", Source = "Value", },
+			},
+		},
+		Eb_Trends_SlideQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[56] = { 1, RH = { 56.333333, 2 } },
+				[57] = { 4, LH = { 56.666667, 3 }, RH = { 61.666667, 4 } },
+				[71] = { 4, LH = { 66.333333, 4 }, RH = { 71.333333, 3 } },
+				[72] = { 1, LH = { 71.666667, 2 }, RH = { 77.666667, 1 } },
+				[89] = { 1, LH = { 83.333333, 1 }, RH = { 89.333333, 2 } },
+				[90] = { 4, LH = { 89.666667, 3 }, RH = { 92.666667, 4 } },
+				[98] = { 4, LH = { 95.333333, 4 }, RH = { 98.333333, 3 } },
+				[99] = { 1, LH = { 98.666667, 2 } },
+			}
+		},
+		Eb_Trends_Slide = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Eb_Trends_AddLabel", Source = "Output", },
+				Center = Input { SourceOp = "Eb_Trends_SlideCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Eb_Trends_SlideQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 264 } },
+		},
+		UL_Eyebrow_Eb_Trends = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Eyebrow_Eb_Trends", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 595, -30 },
+				Size = { 120, 327 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		HL_Analyze_Trends_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 0 } },
+		},
+		HL_Analyze_Trends_Clip0_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.211493, 0.565556 }, },
+				Width = Input { Value = 0.293819, },
+				Height = Input { Value = 0.129481, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 33 } },
+		},
+		HL_Analyze_Trends_Line0 = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 66 } },
+		},
+		HL_Analyze_Trends_W01_Analyze = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Analyze", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.1, },
+				Center = Input { Value = { 0.088542, 0.574074 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 99 } },
+		},
+		HL_Analyze_Trends_W01_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Analyze_Trends_W01_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[57] = { 0.367963, RH = { 59.56, 0.5 } },
+				[73] = { 0.5, LH = { 61.8, 0.5 }, RH = { 78.666667, 0.5 } },
+				[90] = { 0.5, LH = { 84.333333, 0.5 }, RH = { 97, 0.5 } },
+				[100] = { 0.632037, LH = { 98.4, 0.5 } },
+			}
+		},
+		HL_Analyze_Trends_W01_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Analyze_Trends_W01_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Analyze_Trends_W01_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Analyze_Trends_W01_RiseQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[56] = { 1, RH = { 56.333333, 2 } },
+				[57] = { 4, LH = { 56.666667, 3 }, RH = { 62.333333, 4 } },
+				[73] = { 4, LH = { 67.666667, 4 }, RH = { 73.333333, 3 } },
+				[74] = { 1, LH = { 73.666667, 2 }, RH = { 79, 1 } },
+				[89] = { 1, LH = { 84, 1 }, RH = { 89.333333, 2 } },
+				[90] = { 4, LH = { 89.666667, 3 }, RH = { 93.333333, 4 } },
+				[100] = { 4, LH = { 96.666667, 4 }, RH = { 100.333333, 3 } },
+				[101] = { 1, LH = { 100.666667, 2 } },
+			}
+		},
+		HL_Analyze_Trends_W01_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Analyze_Trends_W01_Analyze", Source = "Output", },
+				Center = Input { SourceOp = "HL_Analyze_Trends_W01_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Analyze_Trends_W01_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 132 } },
+		},
+		HL_Analyze_Trends_W01_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Analyze_Trends_Line0", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Analyze_Trends_W01_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 165 } },
+		},
+		HL_Analyze_Trends_Line0_Clipped = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Analyze_Trends_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Analyze_Trends_W01_Add", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "HL_Analyze_Trends_Clip0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 198 } },
+		},
+		HL_Analyze_Trends_Clip1_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.195564, 0.427556 }, },
+				Width = Input { Value = 0.261962, },
+				Height = Input { Value = 0.129481, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 231 } },
+		},
+		HL_Analyze_Trends_Line1 = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 264 } },
+		},
+		HL_Analyze_Trends_W02_trends = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "trends.", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.1, },
+				Center = Input { Value = { 0.088542, 0.436074 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 297 } },
+		},
+		HL_Analyze_Trends_W02_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		HL_Analyze_Trends_W02_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[65] = { 0.367963, RH = { 67.56, 0.5 } },
+				[81] = { 0.5, LH = { 69.8, 0.5 }, RH = { 84.333333, 0.5 } },
+				[91] = { 0.5, LH = { 87.666667, 0.5 }, RH = { 98, 0.5 } },
+				[101] = { 0.632037, LH = { 99.4, 0.5 } },
+			}
+		},
+		HL_Analyze_Trends_W02_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "HL_Analyze_Trends_W02_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "HL_Analyze_Trends_W02_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		HL_Analyze_Trends_W02_RiseQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[64] = { 1, RH = { 64.333333, 2 } },
+				[65] = { 4, LH = { 64.666667, 3 }, RH = { 70.333333, 4 } },
+				[81] = { 4, LH = { 75.666667, 4 }, RH = { 81.333333, 3 } },
+				[82] = { 1, LH = { 81.666667, 2 }, RH = { 84.666667, 1 } },
+				[90] = { 1, LH = { 87.333333, 1 }, RH = { 90.333333, 2 } },
+				[91] = { 4, LH = { 90.666667, 3 }, RH = { 94.333333, 4 } },
+				[101] = { 4, LH = { 97.666667, 4 }, RH = { 101.333333, 3 } },
+				[102] = { 1, LH = { 101.666667, 2 } },
+			}
+		},
+		HL_Analyze_Trends_W02_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "HL_Analyze_Trends_W02_trends", Source = "Output", },
+				Center = Input { SourceOp = "HL_Analyze_Trends_W02_RiseCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "HL_Analyze_Trends_W02_RiseQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 330 } },
+		},
+		HL_Analyze_Trends_W02_Add = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Analyze_Trends_Line1", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Analyze_Trends_W02_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 363 } },
+		},
+		HL_Analyze_Trends_Line1_Clipped = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "HL_Analyze_Trends_Line0_Clipped", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Analyze_Trends_W02_Add", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "HL_Analyze_Trends_Clip1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 396 } },
+		},
+		UL_HL_HL_Analyze_Trends = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "HL_HL_Analyze_Trends", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 725, -30 },
+				Size = { 120, 459 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		AlertSetup_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.708333, 0.467593 }, },
+				Width = Input { Value = 0.395833, },
+				Height = Input { Value = 0.194444, },
+				CornerRadius = Input { Value = 0.342857, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 0 } },
+		},
+		AlertSetup_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.082353, },
+				TopLeftGreen = Input { Value = 0.101961, },
+				TopLeftBlue = Input { Value = 0.082353, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "AlertSetup_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 33 } },
+		},
+		AlertSetup_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.708333, 0.467593 }, },
+				Width = Input { Value = 0.395833, },
+				Height = Input { Value = 0.194444, },
+				CornerRadius = Input { Value = 0.342857, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 66 } },
+		},
+		AlertSetup_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "AlertSetup_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 99 } },
+		},
+		AlertSetup_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "AlertSetup_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "AlertSetup_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 132 } },
+		},
+		AlertSetup_Bell_bell0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0.042101, Y = -0.006944 },
+							{ X = 0.042101, Y = 0.001543, RX = 0, RY = 0.004784 },
+							{ X = 0.046875, Y = 0.010031, LX = -0.002604, LY = 0, RX = 0.002604, RY = 0 },
+							{ X = 0.051649, Y = 0.001543, LX = 0, LY = 0.004784 },
+							{ Linear = true, X = 0.051649, Y = -0.006944 },
+							{ Linear = true, X = 0.053385, Y = -0.009722 },
+							{ Linear = true, X = 0.040365, Y = -0.009722 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001736, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 165 } },
+		},
+		AlertSetup_Bell_bell1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "AlertSetup_Bell_bell0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.045312, Y = -0.013272, RX = 0.000347, RY = -0.001235 },
+							{ X = 0.046875, Y = -0.015123, LX = -0.000694, LY = 0, RX = 0.000694, RY = 0 },
+							{ X = 0.048438, Y = -0.013272, LX = -0.000347, LY = -0.001235 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001736, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 198 } },
+		},
+		AlertSetup_Bell_bell2_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "AlertSetup_Bell_bell1_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = 0.046875, Y = 0.013889 },
+							{ Linear = true, X = 0.046875, Y = 0.010031 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001736, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 231 } },
+		},
+		AlertSetup_Bell_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "AlertSetup_Bell_bell2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 264 } },
+		},
+		AlertSetup_AddBell = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "AlertSetup_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "AlertSetup_Bell_Icon", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 297 } },
+		},
+		AlertSetup_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Price alert", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.023913, },
+				Center = Input { Value = { 0.56875, 0.5 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 330 } },
+		},
+		AlertSetup_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "AlertSetup_AddBell", Source = "Output", },
+				Foreground = Input { SourceOp = "AlertSetup_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 363 } },
+		},
+		AlertSetup_Rule = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "BTC  ≥  $68,000", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.043478, },
+				Center = Input { Value = { 0.536458, 0.427778 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 396 } },
+		},
+		AlertSetup_AddRule = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "AlertSetup_AddLabel", Source = "Output", },
+				Foreground = Input { SourceOp = "AlertSetup_Rule", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 429 } },
+		},
+		AlertSetup_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "AlertSetup_AddRule", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 462 } },
+		},
+		Toggle_Track_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.855208, 0.427778 }, },
+				Width = Input { Value = 0.054167, },
+				Height = Input { Value = 0.051852, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 495 } },
+		},
+		Toggle_TrackOff = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.180392, },
+				TopLeftGreen = Input { Value = 0.207843, },
+				TopLeftBlue = Input { Value = 0.180392, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Toggle_Track_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 528 } },
+		},
+		Toggle_TrackOn = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Toggle_Track_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 561 } },
+		},
+		Toggle_TrackSwitchBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[16] = { 0, RH = { 17.28, 1 } },
+				[24] = { 1, LH = { 18.4, 1 } },
+			}
+		},
+		Toggle_TrackSwitch = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Toggle_TrackOff", Source = "Output", },
+				Foreground = Input { SourceOp = "Toggle_TrackOn", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Toggle_TrackSwitchBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 594 } },
+		},
+		Toggle_Knob_MCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[16] = { 0.842708, RH = { 19.4, 0.878958 } },
+				[26] = { 0.867708, LH = { 22.4, 0.867708 } },
+			}
+		},
+		Toggle_Knob_MCenterPathY = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[16] = { 0.427778, RH = { 19.4, 0.427778 } },
+				[26] = { 0.427778, LH = { 22.4, 0.427778 } },
+			}
+		},
+		Toggle_Knob_MCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Toggle_Knob_MCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Toggle_Knob_MCenterPathY", Source = "Value", },
+			},
+		},
+		Toggle_Knob_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { SourceOp = "Toggle_Knob_MCenterPath", Source = "Value", },
+				Width = Input { Value = 0.022917, },
+				Height = Input { Value = 0.022917, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 627 } },
+		},
+		Toggle_KnobFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Toggle_Knob_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 660 } },
+		},
+		Toggle_AddKnob = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Toggle_TrackSwitch", Source = "Output", },
+				Foreground = Input { SourceOp = "Toggle_KnobFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 693 } },
+		},
+		AlertSetup_AddToggle = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "AlertSetup_Static", Source = "Output", },
+				Foreground = Input { SourceOp = "Toggle_AddKnob", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 726 } },
+		},
+		AlertSetup_PopCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		AlertSetup_PopCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[5] = { 0.444444, RH = { 7.56, 0.5 } },
+				[21] = { 0.5, LH = { 9.8, 0.5 }, RH = { 30.666667, 0.5 } },
+				[50] = { 0.5, LH = { 40.333333, 0.5 }, RH = { 57, 0.5 } },
+				[60] = { 0.574074, LH = { 58.4, 0.5 } },
+			}
+		},
+		AlertSetup_PopCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "AlertSetup_PopCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "AlertSetup_PopCenterPathY", Source = "Value", },
+			},
+		},
+		AlertSetup_PopSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[5] = { 0.8, RH = { 10.44, 1.09 } },
+				[21] = { 1, LH = { 15.24, 1 }, RH = { 30.666667, 1 } },
+				[50] = { 1, LH = { 40.333333, 1 }, RH = { 57, 1 } },
+				[60] = { 0.9, LH = { 58.4, 1 } },
+			}
+		},
+		AlertSetup_PopQuality = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[4] = { 1, RH = { 4.333333, 2 } },
+				[5] = { 4, LH = { 4.666667, 3 }, RH = { 10.333333, 4 } },
+				[21] = { 4, LH = { 15.666667, 4 }, RH = { 21.333333, 3 } },
+				[22] = { 1, LH = { 21.666667, 2 }, RH = { 31, 1 } },
+				[49] = { 1, LH = { 40, 1 }, RH = { 49.333333, 2 } },
+				[50] = { 4, LH = { 49.666667, 3 }, RH = { 53.333333, 4 } },
+				[60] = { 4, LH = { 56.666667, 4 }, RH = { 60.333333, 3 } },
+				[61] = { 1, LH = { 60.666667, 2 } },
+			}
+		},
+		AlertSetup_Pop = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "AlertSetup_AddToggle", Source = "Output", },
+				Center = Input { SourceOp = "AlertSetup_PopCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.708333, 0.467593 }, },
+				Size = Input { SourceOp = "AlertSetup_PopSize", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "AlertSetup_PopQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 759 } },
+		},
+		UL_Alert_Setup_Card = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Alert_Setup_Card", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 855, -30 },
+				Size = { 120, 822 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Notif_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.708333, 0.689815 }, },
+				Width = Input { Value = 0.395833, },
+				Height = Input { Value = 0.157407, },
+				CornerRadius = Input { Value = 0.447059, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 0 } },
+		},
+		Notif_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.109804, },
+				TopLeftGreen = Input { Value = 0.133333, },
+				TopLeftBlue = Input { Value = 0.109804, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Notif_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 33 } },
+		},
+		Notif_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.708333, 0.689815 }, },
+				Width = Input { Value = 0.395833, },
+				Height = Input { Value = 0.157407, },
+				CornerRadius = Input { Value = 0.447059, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 66 } },
+		},
+		Notif_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Notif_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 99 } },
+		},
+		Notif_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Notif_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "Notif_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 132 } },
+		},
+		Notif_AppIcon_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.547917, 0.702778 }, },
+				Width = Input { Value = 0.0375, },
+				Height = Input { Value = 0.066667, },
+				CornerRadius = Input { Value = 0.5, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 165 } },
+		},
+		Notif_AppIconFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.243137, },
+				TopLeftGreen = Input { Value = 0.262745, },
+				TopLeftBlue = Input { Value = 0.243137, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Notif_AppIcon_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 198 } },
+		},
+		Notif_AddAppIcon = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Notif_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "Notif_AppIconFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 231 } },
+		},
+		Notif_AppMark_bolt_fill0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0.048785, Y = 0.217438 },
+							{ Linear = true, X = 0.042274, Y = 0.200463 },
+							{ Linear = true, X = 0.047483, Y = 0.200463 },
+							{ Linear = true, X = 0.046615, Y = 0.188117 },
+							{ Linear = true, X = 0.053559, Y = 0.205864 },
+							{ Linear = true, X = 0.048351, Y = 0.205864 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 264 } },
+		},
+		Notif_AppMark_Solid = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Notif_AppMark_bolt_fill0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 297 } },
+		},
+		Notif_AddAppMark = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Notif_AddAppIcon", Source = "Output", },
+				Foreground = Input { SourceOp = "Notif_AppMark_Solid", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 330 } },
+		},
+		Notif_App = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "VAULTX", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.018478, },
+				Center = Input { Value = { 0.579167, 0.725926 }, },
+				CharacterSpacing = Input { Value = 1.1, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 363 } },
+		},
+		Notif_AddApp = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Notif_AddAppMark", Source = "Output", },
+				Foreground = Input { SourceOp = "Notif_App", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 396 } },
+		},
+		Notif_Now = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "now", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.018478, },
+				Center = Input { Value = { 0.8875, 0.725926 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 429 } },
+		},
+		Notif_AddNow = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Notif_AddApp", Source = "Output", },
+				Foreground = Input { SourceOp = "Notif_Now", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 462 } },
+		},
+		Notif_Title = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "BTC just crossed $68,000", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.030435, },
+				Center = Input { Value = { 0.579167, 0.685185 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 495 } },
+		},
+		Notif_AddTitle = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Notif_AddNow", Source = "Output", },
+				Foreground = Input { SourceOp = "Notif_Title", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 528 } },
+		},
+		Notif_Body = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Your price alert triggered  ·  +3.1% today", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.579167, 0.644444 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 561 } },
+		},
+		Notif_AddBody = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Notif_AddTitle", Source = "Output", },
+				Foreground = Input { SourceOp = "Notif_Body", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 594 } },
+		},
+		Notif_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Notif_AddBody", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 627 } },
+		},
+		Notif_DropCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		Notif_DropCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[27] = { 0.796296, RH = { 32.44, 0.366667 } },
+				[43] = { 0.5, LH = { 37.24, 0.5 }, RH = { 45.333333, 0.5 } },
+				[50] = { 0.5, LH = { 47.666667, 0.5 }, RH = { 57, 0.5 } },
+				[60] = { 0.833333, LH = { 58.4, 0.5 } },
+			}
+		},
+		Notif_DropCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "Notif_DropCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "Notif_DropCenterPathY", Source = "Value", },
+			},
+		},
+		Notif_DropQuality = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[26] = { 1, RH = { 26.333333, 2 } },
+				[27] = { 4, LH = { 26.666667, 3 }, RH = { 32.333333, 4 } },
+				[43] = { 4, LH = { 37.666667, 4 }, RH = { 43.333333, 3 } },
+				[44] = { 1, LH = { 43.666667, 2 }, RH = { 45.666667, 1 } },
+				[49] = { 1, LH = { 47.333333, 1 }, RH = { 49.333333, 2 } },
+				[50] = { 4, LH = { 49.666667, 3 }, RH = { 53.333333, 4 } },
+				[60] = { 4, LH = { 56.666667, 4 }, RH = { 60.333333, 3 } },
+				[61] = { 1, LH = { 60.666667, 2 } },
+			}
+		},
+		Notif_Drop = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Notif_Static", Source = "Output", },
+				Center = Input { SourceOp = "Notif_DropCenterPath", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "Notif_DropQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 660 } },
+		},
+		UL_Alert_Notification = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Alert_Notification", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 985, -30 },
+				Size = { 120, 723 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		BellBadge_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.895833, 0.762963 }, },
+				Width = Input { Value = 0.035417, },
+				Height = Input { Value = 0.035417, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 0 } },
+		},
+		BellBadgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "BellBadge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 33 } },
+		},
+		BellBadge_bell0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0.391298, Y = 0.256366 },
+							{ X = 0.391298, Y = 0.264429, RX = 0, RY = 0.004545 },
+							{ X = 0.395833, Y = 0.272492, LX = -0.002474, LY = 0, RX = 0.002474, RY = 0 },
+							{ X = 0.400369, Y = 0.264429, LX = 0, LY = 0.004545 },
+							{ Linear = true, X = 0.400369, Y = 0.256366 },
+							{ Linear = true, X = 0.402018, Y = 0.253727 },
+							{ Linear = true, X = 0.389648, Y = 0.253727 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001875, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 66 } },
+		},
+		BellBadge_bell1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "BellBadge_bell0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.394349, Y = 0.250355, RX = 0.00033, RY = -0.001173 },
+							{ X = 0.395833, Y = 0.248596, LX = -0.00066, LY = 0, RX = 0.00066, RY = 0 },
+							{ X = 0.397318, Y = 0.250355, LX = -0.00033, LY = -0.001173 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001875, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 99 } },
+		},
+		BellBadge_bell2_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "BellBadge_bell1_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = 0.395833, Y = 0.276157 },
+							{ Linear = true, X = 0.395833, Y = 0.272492 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001875, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 132 } },
+		},
+		BellBadge_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.043137, },
+				TopLeftGreen = Input { Value = 0.054902, },
+				TopLeftBlue = Input { Value = 0.043137, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "BellBadge_bell2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 165 } },
+		},
+		BellBadge_ShakeAngle = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[35] = { 0, RH = { 36.35, 0 } },
+				[38] = { 16, LH = { 35.75, 16 }, RH = { 39.35, 16 } },
+				[41] = { -14, LH = { 38.75, -14 }, RH = { 42.35, -14 } },
+				[44] = { 10, LH = { 41.75, 10 }, RH = { 45.35, 10 } },
+				[47] = { -6, LH = { 44.75, -6 }, RH = { 48.8, -6 } },
+				[51] = { 0, LH = { 48, 0 } },
+			}
+		},
+		BellBadge_ShakeQuality = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[34] = { 1, RH = { 34.333333, 2 } },
+				[35] = { 4, LH = { 34.666667, 3 }, RH = { 40.333333, 4 } },
+				[51] = { 4, LH = { 45.666667, 4 }, RH = { 51.333333, 3 } },
+				[52] = { 1, LH = { 51.666667, 2 } },
+			}
+		},
+		BellBadge_Shake = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "BellBadge_Icon", Source = "Output", },
+				Pivot = Input { Value = { 0.895833, 0.781481 }, },
+				Angle = Input { SourceOp = "BellBadge_ShakeAngle", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "BellBadge_ShakeQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 198 } },
+		},
+		BellBadge_AddIcon = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BellBadgeFill", Source = "Output", },
+				Foreground = Input { SourceOp = "BellBadge_Shake", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 231 } },
+		},
+		BellBadge_PopCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		BellBadge_PopCenterPathY = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[33] = { 0.5, RH = { 34.92, 0.5 } },
+				[45] = { 0.5, LH = { 36.6, 0.5 }, RH = { 46.666667, 0.5 } },
+				[50] = { 0.5, LH = { 48.333333, 0.5 }, RH = { 55.6, 0.5 } },
+				[58] = { 0.518519, LH = { 56.72, 0.5 } },
+			}
+		},
+		BellBadge_PopCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "BellBadge_PopCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "BellBadge_PopCenterPathY", Source = "Value", },
+			},
+		},
+		BellBadge_PopSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[33] = { 0.2, RH = { 37.08, 1.36 } },
+				[45] = { 1, LH = { 40.68, 1 }, RH = { 46.666667, 1 } },
+				[50] = { 1, LH = { 48.333333, 1 }, RH = { 55.6, 1 } },
+				[58] = { 0.9, LH = { 56.72, 1 } },
+			}
+		},
+		BellBadge_PopQuality = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[32] = { 1, RH = { 32.333333, 2 } },
+				[33] = { 4, LH = { 32.666667, 3 }, RH = { 37, 4 } },
+				[45] = { 4, LH = { 41, 4 }, RH = { 45.333333, 3 } },
+				[46] = { 1, LH = { 45.666667, 2 }, RH = { 47, 1 } },
+				[49] = { 1, LH = { 48, 1 }, RH = { 49.333333, 2 } },
+				[50] = { 4, LH = { 49.666667, 3 }, RH = { 52.666667, 4 } },
+				[58] = { 4, LH = { 55.333333, 4 }, RH = { 58.333333, 3 } },
+				[59] = { 1, LH = { 58.666667, 2 } },
+			}
+		},
+		BellBadge_Pop = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "BellBadge_AddIcon", Source = "Output", },
+				Center = Input { SourceOp = "BellBadge_PopCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.895833, 0.762963 }, },
+				Size = Input { SourceOp = "BellBadge_PopSize", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "BellBadge_PopQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 264 } },
+		},
+		UL_Alert_Bell_Badge = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Alert_Bell_Badge", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1115, -30 },
+				Size = { 120, 327 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		TrendCard_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.708333, 0.490741 }, },
+				Width = Input { Value = 0.395833, },
+				Height = Input { Value = 0.555556, },
+				CornerRadius = Input { Value = 0.133333, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 0 } },
+		},
+		TrendCard_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.082353, },
+				TopLeftGreen = Input { Value = 0.101961, },
+				TopLeftBlue = Input { Value = 0.082353, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "TrendCard_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 33 } },
+		},
+		TrendCard_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.708333, 0.490741 }, },
+				Width = Input { Value = 0.395833, },
+				Height = Input { Value = 0.555556, },
+				CornerRadius = Input { Value = 0.133333, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000781, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 66 } },
+		},
+		TrendCard_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "TrendCard_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 99 } },
+		},
+		TrendCard_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendCard_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 132 } },
+		},
+		TrendCard_Title = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Weekly trend", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.030435, },
+				Center = Input { Value = { 0.536458, 0.707407 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 165 } },
+		},
+		TrendCard_AddTitle = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendCard_Title", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 198 } },
+		},
+		TrendCard_Sub = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "BTC  ·  7 days", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.021739, },
+				Center = Input { Value = { 0.536458, 0.668519 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 231 } },
+		},
+		TrendCard_AddSub = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddTitle", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendCard_Sub", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 264 } },
+		},
+		TrendCard_Bull_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.835938, 0.702778 }, },
+				Width = Input { Value = 0.088542, },
+				Height = Input { Value = 0.046296, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 297 } },
+		},
+		TrendCard_Bull_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.133333, },
+				TopLeftGreen = Input { Value = 0.188235, },
+				TopLeftBlue = Input { Value = 0.101961, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "TrendCard_Bull_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 330 } },
+		},
+		TrendCard_Bull_Ic_arrowup0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = 0.30599, Y = 0.196566 },
+							{ Linear = true, X = 0.30599, Y = 0.208989 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000998, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 363 } },
+		},
+		TrendCard_Bull_Ic_arrowup1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				EffectMask = Input { SourceOp = "TrendCard_Bull_Ic_arrowup0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = 0.303244, Y = 0.204109 },
+							{ Linear = true, X = 0.30599, Y = 0.208989 },
+							{ Linear = true, X = 0.308735, Y = 0.204109 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.000998, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 396 } },
+		},
+		TrendCard_Bull_Ic_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "TrendCard_Bull_Ic_arrowup1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 429 } },
+		},
+		TrendCard_Bull_AddIcon = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_Bull_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendCard_Bull_Ic_Icon", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 462 } },
+		},
+		TrendCard_Bull_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "Bullish", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.022826, },
+				Center = Input { Value = { 0.817708, 0.702778 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 495 } },
+		},
+		TrendCard_Bull_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_Bull_AddIcon", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendCard_Bull_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 528 } },
+		},
+		TrendCard_AddPill = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddSub", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendCard_Bull_AddLabel", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 561 } },
+		},
+		TrendCard_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "TrendCard_AddPill", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1300, 594 } },
+		},
+		UL_Trend_Card = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Card", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1245, -30 },
+				Size = { 120, 657 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Bar1_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.552604, 0.354352 }, },
+				Width = Input { Value = 0.032292, },
+				Height = Input { Value = 0.116111, },
+				CornerRadius = Input { Value = 0.451613, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 0 } },
+		},
+		Bar1_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.235294, },
+				TopLeftGreen = Input { Value = 0.290196, },
+				TopLeftBlue = Input { Value = 0.2, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Bar1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 33 } },
+		},
+		Bar1_GrowSize = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[61] = { 0, RH = { 65.76, 1.45 } },
+				[75] = { 1, LH = { 69.96, 1 } },
+			}
+		},
+		Bar1_Grow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Bar1_Fill", Source = "Output", },
+				Pivot = Input { Value = { 0.552604, 0.296296 }, },
+				Size = Input { SourceOp = "Bar1_GrowSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 66 } },
+		},
+		TrendCard_AddBar1 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_Static", Source = "Output", },
+				Foreground = Input { SourceOp = "Bar1_Grow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 99 } },
+		},
+		Day1 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "M", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.019565, },
+				Center = Input { Value = { 0.552604, 0.255556 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 132 } },
+		},
+		TrendCard_AddDay1 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddBar1", Source = "Output", },
+				Foreground = Input { SourceOp = "Day1", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 165 } },
+		},
+		UL_Trend_Bar1 = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Bar1", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1375, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Bar2_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.604514, 0.375741 }, },
+				Width = Input { Value = 0.032292, },
+				Height = Input { Value = 0.158889, },
+				CornerRadius = Input { Value = 0.451613, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 0 } },
+		},
+		Bar2_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.235294, },
+				TopLeftGreen = Input { Value = 0.290196, },
+				TopLeftBlue = Input { Value = 0.2, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Bar2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 33 } },
+		},
+		Bar2_GrowSize = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[64] = { 0, RH = { 68.76, 1.45 } },
+				[78] = { 1, LH = { 72.96, 1 } },
+			}
+		},
+		Bar2_Grow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Bar2_Fill", Source = "Output", },
+				Pivot = Input { Value = { 0.604514, 0.296296 }, },
+				Size = Input { SourceOp = "Bar2_GrowSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 66 } },
+		},
+		TrendCard_AddBar2 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddDay1", Source = "Output", },
+				Foreground = Input { SourceOp = "Bar2_Grow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 99 } },
+		},
+		Day2 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "T", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.019565, },
+				Center = Input { Value = { 0.604514, 0.255556 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 132 } },
+		},
+		TrendCard_AddDay2 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddBar2", Source = "Output", },
+				Foreground = Input { SourceOp = "Day2", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1560, 165 } },
+		},
+		UL_Trend_Bar2 = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Bar2", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1505, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Bar3_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.656424, 0.363519 }, },
+				Width = Input { Value = 0.032292, },
+				Height = Input { Value = 0.134444, },
+				CornerRadius = Input { Value = 0.451613, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 0 } },
+		},
+		Bar3_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.235294, },
+				TopLeftGreen = Input { Value = 0.290196, },
+				TopLeftBlue = Input { Value = 0.2, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Bar3_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 33 } },
+		},
+		Bar3_GrowSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[67] = { 0, RH = { 71.76, 1.45 } },
+				[81] = { 1, LH = { 75.96, 1 } },
+			}
+		},
+		Bar3_Grow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Bar3_Fill", Source = "Output", },
+				Pivot = Input { Value = { 0.656424, 0.296296 }, },
+				Size = Input { SourceOp = "Bar3_GrowSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 66 } },
+		},
+		TrendCard_AddBar3 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddDay2", Source = "Output", },
+				Foreground = Input { SourceOp = "Bar3_Grow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 99 } },
+		},
+		Day3 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "W", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.019565, },
+				Center = Input { Value = { 0.656424, 0.255556 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 132 } },
+		},
+		TrendCard_AddDay3 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddBar3", Source = "Output", },
+				Foreground = Input { SourceOp = "Day3", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1690, 165 } },
+		},
+		UL_Trend_Bar3 = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Bar3", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1635, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Bar4_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.708333, 0.392546 }, },
+				Width = Input { Value = 0.032292, },
+				Height = Input { Value = 0.1925, },
+				CornerRadius = Input { Value = 0.451613, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 0 } },
+		},
+		Bar4_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.235294, },
+				TopLeftGreen = Input { Value = 0.290196, },
+				TopLeftBlue = Input { Value = 0.2, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Bar4_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 33 } },
+		},
+		Bar4_GrowSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[70] = { 0, RH = { 74.76, 1.45 } },
+				[84] = { 1, LH = { 78.96, 1 } },
+			}
+		},
+		Bar4_Grow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Bar4_Fill", Source = "Output", },
+				Pivot = Input { Value = { 0.708333, 0.296296 }, },
+				Size = Input { SourceOp = "Bar4_GrowSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 66 } },
+		},
+		TrendCard_AddBar4 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddDay3", Source = "Output", },
+				Foreground = Input { SourceOp = "Bar4_Grow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 99 } },
+		},
+		Day4 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "T", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.019565, },
+				Center = Input { Value = { 0.708333, 0.255556 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 132 } },
+		},
+		TrendCard_AddDay4 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddBar4", Source = "Output", },
+				Foreground = Input { SourceOp = "Day4", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1820, 165 } },
+		},
+		UL_Trend_Bar4 = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Bar4", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1765, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Bar5_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.760243, 0.384907 }, },
+				Width = Input { Value = 0.032292, },
+				Height = Input { Value = 0.177222, },
+				CornerRadius = Input { Value = 0.451613, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1950, 0 } },
+		},
+		Bar5_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.235294, },
+				TopLeftGreen = Input { Value = 0.290196, },
+				TopLeftBlue = Input { Value = 0.2, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Bar5_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1950, 33 } },
+		},
+		Bar5_GrowSize = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[73] = { 0, RH = { 77.76, 1.45 } },
+				[87] = { 1, LH = { 81.96, 1 } },
+			}
+		},
+		Bar5_Grow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Bar5_Fill", Source = "Output", },
+				Pivot = Input { Value = { 0.760243, 0.296296 }, },
+				Size = Input { SourceOp = "Bar5_GrowSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1950, 66 } },
+		},
+		TrendCard_AddBar5 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddDay4", Source = "Output", },
+				Foreground = Input { SourceOp = "Bar5_Grow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1950, 99 } },
+		},
+		Day5 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "F", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.019565, },
+				Center = Input { Value = { 0.760243, 0.255556 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1950, 132 } },
+		},
+		TrendCard_AddDay5 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddBar5", Source = "Output", },
+				Foreground = Input { SourceOp = "Day5", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1950, 165 } },
+		},
+		UL_Trend_Bar5 = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Bar5", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 1895, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Bar6_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.812153, 0.416991 }, },
+				Width = Input { Value = 0.032292, },
+				Height = Input { Value = 0.241389, },
+				CornerRadius = Input { Value = 0.451613, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2080, 0 } },
+		},
+		Bar6_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.235294, },
+				TopLeftGreen = Input { Value = 0.290196, },
+				TopLeftBlue = Input { Value = 0.2, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Bar6_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2080, 33 } },
+		},
+		Bar6_GrowSize = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[76] = { 0, RH = { 80.76, 1.45 } },
+				[90] = { 1, LH = { 84.96, 1 } },
+			}
+		},
+		Bar6_Grow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Bar6_Fill", Source = "Output", },
+				Pivot = Input { Value = { 0.812153, 0.296296 }, },
+				Size = Input { SourceOp = "Bar6_GrowSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2080, 66 } },
+		},
+		TrendCard_AddBar6 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddDay5", Source = "Output", },
+				Foreground = Input { SourceOp = "Bar6_Grow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2080, 99 } },
+		},
+		Day6 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "S", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.019565, },
+				Center = Input { Value = { 0.812153, 0.255556 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2080, 132 } },
+		},
+		TrendCard_AddDay6 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddBar6", Source = "Output", },
+				Foreground = Input { SourceOp = "Day6", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2080, 165 } },
+		},
+		UL_Trend_Bar6 = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Bar6", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 2025, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Bar7_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.864062, 0.436852 }, },
+				Width = Input { Value = 0.032292, },
+				Height = Input { Value = 0.281111, },
+				CornerRadius = Input { Value = 0.451613, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2210, 0 } },
+		},
+		Bar7_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Bar7_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2210, 33 } },
+		},
+		Bar7_GrowSize = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[79] = { 0, RH = { 83.76, 1.45 } },
+				[93] = { 1, LH = { 87.96, 1 } },
+			}
+		},
+		Bar7_Grow = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Bar7_Fill", Source = "Output", },
+				Pivot = Input { Value = { 0.864062, 0.296296 }, },
+				Size = Input { SourceOp = "Bar7_GrowSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2210, 66 } },
+		},
+		TrendCard_AddBar7 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddDay6", Source = "Output", },
+				Foreground = Input { SourceOp = "Bar7_Grow", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2210, 99 } },
+		},
+		Day7 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "S", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.019565, },
+				Center = Input { Value = { 0.864062, 0.255556 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2210, 132 } },
+		},
+		TrendCard_AddDay7 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddBar7", Source = "Output", },
+				Foreground = Input { SourceOp = "Day7", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2210, 165 } },
+		},
+		UL_Trend_Bar7 = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Bar7", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 2155, -30 },
+				Size = { 120, 228 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		TrendLine_MLevel = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[71] = { 0, RH = { 71.333333, 0.333333 } },
+				[72] = { 1, LH = { 71.666667, 0.666667 } },
+			}
+		},
+		TrendLine_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[71] = { 0, RH = { 81.4, 0 } },
+				[87] = { 1, LH = { 76.6, 1 } },
+			}
+		},
+		TrendLine_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Level = Input { SourceOp = "TrendLine_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.052604, Y = -0.063519, RX = 0.010382, RY = 0.008556 },
+							{ X = 0.104514, Y = -0.020741, LX = -0.020764, LY = -0.003667, RX = 0.020764, RY = 0.003667 },
+							{ X = 0.156424, Y = -0.045185, LX = -0.020764, LY = -0.006722, RX = 0.020764, RY = 0.006722 },
+							{ X = 0.208333, Y = 0.01287, LX = -0.020764, LY = -0.008556, RX = 0.020764, RY = 0.008556 },
+							{ X = 0.260243, Y = -0.002407, LX = -0.020764, LY = -0.009778, RX = 0.020764, RY = 0.009778 },
+							{ X = 0.312153, Y = 0.061759, LX = -0.020764, LY = -0.020778, RX = 0.020764, RY = 0.020778 },
+							{ X = 0.364063, Y = 0.101481, LX = -0.010382, LY = -0.007944 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.002083, },
+				WriteOnEnd = Input { SourceOp = "TrendLine_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 0 } },
+		},
+		TrendLine_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.9, },
+				TopLeftGreen = Input { Value = 0.9, },
+				TopLeftBlue = Input { Value = 0.9, },
+				TopLeftAlpha = Input { Value = 0.9, },
+				EffectMask = Input { SourceOp = "TrendLine_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 33 } },
+		},
+		TrendCard_AddLine = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddDay7", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendLine_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 66 } },
+		},
+		TrendGain_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				Center = Input { Value = { 0.809375, 0.650556 }, },
+				Width = Input { Value = 0.078125, },
+				Height = Input { Value = 0.042593, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 99 } },
+		},
+		TrendGain_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "TrendGain_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 132 } },
+		},
+		TrendGain_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				StyledText = Input { Value = "+8.6%", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.022826, },
+				Center = Input { Value = { 0.809375, 0.650556 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.043137, },
+				Green1 = Input { Value = 0.054902, },
+				Blue1 = Input { Value = 0.043137, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 165 } },
+		},
+		TrendGain_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendGain_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendGain_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 198 } },
+		},
+		TrendGain_PopCenterPathX = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		TrendGain_PopCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[85] = { 0.490741, RH = { 86.92, 0.5 } },
+				[97] = { 0.5, LH = { 88.6, 0.5 } },
+			}
+		},
+		TrendGain_PopCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "TrendGain_PopCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "TrendGain_PopCenterPathY", Source = "Value", },
+			},
+		},
+		TrendGain_PopSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[85] = { 0.4, RH = { 89.08, 1.27 } },
+				[97] = { 1, LH = { 92.68, 1 } },
+			}
+		},
+		TrendGain_PopQuality = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[84] = { 1, RH = { 84.333333, 2 } },
+				[85] = { 4, LH = { 84.666667, 3 }, RH = { 89, 4 } },
+				[97] = { 4, LH = { 93, 4 }, RH = { 97.333333, 3 } },
+				[98] = { 1, LH = { 97.666667, 2 } },
+			}
+		},
+		TrendGain_Pop = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "TrendGain_AddLabel", Source = "Output", },
+				Center = Input { SourceOp = "TrendGain_PopCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.809375, 0.650556 }, },
+				Size = Input { SourceOp = "TrendGain_PopSize", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "TrendGain_PopQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 231 } },
+		},
+		TrendCard_AddGainBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[85] = { 0, RH = { 85.96, 1 } },
+				[91] = { 1, LH = { 86.8, 1 } },
+			}
+		},
+		TrendCard_AddGain = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "TrendCard_AddLine", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendGain_Pop", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "TrendCard_AddGainBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 264 } },
+		},
+		TrendCard_MoveCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		TrendCard_MoveCenterPathY = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[52] = { -0.333333, RH = { 54.56, 0.5 } },
+				[68] = { 0.5, LH = { 56.8, 0.5 } },
+			}
+		},
+		TrendCard_MoveCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "TrendCard_MoveCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "TrendCard_MoveCenterPathY", Source = "Value", },
+			},
+		},
+		TrendCard_MoveSize = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[90] = { 1, RH = { 96.3, 1 } },
+				[99] = { 0.7, LH = { 97.56, 1 } },
+			}
+		},
+		TrendCard_Move = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "TrendCard_AddGain", Source = "Output", },
+				Center = Input { SourceOp = "TrendCard_MoveCenterPath", Source = "Value", },
+				Pivot = Input { Value = { 0.708333, 0.490741 }, },
+				Size = Input { SourceOp = "TrendCard_MoveSize", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 2340, 297 } },
+		},
+		UL_Trend_Line = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Trend_Line", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 2285, -30 },
+				Size = { 120, 360 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Comp_01Blend = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[2] = { 0, RH = { 3.6, 1 } },
+				[12] = { 1, LH = { 5, 1 }, RH = { 24.666667, 1 } },
+				[50] = { 1, LH = { 37.333333, 1 }, RH = { 55.6, 1 } },
+				[58] = { 0, LH = { 56.72, 1 } },
+			}
+		},
+		Comp_01 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "BG_AddVignette", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Alerts_Slide", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_01Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 1500 } },
+		},
+		Comp_02 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_01", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Price_Alerts_Line1_Clipped", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1500 } },
+		},
+		Comp_03Blend = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[57] = { 0, RH = { 58.6, 1 } },
+				[67] = { 1, LH = { 60, 1 }, RH = { 74.666667, 1 } },
+				[90] = { 1, LH = { 82.333333, 1 }, RH = { 95.6, 1 } },
+				[98] = { 0, LH = { 96.72, 1 } },
+			}
+		},
+		Comp_03 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_02", Source = "Output", },
+				Foreground = Input { SourceOp = "Eb_Trends_Slide", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_03Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 1500 } },
+		},
+		Comp_04 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_03", Source = "Output", },
+				Foreground = Input { SourceOp = "HL_Analyze_Trends_Line1_Clipped", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 1500 } },
+		},
+		Comp_05Blend = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[5] = { 0, RH = { 6.28, 1 } },
+				[13] = { 1, LH = { 7.4, 1 }, RH = { 25.333333, 1 } },
+				[50] = { 1, LH = { 37.666667, 1 }, RH = { 57, 1 } },
+				[60] = { 0, LH = { 58.4, 1 } },
+			}
+		},
+		Comp_05 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_04", Source = "Output", },
+				Foreground = Input { SourceOp = "AlertSetup_Pop", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_05Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 1500 } },
+		},
+		Comp_06Blend = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[27] = { 0, RH = { 27.96, 1 } },
+				[33] = { 1, LH = { 28.8, 1 }, RH = { 40, 1 } },
+				[54] = { 1, LH = { 47, 1 }, RH = { 58.2, 1 } },
+				[60] = { 0, LH = { 59.04, 1 } },
+			}
+		},
+		Comp_06 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_05", Source = "Output", },
+				Foreground = Input { SourceOp = "Notif_Drop", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_06Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 1500 } },
+		},
+		Comp_07Blend = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[33] = { 0, RH = { 33.96, 1 } },
+				[39] = { 1, LH = { 34.8, 1 }, RH = { 42.666667, 1 } },
+				[50] = { 1, LH = { 46.333333, 1 }, RH = { 55.6, 1 } },
+				[58] = { 0, LH = { 56.72, 1 } },
+			}
+		},
+		Comp_07 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_06", Source = "Output", },
+				Foreground = Input { SourceOp = "BellBadge_Pop", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_07Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 780, 1500 } },
+		},
+		Comp_08Blend = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[51] = { 0, RH = { 51.8, 1 } },
+				[56] = { 1, LH = { 52.5, 1 }, RH = { 68, 1 } },
+				[92] = { 1, LH = { 80, 1 }, RH = { 96.9, 1 } },
+				[99] = { 0, LH = { 97.88, 1 } },
+			}
+		},
+		Comp_08 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Comp_07", Source = "Output", },
+				Foreground = Input { SourceOp = "TrendCard_Move", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "Comp_08Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 910, 1500 } },
+		},
+		CAMERASize = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 1.06, RH = { 1.92, 1 } },
+				[12] = { 1, LH = { 3.6, 1 }, RH = { 51.15, 1 } },
+				[99] = { 1.02, LH = { 33.75, 1.02 } },
+			}
+		},
+		CAMERA = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Comp_08", Source = "Output", },
+				Size = Input { SourceOp = "CAMERASize", Source = "Value", },
+				Pivot = Input { Value = { 0.5, 0.5 }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1040, 1500 } },
+		},
+		GRAIN_Noise = FastNoise {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Detail = Input { Value = 1, },
+				Contrast = Input { Value = 2.2, },
+				XScale = Input { Value = 220, },
+				SeetheRate = Input { Value = 4, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1434 } },
+		},
+		GRAIN_Overlay = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "CAMERA", Source = "Output", },
+				Foreground = Input { SourceOp = "GRAIN_Noise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				ApplyMode = Input { Value = FuID { "Overlay" }, },
+				Blend = Input { Value = 0.035, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1170, 1500 } },
+		},
+		MediaOut1 = MediaOut {
+			NameSet = true,
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input { SourceOp = "GRAIN_Overlay", Source = "Output", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 1500 } },
+		},
+		UL_OUTPUT_SPINE___layers_merged_left_to_right__then_camera__grain__MediaOut = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "OUTPUT SPINE - layers merged left to right, then camera, grain, MediaOut", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, 1460 },
+				Size = { 1580, 90 }
+			},
+			Colors = { TileColor = { R = 0.35, G = 0.2, B = 0.2 }, }
+		}
+	},
+	Frames = {
+	},
+	Prefs = {
+		Comp = {
+			FrameFormat = {
+				Name = "HD 1080",
+				Width = 1920,
+				Height = 1080,
+				Rate = 30,
+				AspectX = 1,
+				AspectY = 1,
+				GuideRatio = 1.77777777777778,
+				DepthFull = 2,
+				DepthPreview = 2,
+				DepthInteractive = 2,
+			},
+			Unsorted = {
+				GlobalEnd = 98
+			},
+		}
+	},
+}
