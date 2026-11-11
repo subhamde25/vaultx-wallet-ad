@@ -1,0 +1,1385 @@
+Composition {
+	CurrentTime = 0,
+	RenderRange = { 0, 89 },
+	GlobalRange = { 0, 89 },
+	CurrentID = 117,
+	HiQ = true,
+	PlaybackUpdateMode = 0,
+	Version = "DaVinci Resolve Fusion 21.2",
+	SavedOutputs = 0,
+	HeldTools = 0,
+	DisabledTools = 0,
+	LockedTools = 0,
+	AudioOffset = 0,
+	AutoRenderRange = true,
+	Resumable = true,
+	OutputClips = {
+	},
+	Tools = ordered() {
+		Phone_Frame_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 1, },
+				Height = Input { Value = 1, },
+				CornerRadius = Input { Value = 0.293333, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+		},
+		Phone_Frame_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.039216, },
+				TopLeftGreen = Input { Value = 0.047059, },
+				TopLeftBlue = Input { Value = 0.039216, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Frame_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		},
+		Phone_Frame_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 1, },
+				Height = Input { Value = 1, },
+				CornerRadius = Input { Value = 0.293333, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004444, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 66 } },
+		},
+		Phone_Frame_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.290196, },
+				TopLeftGreen = Input { Value = 0.321569, },
+				TopLeftBlue = Input { Value = 0.290196, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Frame_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 99 } },
+		},
+		Phone_Frame_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Frame_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_Frame_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 132 } },
+		},
+		Phone_Screen_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 0.951111, },
+				Height = Input { Value = 0.976344, },
+				CornerRadius = Input { Value = 0.261682, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 165 } },
+		},
+		Phone_ScreenBG = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Linear" }, },
+				Start = Input { Value = { 0.5, 1 }, },
+				End = Input { Value = { 0.5, 0 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.082353, 0.101961, 0.078431, 1 }, [1] = { 0.05098, 0.062745, 0.05098, 1 } }
+					}, },
+				EffectMask = Input { SourceOp = "Phone_Screen_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 198 } },
+		},
+		Phone_AddScreen = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Frame_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_ScreenBG", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 231 } },
+		},
+		Phone_Island_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.962366 }, },
+				Width = Input { Value = 0.204444, },
+				Height = Input { Value = 0.027957, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 264 } },
+		},
+		Phone_IslandFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Island_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 297 } },
+		},
+		Phone_AddIsland = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddScreen", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_IslandFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 330 } },
+		},
+		Phone_Time = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "9:41", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.055652, },
+				Center = Input { Value = { 0.142222, 0.96129 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 363 } },
+		},
+		Phone_AddTime = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddIsland", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_Time", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 396 } },
+		},
+		Phone_Sig0_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.755, 0.956989 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.004301, },
+				CornerRadius = Input { Value = 0.571429, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 429 } },
+		},
+		Phone_Sig1_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.767222, 0.958333 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.006989, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 462 } },
+		},
+		Phone_Sig2_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.779444, 0.959677 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.009677, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 495 } },
+		},
+		Phone_Sig3_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.791667, 0.961022 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.012366, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 528 } },
+		},
+		Phone_Bat_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.833333, 0.960753 }, },
+				Width = Input { Value = 0.048889, },
+				Height = Input { Value = 0.011828, },
+				CornerRadius = Input { Value = 0.545455, },
+				EffectMask = Input { SourceOp = "Phone_Sig3_M", Source = "Mask", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.002222, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 561 } },
+		},
+		Phone_BatFill_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.831111, 0.960753 }, },
+				Width = Input { Value = 0.035556, },
+				Height = Input { Value = 0.007527, },
+				CornerRadius = Input { Value = 0.428571, },
+				EffectMask = Input { SourceOp = "Phone_Bat_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 594 } },
+		},
+		Phone_StatusFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_BatFill_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 627 } },
+		},
+		Phone_AddStatus = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddTime", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_StatusFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 660 } },
+		},
+		Phone_HomeBar_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.022312 }, },
+				Width = Input { Value = 0.288889, },
+				Height = Input { Value = 0.004839, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 693 } },
+		},
+		Phone_HomeBarFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.85, },
+				TopLeftGreen = Input { Value = 0.85, },
+				TopLeftBlue = Input { Value = 0.85, },
+				TopLeftAlpha = Input { Value = 0.85, },
+				EffectMask = Input { SourceOp = "Phone_HomeBar_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 726 } },
+		},
+		Phone_AddHomeBar = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddStatus", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_HomeBarFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 759 } },
+		},
+		Phone_Body_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Phone_AddHomeBar", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 792 } },
+		},
+		UL_Phone_Body = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Phone_Body", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, -30 },
+				Size = { 120, 855 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		S_Send_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 0 } },
+		},
+		S_Back_back0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.393148, Y = 0.412903 },
+							{ Linear = true, X = -0.404259, Y = 0.407527 },
+							{ Linear = true, X = -0.393148, Y = 0.402151 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.003704, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 33 } },
+		},
+		S_Back_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.54902, },
+				TopLeftGreen = Input { Value = 0.588235, },
+				TopLeftBlue = Input { Value = 0.54902, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_Back_back0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 66 } },
+		},
+		S_Title = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Send", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.069565, },
+				Center = Input { Value = { 0.5, 0.907527 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 99 } },
+		},
+		S_TokenRow_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.830645 }, },
+				Width = Input { Value = 0.844444, },
+				Height = Input { Value = 0.069892, },
+				CornerRadius = Input { Value = 0.523077, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 132 } },
+		},
+		S_TokenRow_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.109804, },
+				TopLeftGreen = Input { Value = 0.133333, },
+				TopLeftBlue = Input { Value = 0.109804, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_TokenRow_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 165 } },
+		},
+		S_TokenRow_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.830645 }, },
+				Width = Input { Value = 0.844444, },
+				Height = Input { Value = 0.069892, },
+				CornerRadius = Input { Value = 0.523077, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001667, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 198 } },
+		},
+		S_TokenRow_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_TokenRow_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 231 } },
+		},
+		S_TokenRow_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_TokenRow_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "S_TokenRow_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 264 } },
+		},
+		S_EthCoin_Disc_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.166667, 0.830645 }, },
+				Width = Input { Value = 0.08, },
+				Height = Input { Value = 0.08, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 297 } },
+		},
+		S_EthCoin_DiscFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.54902, },
+				TopLeftGreen = Input { Value = 0.619608, },
+				TopLeftBlue = Input { Value = 0.94902, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_EthCoin_Disc_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 330 } },
+		},
+		S_EthCoin_EthTop_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = -0.333333, Y = 0.345161 },
+							{ Linear = true, X = -0.315, Y = 0.329839 },
+							{ Linear = true, X = -0.333333, Y = 0.325484 },
+							{ Linear = true, X = -0.351667, Y = 0.329839 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 363 } },
+		},
+		S_EthCoin_EthBot_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				EffectMask = Input { SourceOp = "S_EthCoin_EthTop_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = -0.333333, Y = 0.323226 },
+							{ Linear = true, X = -0.315, Y = 0.327581 },
+							{ Linear = true, X = -0.333333, Y = 0.316129 },
+							{ Linear = true, X = -0.351667, Y = 0.327581 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 396 } },
+		},
+		S_EthCoin_EthGlyph = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_EthCoin_EthBot_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 429 } },
+		},
+		S_EthCoin_Coin = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_EthCoin_DiscFill", Source = "Output", },
+				Foreground = Input { SourceOp = "S_EthCoin_EthGlyph", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 462 } },
+		},
+		S_EthName = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Ethereum", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.06029, },
+				Center = Input { Value = { 0.233333, 0.840323 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 495 } },
+		},
+		S_EthBal = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "ETH  ·  Balance 4.20", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.044058, },
+				Center = Input { Value = { 0.233333, 0.817204 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 528 } },
+		},
+		S_Amount = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "0.85", Expression = ":local t=math.min(1,math.max(0,(time-2)/16)); t=1-(1-t)^3; local v=0.000000+(0.850000)*t; local s=string.format(\"%.2f\",v); local int,frac=s:match(\"(%d+)(.*)\"); int=int:reverse():gsub(\"(%d%d%d)\",\"%1,\"):reverse():gsub(\"^,\",\"\"); return Text(string.format(\"%s\", int..frac))", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.241159, },
+				Center = Input { Value = { 0.622222, 0.698925 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 561 } },
+		},
+		S_AmountUnit = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "ETH", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.097391, },
+				Center = Input { Value = { 0.65, 0.698925 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 594 } },
+		},
+		S_AmountUsd = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "≈ $2,846.10", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.06029, },
+				Center = Input { Value = { 0.5, 0.645161 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 627 } },
+		},
+		S_ToRow_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.567204 }, },
+				Width = Input { Value = 0.844444, },
+				Height = Input { Value = 0.069892, },
+				CornerRadius = Input { Value = 0.523077, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 660 } },
+		},
+		S_ToRow_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.109804, },
+				TopLeftGreen = Input { Value = 0.133333, },
+				TopLeftBlue = Input { Value = 0.109804, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_ToRow_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 693 } },
+		},
+		S_ToRow_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.567204 }, },
+				Width = Input { Value = 0.844444, },
+				Height = Input { Value = 0.069892, },
+				CornerRadius = Input { Value = 0.523077, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.001667, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 726 } },
+		},
+		S_ToRow_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.168627, },
+				TopLeftGreen = Input { Value = 0.2, },
+				TopLeftBlue = Input { Value = 0.168627, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_ToRow_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 759 } },
+		},
+		S_ToRow_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_ToRow_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "S_ToRow_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 792 } },
+		},
+		S_ToLabel = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "To", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.044058, },
+				Center = Input { Value = { 0.127778, 0.58172 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 825 } },
+		},
+		S_ToAddr = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "0x8F3c…a91C", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.062609, },
+				Center = Input { Value = { 0.127778, 0.556452 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 858 } },
+		},
+		S_Avatar_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.844444, 0.567204 }, },
+				Width = Input { Value = 0.075556, },
+				Height = Input { Value = 0.075556, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 891 } },
+		},
+		S_AvatarFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.243137, },
+				TopLeftGreen = Input { Value = 0.262745, },
+				TopLeftBlue = Input { Value = 0.243137, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_Avatar_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 924 } },
+		},
+		S_AvatarIc_user0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = 0.344444, Y = 0.073656, LX = -0.003667, LY = 0, RX = 0.003667, RY = 0 },
+							{ X = 0.351111, Y = 0.07043, LX = 0, LY = 0.001774, RX = 0, RY = -0.001774 },
+							{ X = 0.344444, Y = 0.067204, LX = 0.003667, LY = 0, RX = -0.003667, RY = 0 },
+							{ X = 0.337778, Y = 0.07043, LX = 0, LY = -0.001774, RX = 0, RY = 0.001774 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.003333, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 957 } },
+		},
+		S_AvatarIc_user1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				EffectMask = Input { SourceOp = "S_AvatarIc_user0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ X = 0.331944, Y = 0.060753, RX = 0.001167, RY = 0.002903 },
+							{ X = 0.344444, Y = 0.065591, LX = -0.006333, LY = 0, RX = 0.006333, RY = 0 },
+							{ X = 0.356944, Y = 0.060753, LX = -0.001167, LY = 0.002903 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.003333, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 990 } },
+		},
+		S_AvatarIc_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_AvatarIc_user1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1023 } },
+		},
+		S_Row0_L = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Network fee", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.051014, },
+				Center = Input { Value = { 0.127778, 0.489247 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1056 } },
+		},
+		S_Row0_R = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "$0.12", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.051014, },
+				Center = Input { Value = { 0.872222, 0.489247 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1089 } },
+		},
+		S_Row1_L = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Arrives in", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.051014, },
+				Center = Input { Value = { 0.127778, 0.455914 }, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1122 } },
+		},
+		S_Row1_R = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "~0.4s", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.051014, },
+				Center = Input { Value = { 0.872222, 0.455914 }, },
+				HorizontalLeftCenterRight = Input { Value = 1, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1155 } },
+		},
+		S_SendAdd01 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_Send_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "S_Back_Icon", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1188 } },
+		},
+		S_SendAdd02 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd01", Source = "Output", },
+				Foreground = Input { SourceOp = "S_Title", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1221 } },
+		},
+		S_SendAdd03 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd02", Source = "Output", },
+				Foreground = Input { SourceOp = "S_TokenRow_Bordered", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1254 } },
+		},
+		S_SendAdd04 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd03", Source = "Output", },
+				Foreground = Input { SourceOp = "S_EthCoin_Coin", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1287 } },
+		},
+		S_SendAdd05 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd04", Source = "Output", },
+				Foreground = Input { SourceOp = "S_EthName", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1320 } },
+		},
+		S_SendAdd06 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd05", Source = "Output", },
+				Foreground = Input { SourceOp = "S_EthBal", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1353 } },
+		},
+		S_SendAdd07 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd06", Source = "Output", },
+				Foreground = Input { SourceOp = "S_AmountUnit", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1386 } },
+		},
+		S_SendAdd08 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd07", Source = "Output", },
+				Foreground = Input { SourceOp = "S_AmountUsd", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1419 } },
+		},
+		S_SendAdd09 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd08", Source = "Output", },
+				Foreground = Input { SourceOp = "S_ToRow_Bordered", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1452 } },
+		},
+		S_SendAdd10 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd09", Source = "Output", },
+				Foreground = Input { SourceOp = "S_ToLabel", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1485 } },
+		},
+		S_SendAdd11 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd10", Source = "Output", },
+				Foreground = Input { SourceOp = "S_ToAddr", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1518 } },
+		},
+		S_SendAdd12 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd11", Source = "Output", },
+				Foreground = Input { SourceOp = "S_AvatarFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1551 } },
+		},
+		S_SendAdd13 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd12", Source = "Output", },
+				Foreground = Input { SourceOp = "S_AvatarIc_Icon", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1584 } },
+		},
+		S_SendAdd14 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd13", Source = "Output", },
+				Foreground = Input { SourceOp = "S_Row0_L", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1617 } },
+		},
+		S_SendAdd15 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd14", Source = "Output", },
+				Foreground = Input { SourceOp = "S_Row0_R", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1650 } },
+		},
+		S_SendAdd16 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd15", Source = "Output", },
+				Foreground = Input { SourceOp = "S_Row1_L", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1683 } },
+		},
+		S_SendAdd17 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAdd16", Source = "Output", },
+				Foreground = Input { SourceOp = "S_Row1_R", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1716 } },
+		},
+		S_SendStatic_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "S_SendAdd17", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1749 } },
+		},
+		S_SendAddAmount = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendStatic_Static", Source = "Output", },
+				Foreground = Input { SourceOp = "S_Amount", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1782 } },
+		},
+		UL_S_SendUI = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "S_SendUI", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 75, -30 },
+				Size = { 120, 1845 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		S_SendBtn_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.106452 }, },
+				Width = Input { Value = 0.844444, },
+				Height = Input { Value = 0.066667, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 0 } },
+		},
+		S_SendBtn_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_SendBtn_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 33 } },
+		},
+		S_SendBtnLabel = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Send now", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.074203, },
+				Center = Input { Value = { 0.5, 0.106452 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.043137, },
+				Green1 = Input { Value = 0.054902, },
+				Blue1 = Input { Value = 0.043137, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 66 } },
+		},
+		S_SendBtnAddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendBtn_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "S_SendBtnLabel", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 99 } },
+		},
+		S_SendBtn_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "S_SendBtnAddLabel", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 132 } },
+		},
+		S_SendBtnPressSize = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[400] = { 1, RH = { 400.48, 0.95 } },
+				[403] = { 0.95, LH = { 400.9, 0.95 }, RH = { 405.04, 1.0225 } },
+				[409] = { 1, LH = { 406.84, 1 } },
+			}
+		},
+		S_SendBtnPressQuality = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[399] = { 1, RH = { 399.333333, 2 } },
+				[400] = { 4, LH = { 399.666667, 3 }, RH = { 403, 4 } },
+				[409] = { 4, LH = { 406, 4 }, RH = { 409.333333, 3 } },
+				[410] = { 1, LH = { 409.666667, 2 } },
+			}
+		},
+		S_SendBtnPress = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "S_SendBtn_Static", Source = "Output", },
+				Pivot = Input { Value = { 0.5, 0.106452 }, },
+				Size = Input { SourceOp = "S_SendBtnPressSize", Source = "Value", },
+				MotionBlur = Input { Value = 1, },
+				Quality = Input { SourceOp = "S_SendBtnPressQuality", Source = "Value", },
+				ShutterAngle = Input { Value = 180, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 165 } },
+		},
+		S_TapRipple_MWidth = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[400] = { 0.022222, RH = { 402.24, 0.377778 } },
+				[414] = { 0.377778, LH = { 404.2, 0.377778 } },
+			}
+		},
+		S_TapRipple_MHeight = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[400] = { 0.022222, RH = { 402.24, 0.377778 } },
+				[414] = { 0.377778, LH = { 404.2, 0.377778 } },
+			}
+		},
+		S_TapRipple_MBorderWidth = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[400] = { 0.015556, RH = { 402.24, 0.002222 } },
+				[414] = { 0.002222, LH = { 404.2, 0.002222 } },
+			}
+		},
+		S_TapRipple_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.106452 }, },
+				Width = Input { SourceOp = "S_TapRipple_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "S_TapRipple_MHeight", Source = "Value", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { SourceOp = "S_TapRipple_MBorderWidth", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 198 } },
+		},
+		S_TapRippleFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_TapRipple_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 231 } },
+		},
+		S_TapDot_MWidth = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[394] = { 0, RH = { 394.64, 0.057778 } },
+				[398] = { 0.057778, LH = { 395.2, 0.057778 }, RH = { 400.666667, 0.057778 } },
+				[406] = { 0.057778, LH = { 403.333333, 0.057778 }, RH = { 408.8, 0.057778 } },
+				[410] = { 0, LH = { 409.36, 0.057778 } },
+			}
+		},
+		S_TapDot_MHeight = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[394] = { 0, RH = { 394.64, 0.057778 } },
+				[398] = { 0.057778, LH = { 395.2, 0.057778 }, RH = { 400.666667, 0.057778 } },
+				[406] = { 0.057778, LH = { 403.333333, 0.057778 }, RH = { 408.8, 0.057778 } },
+				[410] = { 0, LH = { 409.36, 0.057778 } },
+			}
+		},
+		S_TapDot_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.106452 }, },
+				Width = Input { SourceOp = "S_TapDot_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "S_TapDot_MHeight", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 264 } },
+		},
+		S_TapDotFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.85, },
+				TopLeftGreen = Input { Value = 0.85, },
+				TopLeftBlue = Input { Value = 0.85, },
+				TopLeftAlpha = Input { Value = 0.85, },
+				EffectMask = Input { SourceOp = "S_TapDot_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 297 } },
+		},
+		S_TapRippleDot = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_TapRippleFill", Source = "Output", },
+				Foreground = Input { SourceOp = "S_TapDotFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 330 } },
+		},
+		S_SendBtnAddTapBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[394] = { 0, RH = { 394.32, 1 } },
+				[396] = { 1, LH = { 394.6, 1 }, RH = { 400.666667, 1 } },
+				[410] = { 1, LH = { 405.333333, 1 }, RH = { 414.2, 1 } },
+				[416] = { 0, LH = { 415.04, 1 } },
+			}
+		},
+		S_SendBtnAddTap = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendBtnPress", Source = "Output", },
+				Foreground = Input { SourceOp = "S_TapRippleDot", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "S_SendBtnAddTapBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 363 } },
+		},
+		S_AddBtn = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_SendAddAmount", Source = "Output", },
+				Foreground = Input { SourceOp = "S_SendBtnAddTap", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 396 } },
+		},
+		UL_S_SendButton = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "S_SendButton", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 205, -30 },
+				Size = { 120, 459 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Phone_AddUI = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Body_Static", Source = "Output", },
+				Foreground = Input { SourceOp = "S_AddBtn", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "Phone_Screen_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 390, 0 } },
+		},
+		UL_Assemble = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Assemble", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 335, -30 },
+				Size = { 120, 63 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		MediaOut1 = MediaOut {
+			NameSet = true,
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input { SourceOp = "Phone_AddUI", Source = "Output", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 650, 300 } },
+		}
+	},
+	Frames = {
+	},
+	Prefs = {
+		Comp = {
+			FrameFormat = {
+				Name = "HD 1080",
+				Width = 900,
+				Height = 1860,
+				Rate = 30,
+				AspectX = 1,
+				AspectY = 1,
+				GuideRatio = 1.77777777777778,
+				DepthFull = 2,
+				DepthPreview = 2,
+				DepthInteractive = 2,
+			},
+			Unsorted = {
+				GlobalEnd = 89
+			},
+		}
+	},
+}

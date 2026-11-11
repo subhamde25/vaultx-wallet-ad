@@ -1,0 +1,990 @@
+Composition {
+	CurrentTime = 0,
+	RenderRange = { 0, 89 },
+	GlobalRange = { 0, 89 },
+	CurrentID = 76,
+	HiQ = true,
+	PlaybackUpdateMode = 0,
+	Version = "DaVinci Resolve Fusion 21.2",
+	SavedOutputs = 0,
+	HeldTools = 0,
+	DisabledTools = 0,
+	LockedTools = 0,
+	AudioOffset = 0,
+	AutoRenderRange = true,
+	Resumable = true,
+	OutputClips = {
+	},
+	Tools = ordered() {
+		Phone_Frame_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 1, },
+				Height = Input { Value = 1, },
+				CornerRadius = Input { Value = 0.293333, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+		},
+		Phone_Frame_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.039216, },
+				TopLeftGreen = Input { Value = 0.047059, },
+				TopLeftBlue = Input { Value = 0.039216, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Frame_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		},
+		Phone_Frame_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 1, },
+				Height = Input { Value = 1, },
+				CornerRadius = Input { Value = 0.293333, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004444, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 66 } },
+		},
+		Phone_Frame_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.290196, },
+				TopLeftGreen = Input { Value = 0.321569, },
+				TopLeftBlue = Input { Value = 0.290196, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Frame_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 99 } },
+		},
+		Phone_Frame_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Frame_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_Frame_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 132 } },
+		},
+		Phone_Screen_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 0.951111, },
+				Height = Input { Value = 0.976344, },
+				CornerRadius = Input { Value = 0.261682, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 165 } },
+		},
+		Phone_ScreenBG = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Linear" }, },
+				Start = Input { Value = { 0.5, 1 }, },
+				End = Input { Value = { 0.5, 0 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.082353, 0.101961, 0.078431, 1 }, [1] = { 0.05098, 0.062745, 0.05098, 1 } }
+					}, },
+				EffectMask = Input { SourceOp = "Phone_Screen_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 198 } },
+		},
+		Phone_AddScreen = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Frame_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_ScreenBG", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 231 } },
+		},
+		Phone_Island_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.962366 }, },
+				Width = Input { Value = 0.204444, },
+				Height = Input { Value = 0.027957, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 264 } },
+		},
+		Phone_IslandFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Island_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 297 } },
+		},
+		Phone_AddIsland = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddScreen", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_IslandFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 330 } },
+		},
+		Phone_Time = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "9:41", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.055652, },
+				Center = Input { Value = { 0.142222, 0.96129 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 363 } },
+		},
+		Phone_AddTime = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddIsland", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_Time", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 396 } },
+		},
+		Phone_Sig0_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.755, 0.956989 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.004301, },
+				CornerRadius = Input { Value = 0.571429, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 429 } },
+		},
+		Phone_Sig1_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.767222, 0.958333 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.006989, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 462 } },
+		},
+		Phone_Sig2_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.779444, 0.959677 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.009677, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 495 } },
+		},
+		Phone_Sig3_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.791667, 0.961022 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.012366, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 528 } },
+		},
+		Phone_Bat_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.833333, 0.960753 }, },
+				Width = Input { Value = 0.048889, },
+				Height = Input { Value = 0.011828, },
+				CornerRadius = Input { Value = 0.545455, },
+				EffectMask = Input { SourceOp = "Phone_Sig3_M", Source = "Mask", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.002222, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 561 } },
+		},
+		Phone_BatFill_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.831111, 0.960753 }, },
+				Width = Input { Value = 0.035556, },
+				Height = Input { Value = 0.007527, },
+				CornerRadius = Input { Value = 0.428571, },
+				EffectMask = Input { SourceOp = "Phone_Bat_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 594 } },
+		},
+		Phone_StatusFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_BatFill_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 627 } },
+		},
+		Phone_AddStatus = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddTime", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_StatusFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 660 } },
+		},
+		Phone_HomeBar_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.022312 }, },
+				Width = Input { Value = 0.288889, },
+				Height = Input { Value = 0.004839, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 693 } },
+		},
+		Phone_HomeBarFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.85, },
+				TopLeftGreen = Input { Value = 0.85, },
+				TopLeftBlue = Input { Value = 0.85, },
+				TopLeftAlpha = Input { Value = 0.85, },
+				EffectMask = Input { SourceOp = "Phone_HomeBar_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 726 } },
+		},
+		Phone_AddHomeBar = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddStatus", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_HomeBarFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 759 } },
+		},
+		Phone_Body_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Phone_AddHomeBar", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 792 } },
+		},
+		UL_Phone_Body = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Phone_Body", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, -30 },
+				Size = { 120, 855 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		E_Splash_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 0 } },
+		},
+		E_SplashBG_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 0.951111, },
+				Height = Input { Value = 0.976344, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 33 } },
+		},
+		E_SplashGrad = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Linear" }, },
+				Start = Input { Value = { 0.5, 0.83871 }, },
+				End = Input { Value = { 0.5, 0.193548 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.141176, 0.188235, 0.109804, 1 }, [1] = { 0.047059, 0.058824, 0.047059, 1 } }
+					}, },
+				EffectMask = Input { SourceOp = "E_SplashBG_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 66 } },
+		},
+		E_AddBG = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_Splash_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashGrad", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 99 } },
+		},
+		E_SplashLogo0_0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = -0.285779, Y = 0.058807 },
+							{ Linear = true, X = -0.311111, Y = 0.125234 },
+							{ Linear = true, X = -0.279871, Y = 0.125234 },
+							{ X = -0.26889, Y = 0.093178, RX = 0.001341, RY = -0.004244 },
+							{ X = -0.265375, Y = 0.07964, LX = -0.001015, LY = 0.00477, RX = 0.000979, RY = -0.00477 },
+							{ X = -0.262439, Y = 0.063875, LX = -0.000979, LY = 0.005734 },
+							{ X = -0.268419, Y = 0.063875, RX = 0.004856, RY = 0.005699 },
+							{ X = -0.254829, Y = 0.07971, LX = -0.004204, LY = -0.004857, RX = 0.004204, RY = 0.00484 },
+							{ X = -0.242434, Y = 0.093178, LX = -0.004059, LY = -0.004138 },
+							{ Linear = true, X = -0.210325, Y = 0.125234 },
+							{ Linear = true, X = -0.179266, Y = 0.125234 },
+							{ Linear = true, X = -0.24903, Y = 0.058807 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 132 } },
+		},
+		E_SplashLogo0_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "E_SplashLogo0_0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 165 } },
+		},
+		E_AddSplashLogo0 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddBG", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashLogo0_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 198 } },
+		},
+		E_SplashLogo1_0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = -0.159805, Y = 0.057966, RX = -0.007864, RY = 0 },
+							{ X = -0.180136, Y = 0.060947, LX = 0.00569, LY = -0.001982, RX = -0.00569, RY = 0.001999 },
+							{ X = -0.192241, Y = 0.069662, LX = 0.002392, LY = -0.003823, RX = -0.002392, RY = 0.003823 },
+							{ X = -0.192965, Y = 0.083691, LX = -0.001921, LY = -0.005541, RX = 0.001957, RY = 0.005682 },
+							{ X = -0.182383, Y = 0.097895, LX = -0.005074, LY = -0.003788, RX = 0.005074, RY = 0.003788 },
+							{ X = -0.164226, Y = 0.106435, LX = -0.006995, LY = -0.001911, RX = 0.006995, RY = 0.001894 },
+							{ X = -0.1423, Y = 0.109293, LX = -0.007611, LY = 0, RX = 0.005835, RY = 0 },
+							{ X = -0.128239, Y = 0.10789, LX = -0.003552, LY = 0.000929, RX = 0.003515, RY = -0.000929 },
+							{ X = -0.120085, Y = 0.104383, LX = -0.001921, LY = 0.001403, RX = 0.001921, RY = -0.001403 },
+							{ X = -0.116026, Y = 0.10028, LX = -0.000797, LY = 0.001333 },
+							{ Linear = true, X = -0.11512, Y = 0.10028 },
+							{ Linear = true, X = -0.112257, Y = 0.108662 },
+							{ Linear = true, X = -0.084713, Y = 0.108662 },
+							{ Linear = true, X = -0.101747, Y = 0.058825 },
+							{ Linear = true, X = -0.128927, Y = 0.058825 },
+							{ Linear = true, X = -0.126246, Y = 0.066804 },
+							{ X = -0.12755, Y = 0.066804, RX = -0.001776, RY = -0.001368 },
+							{ X = -0.134545, Y = 0.062718, LX = 0.002863, LY = 0.00135, RX = -0.002899, RY = -0.00135 },
+							{ X = -0.145127, Y = 0.059333, LX = 0.004168, LY = 0.000894, RX = -0.004168, RY = -0.000912 },
+							{ X = -0.159769, Y = 0.057966, LX = 0.005581, LY = 0 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 231 } },
+		},
+		E_SplashLogo1_1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				PaintMode = Input { Value = FuID { "Subtract" }, },
+				EffectMask = Input { SourceOp = "E_SplashLogo1_0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = -0.147555, Y = 0.068698, RX = 0.004748, RY = 0 },
+							{ X = -0.134871, Y = 0.070591, LX = -0.003733, LY = -0.001263, RX = 0.003733, RY = 0.001263 },
+							{ X = -0.125521, Y = 0.075852, LX = -0.002501, LY = -0.002245, RX = 0.002501, RY = 0.002245 },
+							{ X = -0.120266, Y = 0.083673, LX = -0.000979, LY = -0.002964, RX = 0.001051, RY = 0.003034 },
+							{ X = -0.120121, Y = 0.091564, LX = 0.000942, LY = -0.002227, RX = -0.000942, RY = 0.002227 },
+							{ X = -0.125883, Y = 0.096738, LX = 0.002899, LY = -0.001228, RX = -0.002899, RY = 0.00121 },
+							{ X = -0.137299, Y = 0.098561, LX = 0.004711, LY = 0, RX = -0.004711, RY = 0 },
+							{ X = -0.150201, Y = 0.09665, LX = 0.003733, LY = 0.00128, RX = -0.003733, RY = -0.00128 },
+							{ X = -0.159442, Y = 0.091389, LX = 0.002392, LY = 0.002227, RX = -0.002428, RY = -0.002227 },
+							{ X = -0.164552, Y = 0.083673, LX = 0.000979, LY = 0.002911, RX = -0.000979, RY = -0.002911 },
+							{ X = -0.164661, Y = 0.075922, LX = -0.000906, LY = 0.002245, RX = 0.000906, RY = -0.002262 },
+							{ X = -0.159008, Y = 0.070609, LX = -0.002827, LY = 0.00128, RX = 0.002863, RY = -0.00128 },
+							{ X = -0.147519, Y = 0.068698, LX = -0.00482, LY = 0 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 264 } },
+		},
+		E_SplashLogo1_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "E_SplashLogo1_1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 297 } },
+		},
+		E_AddSplashLogo1 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddSplashLogo0", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashLogo1_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 330 } },
+		},
+		E_SplashLogo2_0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = -0.027779, Y = 0.125234 },
+							{ Linear = true, X = -0.050538, Y = 0.058807 },
+							{ Linear = true, X = -0.07819, Y = 0.058807 },
+							{ Linear = true, X = -0.055431, Y = 0.125234 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 363 } },
+		},
+		E_SplashLogo2_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "E_SplashLogo2_0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 396 } },
+		},
+		E_AddSplashLogo2 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddSplashLogo1", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashLogo2_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 429 } },
+		},
+		E_SplashLogo3_0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = 0.008354, Y = 0.058176, RX = -0.007139, RY = 0 },
+							{ X = -0.009513, Y = 0.060421, LX = 0.004784, LY = -0.001491, RX = -0.004784, RY = 0.001508 },
+							{ X = -0.019697, Y = 0.066891, LX = 0.001993, LY = -0.002823, RX = -0.001993, RY = 0.002806 },
+							{ X = -0.020748, Y = 0.076939, LX = -0.001305, LY = -0.003893 },
+							{ Linear = true, X = -0.009876, Y = 0.108644 },
+							{ Linear = true, X = 0.017776, Y = 0.108644 },
+							{ X = 0.007737, Y = 0.079272, RX = -0.001051, RY = -0.003086 },
+							{ X = 0.010166, Y = 0.072012, LX = -0.002646, LY = 0.001754, RX = 0.002646, RY = -0.001754 },
+							{ X = 0.023031, Y = 0.069381, LX = -0.005907, LY = 0, RX = 0.003878, RY = 0 },
+							{ X = 0.033722, Y = 0.070609, LX = -0.003262, LY = -0.000824, RX = 0.003262, RY = 0.000824 },
+							{ X = 0.042021, Y = 0.074151, LX = -0.002283, LY = -0.001543, RX = 0.002283, RY = 0.001543 },
+							{ X = 0.046552, Y = 0.079815, LX = -0.000761, LY = -0.002227 },
+							{ Linear = true, X = 0.056409, Y = 0.108662 },
+							{ Linear = true, X = 0.084134, Y = 0.108662 },
+							{ Linear = true, X = 0.067064, Y = 0.058825 },
+							{ Linear = true, X = 0.040898, Y = 0.058825 },
+							{ Linear = true, X = 0.044776, Y = 0.071258 },
+							{ X = 0.046334, Y = 0.071258, RX = -0.004131, RY = -0.004191 },
+							{ X = 0.030714, Y = 0.061578, LX = 0.006306, LY = 0.002262, RX = -0.006306, RY = -0.002262 },
+							{ X = 0.008354, Y = 0.058193, LX = 0.008625, LY = 0 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 462 } },
+		},
+		E_SplashLogo3_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "E_SplashLogo3_0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 495 } },
+		},
+		E_AddSplashLogo3 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddSplashLogo2", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashLogo3_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 528 } },
+		},
+		E_SplashLogo4_0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0.15879, Y = 0.108644 },
+							{ Linear = true, X = 0.155383, Y = 0.098439 },
+							{ Linear = true, X = 0.094281, Y = 0.098439 },
+							{ Linear = true, X = 0.097688, Y = 0.108644 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 561 } },
+		},
+		E_SplashLogo4_1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				EffectMask = Input { SourceOp = "E_SplashLogo4_0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0.116062, Y = 0.120516 },
+							{ Linear = true, X = 0.143714, Y = 0.120516 },
+							{ X = 0.127587, Y = 0.073397, RX = -0.000544, RY = -0.001613 },
+							{ X = 0.128601, Y = 0.069872, LX = -0.001232, LY = 0.000754, RX = 0.001232, RY = -0.000737 },
+							{ X = 0.135415, Y = 0.06875, LX = -0.003298, LY = 0, RX = 0.001051, RY = 0 },
+							{ X = 0.139872, Y = 0.068943, LX = -0.001921, LY = -0.000123, RX = 0.001921, RY = 0.00014 },
+							{ X = 0.14433, Y = 0.069329, LX = -0.001051, LY = -0.000123 },
+							{ X = 0.144801, Y = 0.059298, RX = -0.003117, RY = -0.000438 },
+							{ X = 0.135451, Y = 0.058369, LX = 0.003117, LY = 0.000175, RX = -0.003117, RY = -0.000175 },
+							{ X = 0.126572, Y = 0.058106, LX = 0.002827, LY = 0, RX = -0.010401, RY = 0 },
+							{ X = 0.104102, Y = 0.061753, LX = 0.004603, LY = -0.002438, RX = -0.004603, RY = 0.002438 },
+							{ X = 0.0995, Y = 0.072222, LX = -0.001558, LY = -0.004542 },
+							{ Linear = true, X = 0.116098, Y = 0.120499 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 594 } },
+		},
+		E_SplashLogo4_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "E_SplashLogo4_1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 627 } },
+		},
+		E_AddSplashLogo4 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddSplashLogo3", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashLogo4_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 660 } },
+		},
+		E_SplashLogo5_0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = 0.191335, Y = 0.068417, LX = -0.002283, LY = 0.001298, RX = 0.002283, RY = -0.001298 },
+							{ X = 0.19398, Y = 0.063823, LX = 0.000507, LY = 0.001771, RX = -0.000471, RY = -0.001719 },
+							{ X = 0.188834, Y = 0.059403, LX = 0.002936, LY = 0.00121, RX = -0.002972, RY = -0.001228 },
+							{ X = 0.178723, Y = 0.05758, LX = 0.003769, LY = 0, RX = -0.003552, RY = 0 },
+							{ X = 0.170025, Y = 0.059403, LX = 0.002247, LY = -0.00121, RX = -0.002247, RY = 0.001228 },
+							{ X = 0.167379, Y = 0.063823, LX = -0.000471, LY = -0.001719, RX = 0.000507, RY = 0.001771 },
+							{ X = 0.172525, Y = 0.068417, LX = -0.002936, LY = -0.00128, RX = 0.002936, RY = 0.001298 },
+							{ X = 0.182274, Y = 0.070363, LX = -0.003552, LY = 0, RX = 0.003769, RY = 0 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 693 } },
+		},
+		E_SplashLogo5_1_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				EffectMask = Input { SourceOp = "E_SplashLogo5_0_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = 0.267876, Y = 0.059772, RX = 0.002356, RY = -0.001 },
+							{ X = 0.278458, Y = 0.057983, LX = -0.004711, LY = 0.000175 },
+							{ X = 0.256786, Y = 0.057983, RX = -0.005654, RY = 0 },
+							{ X = 0.241999, Y = 0.06035, LX = 0.004204, LY = -0.001578, RX = -0.004204, RY = 0.001578 },
+							{ X = 0.233628, Y = 0.066611, LX = 0.001377, LY = -0.002595 },
+							{ X = 0.203222, Y = 0.11629, RX = -0.000689, RY = 0.001491 },
+							{ X = 0.198583, Y = 0.119885, LX = 0.002428, LY = -0.000912, RX = -0.002428, RY = 0.000912 },
+							{ X = 0.188653, Y = 0.121533, LX = 0.004204, LY = -0.000193 },
+							{ X = 0.21866, Y = 0.121533, RX = 0.002682, RY = 0 },
+							{ X = 0.225691, Y = 0.120411, LX = -0.002029, LY = 0.000754, RX = 0.002029, RY = -0.000737 },
+							{ X = 0.229678, Y = 0.11736, LX = -0.000616, LY = 0.001298 },
+							{ Linear = true, X = 0.263635, Y = 0.062437 },
+							{ X = 0.262983, Y = 0.063875, RX = 0.000906, RY = -0.001719 },
+							{ X = 0.267839, Y = 0.059772, LX = -0.002319, LY = 0.001017 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 726 } },
+		},
+		E_SplashLogo5_2_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				EffectMask = Input { SourceOp = "E_SplashLogo5_1_M", Source = "Mask", },
+				Polyline = Input { Value = Polyline {
+						Closed = true,
+						Points = {
+							{ X = 0.311002, Y = 0.114817, LX = 0.000507, LY = 0.001771, RX = -0.000471, RY = -0.001719 },
+							{ X = 0.305856, Y = 0.110398, LX = 0.002936, LY = 0.001228, RX = -0.002972, RY = -0.001228 },
+							{ X = 0.295745, Y = 0.108574, LX = 0.003769, LY = 0, RX = -0.003552, RY = 0 },
+							{ X = 0.287047, Y = 0.110398, LX = 0.002247, LY = -0.00121, RX = -0.002247, RY = 0.00121 },
+							{ X = 0.284401, Y = 0.114817, LX = -0.000471, LY = -0.001719, RX = 0.000507, RY = 0.001771 },
+							{ X = 0.289548, Y = 0.119412, LX = -0.002936, LY = -0.00128, RX = 0.002936, RY = 0.001298 },
+							{ X = 0.299297, Y = 0.121358, LX = -0.003552, LY = 0, RX = 0.003769, RY = 0 },
+							{ X = 0.308357, Y = 0.119412, LX = -0.002283, LY = 0.001298, RX = 0.002283, RY = -0.001298 }
+						}
+					}, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 759 } },
+		},
+		E_SplashLogo5_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "E_SplashLogo5_2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 792 } },
+		},
+		E_AddSplashLogo5 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddSplashLogo4", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashLogo5_Fill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 825 } },
+		},
+		E_SplashTag = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Own your crypto journey.", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Medium", },
+				Size = Input { Value = 0.06029, },
+				Center = Input { Value = { 0.5, 0.516129 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 858 } },
+		},
+		E_AddTag = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddSplashLogo5", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashTag", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 891 } },
+		},
+		E_SplashBtn_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.129032 }, },
+				Width = Input { Value = 0.8, },
+				Height = Input { Value = 0.064516, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 924 } },
+		},
+		E_SplashBtn_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "E_SplashBtn_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 957 } },
+		},
+		E_SplashBtn_Label = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Get started", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.074203, },
+				Center = Input { Value = { 0.5, 0.129032 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.043137, },
+				Green1 = Input { Value = 0.054902, },
+				Blue1 = Input { Value = 0.043137, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 990 } },
+		},
+		E_SplashBtn_AddLabel = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_SplashBtn_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashBtn_Label", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1023 } },
+		},
+		E_AddBtn = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddTag", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashBtn_AddLabel", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1056 } },
+		},
+		E_SplashLogin = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "I already have a wallet", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.051014, },
+				Center = Input { Value = { 0.5, 0.061828 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1089 } },
+		},
+		E_AddLogin = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "E_AddBtn", Source = "Output", },
+				Foreground = Input { SourceOp = "E_SplashLogin", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1122 } },
+		},
+		E_Splash_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "E_AddLogin", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 1155 } },
+		},
+		UL_E_Splash = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "E_Splash", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 75, -30 },
+				Size = { 120, 1218 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Phone_AddUI = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Body_Static", Source = "Output", },
+				Foreground = Input { SourceOp = "E_Splash_Static", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "Phone_Screen_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 0 } },
+		},
+		UL_Assemble = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Assemble", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 205, -30 },
+				Size = { 120, 63 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		MediaOut1 = MediaOut {
+			NameSet = true,
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input { SourceOp = "Phone_AddUI", Source = "Output", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 300 } },
+		}
+	},
+	Frames = {
+	},
+	Prefs = {
+		Comp = {
+			FrameFormat = {
+				Name = "HD 1080",
+				Width = 900,
+				Height = 1860,
+				Rate = 30,
+				AspectX = 1,
+				AspectY = 1,
+				GuideRatio = 1.77777777777778,
+				DepthFull = 2,
+				DepthPreview = 2,
+				DepthInteractive = 2,
+			},
+			Unsorted = {
+				GlobalEnd = 89
+			},
+		}
+	},
+}

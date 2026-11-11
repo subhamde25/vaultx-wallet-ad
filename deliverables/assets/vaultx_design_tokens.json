@@ -1,0 +1,31 @@
+{
+  "colors": {
+    "background": "#0B0E0B",
+    "card": "#151A15",
+    "card_raised": "#1C221C",
+    "edge": "#2B332B",
+    "brand_charcoal": "#3E433E",
+    "brand_green": "#91C950",
+    "white": "#FFFFFF",
+    "grey": "#8C968C",
+    "grey_dim": "#5D665D",
+    "negative": "#E5484D"
+  },
+  "type": {
+    "display": "Inter Display Bold / SemiBold",
+    "ui": "Inter Bold / SemiBold / Medium"
+  },
+  "radii_px": {
+    "card": 28,
+    "chart_card": 40,
+    "pill": "height / 2",
+    "phone": 132
+  },
+  "motion": {
+    "ease_out": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "ease_in_out": "cubic-bezier(0.65, 0, 0.35, 1)",
+    "pop": "cubic-bezier(0.34, 1.45, 0.64, 1)",
+    "fps": 30,
+    "motion_blur": "180 deg shutter while moving"
+  }
+}

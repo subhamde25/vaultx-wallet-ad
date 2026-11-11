@@ -1,0 +1,803 @@
+Composition {
+	CurrentTime = 0,
+	RenderRange = { 0, 89 },
+	GlobalRange = { 0, 89 },
+	CurrentID = 78,
+	HiQ = true,
+	PlaybackUpdateMode = 0,
+	Version = "DaVinci Resolve Fusion 21.2",
+	SavedOutputs = 0,
+	HeldTools = 0,
+	DisabledTools = 0,
+	LockedTools = 0,
+	AudioOffset = 0,
+	AutoRenderRange = true,
+	Resumable = true,
+	OutputClips = {
+	},
+	Tools = ordered() {
+		Phone_Frame_Shape_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 1, },
+				Height = Input { Value = 1, },
+				CornerRadius = Input { Value = 0.293333, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+		},
+		Phone_Frame_Fill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.039216, },
+				TopLeftGreen = Input { Value = 0.047059, },
+				TopLeftBlue = Input { Value = 0.039216, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Frame_Shape_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		},
+		Phone_Frame_Edge_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 1, },
+				Height = Input { Value = 1, },
+				CornerRadius = Input { Value = 0.293333, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.004444, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 66 } },
+		},
+		Phone_Frame_EdgeFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.290196, },
+				TopLeftGreen = Input { Value = 0.321569, },
+				TopLeftBlue = Input { Value = 0.290196, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Frame_Edge_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 99 } },
+		},
+		Phone_Frame_Bordered = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Frame_Fill", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_Frame_EdgeFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 132 } },
+		},
+		Phone_Screen_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.5 }, },
+				Width = Input { Value = 0.951111, },
+				Height = Input { Value = 0.976344, },
+				CornerRadius = Input { Value = 0.261682, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 165 } },
+		},
+		Phone_ScreenBG = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				Type = Input { Value = FuID { "Gradient" }, },
+				GradientType = Input { Value = FuID { "Linear" }, },
+				Start = Input { Value = { 0.5, 1 }, },
+				End = Input { Value = { 0.5, 0 }, },
+				Gradient = Input { Value = Gradient {
+						Colors = { [0] = { 0.082353, 0.101961, 0.078431, 1 }, [1] = { 0.05098, 0.062745, 0.05098, 1 } }
+					}, },
+				EffectMask = Input { SourceOp = "Phone_Screen_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 198 } },
+		},
+		Phone_AddScreen = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Frame_Bordered", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_ScreenBG", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 231 } },
+		},
+		Phone_Island_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.962366 }, },
+				Width = Input { Value = 0.204444, },
+				Height = Input { Value = 0.027957, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 264 } },
+		},
+		Phone_IslandFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_Island_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 297 } },
+		},
+		Phone_AddIsland = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddScreen", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_IslandFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 330 } },
+		},
+		Phone_Time = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "9:41", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.055652, },
+				Center = Input { Value = { 0.142222, 0.96129 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 363 } },
+		},
+		Phone_AddTime = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddIsland", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_Time", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 396 } },
+		},
+		Phone_Sig0_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.755, 0.956989 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.004301, },
+				CornerRadius = Input { Value = 0.571429, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 429 } },
+		},
+		Phone_Sig1_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.767222, 0.958333 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.006989, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 462 } },
+		},
+		Phone_Sig2_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.779444, 0.959677 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.009677, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig1_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 495 } },
+		},
+		Phone_Sig3_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.791667, 0.961022 }, },
+				Width = Input { Value = 0.007778, },
+				Height = Input { Value = 0.012366, },
+				CornerRadius = Input { Value = 0.571429, },
+				EffectMask = Input { SourceOp = "Phone_Sig2_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 528 } },
+		},
+		Phone_Bat_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.833333, 0.960753 }, },
+				Width = Input { Value = 0.048889, },
+				Height = Input { Value = 0.011828, },
+				CornerRadius = Input { Value = 0.545455, },
+				EffectMask = Input { SourceOp = "Phone_Sig3_M", Source = "Mask", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.002222, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 561 } },
+		},
+		Phone_BatFill_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.831111, 0.960753 }, },
+				Width = Input { Value = 0.035556, },
+				Height = Input { Value = 0.007527, },
+				CornerRadius = Input { Value = 0.428571, },
+				EffectMask = Input { SourceOp = "Phone_Bat_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 594 } },
+		},
+		Phone_StatusFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "Phone_BatFill_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 627 } },
+		},
+		Phone_AddStatus = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddTime", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_StatusFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 660 } },
+		},
+		Phone_HomeBar_M = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.022312 }, },
+				Width = Input { Value = 0.288889, },
+				Height = Input { Value = 0.004839, },
+				CornerRadius = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 693 } },
+		},
+		Phone_HomeBarFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.85, },
+				TopLeftGreen = Input { Value = 0.85, },
+				TopLeftBlue = Input { Value = 0.85, },
+				TopLeftAlpha = Input { Value = 0.85, },
+				EffectMask = Input { SourceOp = "Phone_HomeBar_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 726 } },
+		},
+		Phone_AddHomeBar = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_AddStatus", Source = "Output", },
+				Foreground = Input { SourceOp = "Phone_HomeBarFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 759 } },
+		},
+		Phone_Body_Static = TimeSpeed {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "Phone_AddHomeBar", Source = "Output", },
+				Speed = Input { Value = 0, },
+				Delay = Input { Value = 0, },
+				InterpolateBetweenFrames = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 792 } },
+		},
+		UL_Phone_Body = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Phone_Body", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { -55, -30 },
+				Size = { 120, 855 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		S_Success_Canvas = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0, },
+				TopLeftGreen = Input { Value = 0, },
+				TopLeftBlue = Input { Value = 0, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 0 } },
+		},
+		S_OkDisc_MWidth = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 4.08, 0.386667 } },
+				[12] = { 0.266667, LH = { 7.68, 0.266667 } },
+			}
+		},
+		S_OkDisc_MHeight = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 4.08, 0.386667 } },
+				[12] = { 0.266667, LH = { 7.68, 0.266667 } },
+			}
+		},
+		S_OkDisc_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.591398 }, },
+				Width = Input { SourceOp = "S_OkDisc_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "S_OkDisc_MHeight", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 33 } },
+		},
+		S_OkDiscFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_OkDisc_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 66 } },
+		},
+		S_OkRing_MWidth = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[4] = { 0.266667, RH = { 6.88, 0.533333 } },
+				[22] = { 0.533333, LH = { 9.4, 0.533333 } },
+			}
+		},
+		S_OkRing_MHeight = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[4] = { 0.266667, RH = { 6.88, 0.533333 } },
+				[22] = { 0.533333, LH = { 9.4, 0.533333 } },
+			}
+		},
+		S_OkRing_M = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Center = Input { Value = { 0.5, 0.591398 }, },
+				Width = Input { SourceOp = "S_OkRing_MWidth", Source = "Value", },
+				Height = Input { SourceOp = "S_OkRing_MHeight", Source = "Value", },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.003333, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 99 } },
+		},
+		S_OkRingFill = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.568627, },
+				TopLeftGreen = Input { Value = 0.788235, },
+				TopLeftBlue = Input { Value = 0.313725, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_OkRing_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 132 } },
+		},
+		S_OkCheck_check0_MLevel = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[6] = { 0, RH = { 6.333333, 0.333333 } },
+				[7] = { 1, LH = { 6.666667, 0.666667 } },
+			}
+		},
+		S_OkCheck_check0_MWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[6] = { 0, RH = { 7.92, 1 } },
+				[18] = { 1, LH = { 9.6, 1 } },
+			}
+		},
+		S_OkCheck_check0_M = PolylineMask {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				MaskWidth = Input { Value = 900, },
+				MaskHeight = Input { Value = 1860, },
+				Level = Input { SourceOp = "S_OkCheck_check0_MLevel", Source = "Value", },
+				Polyline = Input { Value = Polyline {
+						Closed = false,
+						Points = {
+							{ Linear = true, X = -0.045139, Y = 0.089718 },
+							{ Linear = true, X = -0.013889, Y = 0.074597 },
+							{ Linear = true, X = 0.045139, Y = 0.106519 }
+						}
+					}, },
+				Solid = Input { Value = 0, },
+				BorderWidth = Input { Value = 0.017778, },
+				WriteOnEnd = Input { SourceOp = "S_OkCheck_check0_MWriteOnEnd", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 165 } },
+		},
+		S_OkCheck_Icon = Background {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				TopLeftRed = Input { Value = 0.043137, },
+				TopLeftGreen = Input { Value = 0.054902, },
+				TopLeftBlue = Input { Value = 0.043137, },
+				TopLeftAlpha = Input { Value = 1, },
+				EffectMask = Input { SourceOp = "S_OkCheck_check0_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 198 } },
+		},
+		S_OkAddDisc = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_Success_Canvas", Source = "Output", },
+				Foreground = Input { SourceOp = "S_OkDiscFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 231 } },
+		},
+		S_OkAddRingBlend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[4] = { 0.8, RH = { 6.88, 0 } },
+				[22] = { 0, LH = { 9.4, 0 } },
+			}
+		},
+		S_OkAddRing = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_OkAddDisc", Source = "Output", },
+				Foreground = Input { SourceOp = "S_OkRingFill", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "S_OkAddRingBlend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 264 } },
+		},
+		S_OkAddCheck = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_OkAddRing", Source = "Output", },
+				Foreground = Input { SourceOp = "S_OkCheck_Icon", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 297 } },
+		},
+		S_OkText0 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Sent", },
+				Font = Input { Value = "Inter Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.148406, },
+				Center = Input { Value = { 0.5, 0.473118 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 1, },
+				Green1 = Input { Value = 1, },
+				Blue1 = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 330 } },
+		},
+		S_OkText0_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		S_OkText0_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[10] = { 0.478495, RH = { 12.24, 0.5 } },
+				[24] = { 0.5, LH = { 14.2, 0.5 } },
+			}
+		},
+		S_OkText0_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "S_OkText0_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "S_OkText0_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		S_OkText0_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "S_OkText0", Source = "Output", },
+				Center = Input { SourceOp = "S_OkText0_RiseCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 363 } },
+		},
+		S_OkAddText0Blend = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[10] = { 0, RH = { 11.28, 1 } },
+				[18] = { 1, LH = { 12.4, 1 } },
+			}
+		},
+		S_OkAddText0 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_OkAddCheck", Source = "Output", },
+				Foreground = Input { SourceOp = "S_OkText0_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "S_OkAddText0Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 396 } },
+		},
+		S_OkText1 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "0.85 ETH to 0x8F3c…a91C", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.055652, },
+				Center = Input { Value = { 0.5, 0.430108 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.54902, },
+				Green1 = Input { Value = 0.588235, },
+				Blue1 = Input { Value = 0.54902, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 429 } },
+		},
+		S_OkText1_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 0, Green = 200, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		S_OkText1_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[13] = { 0.478495, RH = { 15.24, 0.5 } },
+				[27] = { 0.5, LH = { 17.2, 0.5 } },
+			}
+		},
+		S_OkText1_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "S_OkText1_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "S_OkText1_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		S_OkText1_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "S_OkText1", Source = "Output", },
+				Center = Input { SourceOp = "S_OkText1_RiseCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 462 } },
+		},
+		S_OkAddText1Blend = BezierSpline {
+			SplineColor = { Red = 255, Green = 128, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[13] = { 0, RH = { 14.28, 1 } },
+				[21] = { 1, LH = { 15.4, 1 } },
+			}
+		},
+		S_OkAddText1 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_OkAddText0", Source = "Output", },
+				Foreground = Input { SourceOp = "S_OkText1_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "S_OkAddText1Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 495 } },
+		},
+		S_OkText2 = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 0, },
+				Width = Input { Value = 900, },
+				Height = Input { Value = 1860, },
+				StyledText = Input { Value = "Confirmed in 0.4s", },
+				Font = Input { Value = "Inter", },
+				Style = Input { Value = "SemiBold", },
+				Size = Input { Value = 0.06029, },
+				Center = Input { Value = { 0.5, 0.402151 }, },
+				HorizontalLeftCenterRight = Input { Value = 0, },
+				Red1 = Input { Value = 0.568627, },
+				Green1 = Input { Value = 0.788235, },
+				Blue1 = Input { Value = 0.313725, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 528 } },
+		},
+		S_OkText2_RiseCenterPathX = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 160 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.5, RH = { 0.333333, 0.5 } },
+				[1] = { 0.5, LH = { 0.666667, 0.5 } },
+			}
+		},
+		S_OkText2_RiseCenterPathY = BezierSpline {
+			SplineColor = { Red = 120, Green = 255, Blue = 120 },
+			NameSet = true,
+			KeyFrames = {
+				[16] = { 0.478495, RH = { 18.24, 0.5 } },
+				[30] = { 0.5, LH = { 20.2, 0.5 } },
+			}
+		},
+		S_OkText2_RiseCenterPath = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			Inputs = {
+				X = Input { SourceOp = "S_OkText2_RiseCenterPathX", Source = "Value", },
+				Y = Input { SourceOp = "S_OkText2_RiseCenterPathY", Source = "Value", },
+			},
+		},
+		S_OkText2_Rise = Transform {
+			NameSet = true,
+			Inputs = {
+				Input = Input { SourceOp = "S_OkText2", Source = "Output", },
+				Center = Input { SourceOp = "S_OkText2_RiseCenterPath", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 561 } },
+		},
+		S_OkAddText2Blend = BezierSpline {
+			SplineColor = { Red = 220, Green = 220, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[16] = { 0, RH = { 17.28, 1 } },
+				[24] = { 1, LH = { 18.4, 1 } },
+			}
+		},
+		S_OkAddText2 = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "S_OkAddText1", Source = "Output", },
+				Foreground = Input { SourceOp = "S_OkText2_Rise", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				Blend = Input { SourceOp = "S_OkAddText2Blend", Source = "Value", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 130, 594 } },
+		},
+		UL_S_SuccessUI = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "S_SuccessUI", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 75, -30 },
+				Size = { 120, 657 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		Phone_AddUI = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input { SourceOp = "Phone_Body_Static", Source = "Output", },
+				Foreground = Input { SourceOp = "S_OkAddText2", Source = "Output", },
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input { SourceOp = "Phone_Screen_M", Source = "Mask", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 260, 0 } },
+		},
+		UL_Assemble = Underlay {
+			NameSet = true,
+			Inputs = {
+				Comments = Input { Value = "Assemble", },
+			},
+			ViewInfo = UnderlayInfo {
+				Pos = { 205, -30 },
+				Size = { 120, 63 }
+			},
+			Colors = { TileColor = { R = 0.22, G = 0.27, B = 0.18 }, }
+		},
+		MediaOut1 = MediaOut {
+			NameSet = true,
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input { SourceOp = "Phone_AddUI", Source = "Output", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 520, 300 } },
+		}
+	},
+	Frames = {
+	},
+	Prefs = {
+		Comp = {
+			FrameFormat = {
+				Name = "HD 1080",
+				Width = 900,
+				Height = 1860,
+				Rate = 30,
+				AspectX = 1,
+				AspectY = 1,
+				GuideRatio = 1.77777777777778,
+				DepthFull = 2,
+				DepthPreview = 2,
+				DepthInteractive = 2,
+			},
+			Unsorted = {
+				GlobalEnd = 89
+			},
+		}
+	},
+}
